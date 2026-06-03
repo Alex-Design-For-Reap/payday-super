@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payday Super Enablement View</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Report navigation">
+        <div class="brand-block">
+          <div class="brand-mark" aria-hidden="true">BP</div>
+          <div>
+            <p class="eyebrow">Product Innovation and Enablement</p>
+            <h1>Business Payments</h1>
+          </div>
+        </div>
+
+        <nav class="nav-tabs" id="viewTabs" aria-label="Views"></nav>
+
+        <section class="side-panel">
+          <p class="panel-label">Source</p>
+          <strong>Issues Register</strong>
+          <span id="sourceMeta">Loading register</span>
+        </section>
+      </aside>
+
+      <main class="content">
+        <header class="page-header">
+          <div>
+            <p class="eyebrow">Product Innovation and Enablement</p>
+            <h2 id="viewTitle">Executive Summary</h2>
+            <p id="viewDescription" class="lede"></p>
+          </div>
+          <div class="header-meta">
+            <span id="lastUpdated">Last updated: -</span>
+            <span id="audienceLabel">Audience: Exec / Enablement</span>
+            <span id="metricsLabel">Metrics: current view</span>
+          </div>
+        </header>
+
+        <section class="filters" aria-label="Dashboard filters">
+          <label>
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Search issues, owners, products" />
+          </label>
+          <label>
+            <span>Use Case</span>
+            <select id="useCaseFilter"></select>
+          </label>
+          <label>
+            <span>Product</span>
+            <select id="productFilter"></select>
+          </label>
+          <label>
+            <span>Category</span>
+            <select id="categoryFilter"></select>
+          </label>
+          <label>
+            <span>Issue Type</span>
+            <select id="issueTypeFilter"></select>
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="statusFilter"></select>
+          </label>
+        </section>
+
+        <section class="kpis" id="kpiGrid" aria-label="Key metrics"></section>
+
+        <section class="journey-section" id="journeySection" hidden>
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">E2E journey impact</p>
+              <h3>Issues By Journey Phase</h3>
+            </div>
+            <span id="journeySummary"></span>
+          </div>
+          <div class="journey-map" id="journeyMap" aria-label="Issues by E2E journey phase"></div>
+        </section>
+
+        <section class="dashboard-grid" id="dashboardGrid">
+          <article class="module module-large" id="priorityModule">
+            <div class="module-head">
+              <div>
+                <span class="module-icon alert-icon">!</span>
+                <h3 id="primaryListTitle">Top Priority Issues</h3>
+              </div>
+              <button class="text-button" data-action="show-register">View all</button>
+            </div>
+            <div class="issue-table" id="priorityTable"></div>
+          </article>
+
+          <article class="module" id="progressModule">
+            <div class="module-head">
+              <div>
+                <span class="module-icon progress-icon">↻</span>
+                <h3>What's In Progress</h3>
+              </div>
+            </div>
+            <ul class="compact-list" id="progressList"></ul>
+          </article>
+
+          <article class="module" id="decisionModule">
+            <div class="module-head">
+              <div>
+                <span class="module-icon decision-icon">?</span>
+                <h3>Decisions Needed</h3>
+              </div>
+            </div>
+            <ul class="compact-list" id="decisionList"></ul>
+          </article>
+
+          <article class="module" id="dependencyModule">
+            <div class="module-head">
+              <div>
+                <span class="module-icon dependency-icon">⌘</span>
+                <h3>Key Dependencies</h3>
+              </div>
+            </div>
+            <ul class="compact-list" id="dependencyList"></ul>
+          </article>
+
+          <article class="module" id="watchModule">
+            <div class="module-head">
+              <div>
+                <span class="module-icon gap-icon">△</span>
+                <h3>Gaps / Watch Outs</h3>
+              </div>
+            </div>
+            <ul class="compact-list" id="watchList"></ul>
+          </article>
+        </section>
+
+        <section class="product-sections" id="productSections" hidden>
+          <article class="module">
+            <div class="module-head">
+              <div>
+                <span class="module-icon progress-icon">↗</span>
+                <h3>Opportunity Mapping</h3>
+              </div>
+              <button class="text-button" type="button" data-action="toggle-opportunities">View all</button>
+            </div>
+            <div class="product-table" id="opportunityTable"></div>
+          </article>
+
+          <article class="module">
+            <div class="module-head">
+              <div>
+                <span class="module-icon gap-icon">△</span>
+                <h3>Capability Gaps</h3>
+              </div>
+              <button class="text-button" type="button" data-action="toggle-capability-gaps">View all</button>
+            </div>
+            <div class="product-table" id="capabilityGapTable"></div>
+          </article>
+        </section>
+
+        <section class="register-section" id="registerSection">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Source of truth</p>
+              <h3>Issue Register View</h3>
+            </div>
+            <span id="registerCount"></span>
+          </div>
+          <div class="cards" id="issueCards"></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="issueModal" hidden>
+      <section class="issue-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-head">
+          <div>
+            <span class="id-pill" id="modalIssueId">ID</span>
+            <h3 id="modalTitle">Issue detail</h3>
+          </div>
+          <button class="icon-button" type="button" id="modalClose" aria-label="Close issue detail">×</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </section>
+    </div>
+
+    <script src="issues-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

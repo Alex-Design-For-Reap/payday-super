@@ -1,0 +1,11 @@
+# Local source workbook and generated/temporary report assets
+Issues Register.xlsx
+~$*.xlsx
+Report*.png
+
+# macOS
+.DS_Store
+
+# Local Python/cache noise
+__pycache__/
+.pytest_cache/
