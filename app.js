@@ -2,16 +2,10 @@ const data = window.ISSUES_DATA || { issues: [], generatedAt: "", source: "" };
 
 const journeyPhases = [
   "Preparation and data creation",
-  "Set up & Account",
-  "Employer onboarded",
-  "Contribution data & payment method definition",
+  "Set up & Account, onboarding",
   "Payment processing",
-  "Receiving, validating, and reconciling (SuperStream)",
-  "Allocation and distribution (SuperStream)",
-  "Receiving, validating, and reconciling (Employee's Super Fund)",
-  "Preparing and sending to individual super funds",
+  "Receiving, validating, reconciling, and reporting",
   "Investigation and returns (unhappy path)",
-  "Finalisation and reporting",
 ];
 
 const views = [
@@ -162,7 +156,7 @@ function filteredIssues() {
 
   return data.issues.filter(issue => {
     if (!view.filter(issue)) return false;
-    if (state.category !== "All" && issue.category !== state.category) return false;
+    if (state.category !== "All" && !(issue.categories || [issue.category]).includes(state.category)) return false;
     if (state.useCase !== "All" && !(issue.useCases || [issue.useCase]).includes(state.useCase)) return false;
     if (state.product !== "All" && !(issue.products || [issue.product]).includes(state.product)) return false;
     if (state.issueType !== "All" && issue.issueType !== state.issueType) return false;
@@ -182,6 +176,9 @@ function filteredIssues() {
       issue.currentAction,
       issue.decisionNeeded,
       issue.category,
+      issue.categories,
+      issue.journeyStage,
+      issue.journeyStages,
       issue.dependencies,
       issue.relatedInitiative,
       issue.notes,
@@ -569,7 +566,7 @@ function render() {
 }
 
 function setupControls() {
-  fillSelect(els.categoryFilter, uniqueValues("category"));
+  fillSelect(els.categoryFilter, uniqueValues("categories"));
   fillSelect(els.useCaseFilter, uniqueValues("useCases"));
   fillSelect(els.productFilter, uniqueValues("products"));
   fillSelect(els.issueTypeFilter, uniqueValues("issueType"));
@@ -740,13 +737,10 @@ function renderIssueModal(issue) {
     <section class="detail-section">
       <h4>Scope</h4>
       <div class="detail-grid">
-        ${renderField("Main Use Case", issue.mainUseCase || issue.useCase)}
-        ${renderChipField("Use Cases Impacted", issue.useCases)}
-        ${renderField("Category 1", issue.category)}
-        ${renderField("Category 2", issue.category2)}
-        ${renderField("Journey Stage", issue.journeyStage)}
-        ${renderField("Primary Product", issue.primaryProduct || issue.product)}
-        ${renderChipField("Products Impacted", issue.products)}
+        ${renderChipField("Use Case(s) Impacted", issue.useCases)}
+        ${renderChipField("Categories", issue.categories || [issue.category])}
+        ${renderChipField("Journey Stage", issue.journeyStages || [issue.journeyStage])}
+        ${renderChipField("Product(s) Impacted", issue.products)}
       </div>
     </section>
 
@@ -808,7 +802,7 @@ function renderChipField(label, values) {
 }
 
 function issueJourneyPhases(issue) {
-  const rawValues = splitMultiValue(issue.journeyStage);
+  const rawValues = issue.journeyStages || splitMultiValue(issue.journeyStage);
   return rawValues
     .map(value => {
       const normalised = normaliseJourneyLabel(value);
@@ -828,7 +822,7 @@ function normaliseJourneyLabel(value) {
 
 function splitMultiValue(value) {
   return String(value || "")
-    .split(";")
+    .split(/;|\n/)
     .map(item => item.trim())
     .filter(Boolean);
 }
@@ -840,9 +834,7 @@ function displayImpacts(values) {
 }
 
 function productScope(issue) {
-  const primary = issue.primaryProduct || issue.product;
-  const impacted = (issue.products || []).filter(product => product && product !== primary);
-  return [primary, ...impacted].filter(Boolean).join("; ") || "No product";
+  return (issue.products || [issue.product]).filter(Boolean).join("; ") || "No product";
 }
 
 function normaliseType(value) {

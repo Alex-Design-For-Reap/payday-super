@@ -1,21 +1,18 @@
 window.ISSUES_DATA = {
-  "generatedAt": "2026-06-24 15:59",
+  "generatedAt": "2026-06-24 16:16",
   "source": "Issues Register.xlsm",
   "issues": [
     {
       "id": "ID-01",
-      "mainUseCase": "Super Payroll Business Payments",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super; Payroll; Business Payments",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Understanding of the usage of off-system BSBs",
       "problemScenario": "Currently, there is limited visibility and understanding of how off-system BSBs are being used across use cases and Participants. This results in uncertainty around how payments are routed, the availability of alternatives, and the potential impact on AP+ products and services. There is a need to conduct analysis of off-system BSB usage, associated challenges, and viable alternatives to inform product and ecosystem decisions.",
       "issueType": "Gap",
       "dependencies": "Participants",
       "relatedInitiative": "",
-      "primaryProduct": "Accounts",
-      "productsImpacted": "",
+      "productsImpacted": "Accounts",
       "owner": "Nick",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -28,29 +25,37 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super Payroll Business Payments",
       "useCases": [
-        "Super Payroll Business Payments"
+        "Super",
+        "Payroll",
+        "Business Payments"
       ],
-      "product": "Accounts",
+      "mainUseCase": "Super; Payroll; Business Payments",
+      "useCase": "Super; Payroll; Business Payments",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "Accounts"
+      ],
+      "primaryProduct": "Accounts",
+      "product": "Accounts",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-02",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
-      "category": "Payment instruction and Operation Ecosystem Readiness & External Constraints",
-      "category2": "",
+      "useCasesImpacted": "All",
+      "category": "Payment instruction and Operation; Ecosystem Readiness & External Constraints",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Account Reach",
       "problemScenario": "Currently there are some accounts that haven't been made NPP reachable. This results in the payment being rejected if a payment is made to them. There is a need for plans and timeframes for when accounts will be made reachable, alternative solutions or an understanding of how it impacts any NPP payments being processed.",
       "issueType": "Opportunity",
       "dependencies": "Participants",
       "relatedInitiative": "",
-      "primaryProduct": "Accounts",
-      "productsImpacted": "",
+      "productsImpacted": "Accounts",
       "owner": "Nick",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -63,29 +68,36 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "Accounts",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Payment instruction and Operation",
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "Accounts"
+      ],
+      "primaryProduct": "Accounts",
+      "product": "Accounts",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-03",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Payment processing",
       "title": "BSB Redirection",
       "problemScenario": "Currently Under BECS processing, these obsolete or unused BSBs are often mapped to current BSBs by the Payer or Payee institution. This results in rejected payments despite it being successful in BECS Some industry sectors with low employee turnover have undertaken minimal maintenance of employee banking details. In these cases, payroll and accounting systems continue to use outdated BSBs that are still visible in BSB reference listings but are no longer in active use. ​ This results in payments being rejected particularly super refunds, super pension payments, welfare and payroll payments) There is a need for an industry solution or coordination to solve for this issue",
       "issueType": "Risk",
       "dependencies": "Participants",
       "relatedInitiative": "",
-      "primaryProduct": "Accounts",
-      "productsImpacted": "",
+      "productsImpacted": "Accounts",
       "owner": "Nick",
       "priority": "HIGH",
       "horizon": "MEDIUM",
@@ -98,29 +110,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "Accounts",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "Accounts"
+      ],
+      "primaryProduct": "Accounts",
+      "product": "Accounts",
+      "journeyStages": [
+        "Payment processing"
       ]
     },
     {
       "id": "ID-04",
-      "mainUseCase": "Super",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Readiness of super funds to receive NPP payments by 1 July",
       "problemScenario": "As a result of NPP being approved as a payment method for SuperStream by the ATO, all super funds must be able to receive NPP payments for employer contributions Currently, accounts are either not enabled for NPP due to being on legacy platforms or are using off system BSBs. This results in funds not being ready to meet their ATO SuperStream obligations There is a need for super funds to ensure their contribution accounts are NPP-enabled and accurately maintained in the FVS, including enabling existing accounts or opening new accounts to ensure that can receive and reconcile employer contributions via NPP.",
       "issueType": "Product Idea",
       "dependencies": "Participants",
       "relatedInitiative": "",
-      "primaryProduct": "Accounts",
-      "productsImpacted": "",
+      "productsImpacted": "Accounts",
       "owner": "Bianca",
       "priority": "HIGH",
       "horizon": "SHORT",
@@ -133,29 +151,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super",
       "useCases": [
         "Super"
       ],
-      "product": "Accounts",
+      "mainUseCase": "Super",
+      "useCase": "Super",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "Accounts"
+      ],
+      "primaryProduct": "Accounts",
+      "product": "Accounts",
+      "journeyStages": [
+        "Receiving, validating, reconciling, and reporting"
       ]
     },
     {
       "id": "ID-05",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Data Quality & Validation",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Opportunity: More information for COP calls for DSPs",
       "problemScenario": "COP is the match outcome that a DSP receives. Is this enough information or is there more information that could be provided to DSPs to ensure that upfront validation can occur and ensure better processing.",
       "issueType": "Opportunity",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "CoP",
-      "productsImpacted": "",
+      "productsImpacted": "CoP",
       "owner": "Tina",
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
@@ -168,29 +192,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "CoP",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Data Quality & Validation"
+      ],
       "products": [
         "CoP"
+      ],
+      "primaryProduct": "CoP",
+      "product": "CoP",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-08",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Preparation and data creation",
       "title": "Impacts on cashflow due to sequencing of payments",
       "problemScenario": "Currently under BECS, banks sequence the processing of debits and credits to ensure that the business has sufficient funds to cover any direct debit request. Given PayTo can be triggered during anytime, this results in the Payer having insufficient funds when the request comes through. There is a need to understand how is this managed by the Payer and the initiator to ensure that PayTo payment initiation can be as successful as it can be?",
       "issueType": "Opportunity",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "Other",
-      "productsImpacted": "",
+      "productsImpacted": "Other",
       "owner": "Bianca",
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
@@ -203,29 +233,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "Other",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "Other"
+      ],
+      "primaryProduct": "Other",
+      "product": "Other",
+      "journeyStages": [
+        "Preparation and data creation"
       ]
     },
     {
       "id": "ID-10",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Exceptions, Returns & Error Handling",
-      "category2": "",
       "journeyStage": "Investigation and returns (unhappy path)",
       "title": "Lack of automated payment return solutions by Participants",
       "problemScenario": "Currently there are scenarios where the Payee wants to return the funds back to the original Payer. Today, the Payee could do this under BECS if they have the original Payer details or under NPP contact their bank to process those returns. This results in additional operational burden on participants in order to process these returns. There is a need to Understand the unsolicited payment return process and whether it is fit for purpose for businesses use cases and the impacts it may have on business processes, Participant operational teams.",
       "issueType": "Product Idea",
       "dependencies": "Participants",
       "relatedInitiative": "",
-      "primaryProduct": "Other",
-      "productsImpacted": "",
+      "productsImpacted": "Other",
       "owner": "Bianca",
       "priority": "HIGH",
       "horizon": "SHORT",
@@ -238,29 +274,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "Other",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Exceptions, Returns & Error Handling"
+      ],
       "products": [
         "Other"
+      ],
+      "primaryProduct": "Other",
+      "product": "Other",
+      "journeyStages": [
+        "Investigation and returns (unhappy path)"
       ]
     },
     {
       "id": "ID-11",
-      "mainUseCase": "Super",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Payment processing",
       "title": "Increase super transaction volumes including refunds",
       "problemScenario": "There will be changes in how super payments are being processed due to: - Increase frequency of super payments in-line with payroll - Changes to how clearing houses are processing e.g. Sending contributions by employer for each super fund, rather than aggregating employer payments together. This will result in an Increase in transaction volumes for super contributions to occur due to a number of reason: Additionally there is an expectation that the number of refunds will increase initially as the industry transitions into new processes. There is a need for Participants need to ensure that they are able to support automated processing as a result of the increase volumes.",
       "issueType": "PE",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "Other",
-      "productsImpacted": "",
+      "productsImpacted": "Other",
       "owner": "Bianca",
       "priority": "HIGH",
       "horizon": "SHORT",
@@ -273,29 +315,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super",
       "useCases": [
         "Super"
       ],
-      "product": "Other",
+      "mainUseCase": "Super",
+      "useCase": "Super",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "Other"
+      ],
+      "primaryProduct": "Other",
+      "product": "Other",
+      "journeyStages": [
+        "Payment processing"
       ]
     },
     {
       "id": "ID-12",
-      "mainUseCase": "Super",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Readiness of Clearing Houses to accept and send NPP payments",
       "problemScenario": "Currently The role of the clearing house is to take funds from the employer and re-distribute the payments to the super funds in accordance to the details provided by the employer. There is a need for these enablers to adopt NPP for volumes to increase as they need to both receieve and send NPP payments",
       "issueType": "Dependency",
       "dependencies": "Clearing Houses, Participants",
       "relatedInitiative": "",
-      "primaryProduct": "Other",
-      "productsImpacted": "",
+      "productsImpacted": "Other",
       "owner": "Bianca",
       "priority": "HIGH",
       "horizon": "MEDIUM",
@@ -308,29 +356,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super",
       "useCases": [
         "Super"
       ],
-      "product": "Other",
+      "mainUseCase": "Super",
+      "useCase": "Super",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "Other"
+      ],
+      "primaryProduct": "Other",
+      "product": "Other",
+      "journeyStages": [
+        "Receiving, validating, reconciling, and reporting"
       ]
     },
     {
       "id": "ID-13",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Payment processing",
       "title": "Variability in bank offerings",
       "problemScenario": "Currently banks offer different product capabilities, rules and behaviours that are outside of AP+ visibility and control. These differences result in operational complexity and fragmented user journeys. This results in inconsistencies in how payments are processed and experienced by customers. There is a need to align on minimum standards and expected behaviours across banks to provide a more consistent and predictable experience.",
       "issueType": "Gap",
       "dependencies": "Participants, A2A vision",
       "relatedInitiative": "",
-      "primaryProduct": "Other",
-      "productsImpacted": "",
+      "productsImpacted": "Other",
       "owner": "Bianca",
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
@@ -343,29 +397,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "Other",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "Other"
+      ],
+      "primaryProduct": "Other",
+      "product": "Other",
+      "journeyStages": [
+        "Payment processing"
       ]
     },
     {
       "id": "ID-14",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Reconciliation, Reporting & Traceability",
-      "category2": "",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "NPP data elements within business reporting",
       "problemScenario": "Currently business reporting/account statements have been based on BSB/Account number. Those reporting hasn't been enhanced to support NPP including PayID. This applies to both EOD and intraday reporting across all Participants. Additionally, DSPs need to have the ability to reconcile a PayID within their systems. As a result, it makes it more difficult for businesses to reconcile as it is a key piece of data. There is a need to include elements like PayID, PayTo data elements",
       "issueType": "Opportunity",
       "dependencies": "Participants",
       "relatedInitiative": "",
-      "primaryProduct": "Reporting",
-      "productsImpacted": "",
+      "productsImpacted": "Reporting",
       "owner": "Bianca",
       "priority": "HIGH",
       "horizon": "MEDIUM",
@@ -378,29 +438,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "Reporting",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Reconciliation, Reporting & Traceability"
+      ],
       "products": [
         "Reporting"
+      ],
+      "primaryProduct": "Reporting",
+      "product": "Reporting",
+      "journeyStages": [
+        "Receiving, validating, reconciling, and reporting"
       ]
     },
     {
       "id": "ID-15",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Payment instruction and Operation",
-      "category2": "",
       "journeyStage": "Preparation and data creation",
       "title": "PayID not available in the payment instruction",
       "problemScenario": "Currently Some Participants are offering an ABA translation service as a bulk NPP solution which means businesses can continue to use their existing file formats but still process on NPP. As a result, businesses wouldn't be able to pay to a PayID which can impact the rollout of PayID receivables. There is a need for a longer term strategy for the adoption of a NPP payment instruction for Participants and end users",
       "issueType": "Risk",
       "dependencies": "Participants",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "HIGH",
       "horizon": "MEDIUM",
@@ -413,29 +479,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Payment instruction and Operation"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Preparation and data creation"
       ]
     },
     {
       "id": "ID-16",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Payment instruction and Operation",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "DSP adoption of PayID",
       "problemScenario": "In order for a business to pay to a PayID, their DSP must support the ability to. This includes the ability to store a PayID instead of a BSB/Account and then be able to generate a payment instruction to send to the bank. As a result, if it's not offered out of the box, businesses may need to customised their version which adds to the costs of implementation and maintenance There is a need for DSPs to adopt PayID as an alternative to BSB/Account number",
       "issueType": "Product Idea",
       "dependencies": "Participants, DSPs",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Bianca",
       "priority": "HIGH",
       "horizon": "MEDIUM",
@@ -448,29 +520,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Payment instruction and Operation"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-17",
-      "mainUseCase": "Super",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super",
       "category": "Addressing Model (PayID & Account Structure)",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Risks of business customers making payments to a PayID in online banking channels.",
       "problemScenario": "Currently If the DSP that a business is using doesn't support the ability to sore and pay to a PayID, businesses may make the payment through their online banking channel. As a result, there are additional audit risks the business will take on as well as implementing process changes (e.g. authorisation processes) The business may also encounter channel limits as payments made through online banking channels often have lower limits. There is a need to understand the implications of this and to create awareness",
       "issueType": "PE",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Bianca",
       "priority": "HIGH",
       "horizon": "SHORT",
@@ -483,29 +561,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super",
       "useCases": [
         "Super"
       ],
-      "product": "PayID",
+      "mainUseCase": "Super",
+      "useCase": "Super",
+      "category2": "",
+      "categories": [
+        "Addressing Model (PayID & Account Structure)"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-18",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Lack of understanding the process of registration of ABN PayIDs",
       "problemScenario": "The registration and management of ABN PayIDs by Participants is not clearly understood. This can result in potential vulnerabilities if the registration process is not in-line with the verification service or if there are potential for the registration to be exploited for fraud. There is a need to better understand the registration process that is currently being undertaken by the Participants.",
       "issueType": "Dependency",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "MEDIUM",
       "horizon": "SHORT",
@@ -518,29 +602,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-19",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Understanding the PayID limits that have been implemented by banks",
       "problemScenario": "Currently if the DSP that a business is using doesn't support the ability to sore and pay to a PayID, businesses may make the payment through their online banking channel. When doing so, they may hit channel limits which are typically lower in online banking channels. This results in potentially businesses may need to make multiple payments. There is a need to understand what limitations may apply",
       "issueType": "Gap",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "HIGH",
       "horizon": "SHORT",
@@ -553,29 +643,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-20",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Addressing Model (PayID & Account Structure)",
-      "category2": "",
       "journeyStage": "Payment processing",
       "title": "Bulk PayID Resolution",
       "problemScenario": "As Participants offering bulk payment instructions and as the usage of PayID increases, there will be a need to resolve the PayIDs as part of payment processing. This results in multiple PayID resolution calls to the addressing to process all the payments within that instruction. There is a need to resolve PayID in bulk in order to sufficiently process all the payments in a timely manner.",
       "issueType": "Opportunity",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -588,29 +684,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Addressing Model (PayID & Account Structure)"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Payment processing"
       ]
     },
     {
       "id": "ID-21",
-      "mainUseCase": "Super",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super",
       "category": "Addressing Model (PayID & Account Structure)",
-      "category2": "",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Lack of defined governance for PayID Receivables",
       "problemScenario": "Currently PayID receivables are a common solution offered by Participants however AP+ currently only enables rather than defines the usage. Given the growth and investment Participants have been made results in inconsistent implementation which impacts the overall customer experience. There is a need to consider whether AP+ wants to play a role and amend the rules to accomodate.",
       "issueType": "Risk",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -623,29 +725,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super",
       "useCases": [
         "Super"
       ],
-      "product": "PayID",
+      "mainUseCase": "Super",
+      "useCase": "Super",
+      "category2": "",
+      "categories": [
+        "Addressing Model (PayID & Account Structure)"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Receiving, validating, reconciling, and reporting"
       ]
     },
     {
       "id": "ID-23",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Not all members support all types of PayID",
       "problemScenario": "In the current ecosystem, PayID is not a mandatory capability and is not consistently supported across participants, including differences in supported PayID types. This results in a fragmented experience and limits the scalability of PayID-based solutions. There is a need to define a clear strategic direction for PayID adoption, including whether it should be mandated or incentivised.",
       "issueType": "PE",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
@@ -658,29 +766,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-24",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "PayID is NOT a mandatory product to be implemented",
       "problemScenario": "In the current ecosystem, PayID is not a mandatory capability and is not consistently supported across participants, including differences in supported PayID types. This means that if Payees are offering a PayID receivables solution must also provide an alternative to support any customers who's Participant doesn't support the ability to send to a PayID There is a need to define a clear strategic direction for PayID adoption, including whether it should be mandated or incentivised.",
       "issueType": "Dependency",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -693,29 +807,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-25",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Data Quality & Validation",
-      "category2": "",
       "journeyStage": "Preparation and data creation",
       "title": "Requirement for upfront validation of PayID by DSP",
       "problemScenario": "Currently the NPP rules only allow the PayID resolution to occur prior to a payment/payment initiation or mandate creation. This means that DSPs cannot resolve a PayID within their systems. It has been noted with DSPs, that upfront validation is ideal to prevent from downstream failure and more operational re-work to resolve the issue. There needs to be a consideration whether the rules can be uplifted to support those scenario including what information is display, CX and controls that will be required to support this.",
       "issueType": "Gap",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -728,29 +848,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Data Quality & Validation"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Preparation and data creation"
       ]
     },
     {
       "id": "ID-26",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Addressing Model (PayID & Account Structure)",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Capacity and performance implication on the Addressing Service due to increasing PayID usage",
       "problemScenario": "Given the update of PayID receivables and the potential volumes of PayID resolution especially as bulk payment instructions are being offered and used. This means that this could potentially impact the performance and capacity of the addressing service. There is a need to continuous reviews of the capacity in-line with the uptake of PayIDs",
       "issueType": "Opportunity",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -763,29 +889,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Addressing Model (PayID & Account Structure)"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-27",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Payment instruction and Operation",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Limits on PayIDs payments within a bulk payment instruction.",
       "problemScenario": "Currently, as part of a bulk payment instruction, there can be a number of PayIDs included. This could be due to enumeration controls or throughput. This can result DSPs or customers need to separate their files in order for it to be processed which isn't ideal processing. There needs to be an understand of the current constraints and whether there needs to be changes to rules or capacity to support this.",
       "issueType": "Risk",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
@@ -798,29 +930,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Payment instruction and Operation"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-28",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Addressing Model (PayID & Account Structure)",
-      "category2": "",
       "journeyStage": "Preparation and data creation",
       "title": "Consistent ongoing maintenance of PayID",
       "problemScenario": "Currently, there are NPP rules that cover the maintenance of PayIDs such as ensuring it's de-registered when an account is closed. Given the use of PayID receivables, there are a large number of PayIDs that are being registered however it's unknown how this is managed. This may result in a build up unused PayIDs that are registered with no process to maintain the currency of them. There needs to be processes relating to PayID to ensure there is maintenance processes set up (e.g. if the employer leaves the clearing house as a customer, is the PayID de-registered)?",
       "issueType": "Product Idea",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
@@ -833,29 +971,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayID",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Addressing Model (PayID & Account Structure)"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Preparation and data creation"
       ]
     },
     {
       "id": "ID-29",
-      "mainUseCase": "Super",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super",
       "category": "Data Quality & Validation",
-      "category2": "",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Opportunity: PayID Receivables could be an alternative to PRN for super",
       "problemScenario": "There may be opportunity for PayID receivables to be used as an alternative to PRN. Noting there are restriction given that it's not mandatory for Participants and it would require significant SuperStream changes",
       "issueType": "PE",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Bianca",
       "priority": "LOW",
       "horizon": "LONG",
@@ -868,29 +1012,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super",
       "useCases": [
         "Super"
       ],
-      "product": "PayID",
+      "mainUseCase": "Super",
+      "useCase": "Super",
+      "category2": "",
+      "categories": [
+        "Data Quality & Validation"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Receiving, validating, reconciling, and reporting"
       ]
     },
     {
       "id": "ID-30",
-      "mainUseCase": "Super",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super",
       "category": "Addressing Model (PayID & Account Structure)",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Opportunity: Add USI as a new PayID alias type",
       "problemScenario": "The Unique Superannuation Identifier (USI) is used in SuperStream to identify an APRA fund and/or its superannuation product which an employee (member) is contributing to. This would assist APRA super funds in reconciling payments for employer contributions. It would also provide opportunity to apply specific rules that can then be applied to the super use case.",
       "issueType": "Dependency",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Ronita",
       "priority": "LOW",
       "horizon": "LONG",
@@ -903,29 +1053,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super",
       "useCases": [
         "Super"
       ],
-      "product": "PayID",
+      "mainUseCase": "Super",
+      "useCase": "Super",
+      "category2": "",
+      "categories": [
+        "Addressing Model (PayID & Account Structure)"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-31",
-      "mainUseCase": "Super",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super",
       "category": "Addressing Model (PayID & Account Structure)",
-      "category2": "",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Opportunity: Register a PayID for each employee for super contributions",
       "problemScenario": "Register a dedicated PayID for each employee which moves with the employee when they go across to different super funds. This would need to consider the processes around this and the SuperStream governance around it",
       "issueType": "Gap",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayID",
-      "productsImpacted": "",
+      "productsImpacted": "PayID",
       "owner": "Bianca",
       "priority": "LOW",
       "horizon": "LONG",
@@ -938,29 +1094,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super",
       "useCases": [
         "Super"
       ],
-      "product": "PayID",
+      "mainUseCase": "Super",
+      "useCase": "Super",
+      "category2": "",
+      "categories": [
+        "Addressing Model (PayID & Account Structure)"
+      ],
       "products": [
         "PayID"
+      ],
+      "primaryProduct": "PayID",
+      "product": "PayID",
+      "journeyStages": [
+        "Receiving, validating, reconciling, and reporting"
       ]
     },
     {
       "id": "ID-33",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Payment instruction and Operation",
-      "category2": "",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Variability on NPP data elements included within the payment instruction",
       "problemScenario": "Currently, Payment instruction and response for NPP should include fields for PayID, PayTo and COP outcomes. Currently there is variability on the payment instruction for NPP for the products (i.e. PayID is not available for some) This results in the inability for end users to utilise some NPP products when sending payments with that Participant. There needs to be uplift by Participants in their payment instruction offering to include all relevant NPP products.",
       "issueType": "Risk",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "Payment Instruction",
-      "productsImpacted": "",
+      "productsImpacted": "Payment Instruction",
       "owner": "Bianca",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -973,29 +1135,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "Payment Instruction",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Payment instruction and Operation"
+      ],
       "products": [
         "Payment Instruction"
+      ],
+      "primaryProduct": "Payment Instruction",
+      "product": "Payment Instruction",
+      "journeyStages": [
+        "Receiving, validating, reconciling, and reporting"
       ]
     },
     {
       "id": "ID-34",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Payment instruction and Operation",
-      "category2": "",
       "journeyStage": "Payment processing",
       "title": "A bulk payment instruction is not available across all Participants",
       "problemScenario": "Currently, Not all Participants offer a bulk payment instruction and can do it at scale. This results in the inability for customers to make payments in the following scenarios: - For super, it is required for super funds wanting to make refund payments and employers who send directly to the super fund (channel B) - This will also impact payroll, business payments and migrated DDR payments. There is a need for Participants to offer a bulk payments instruction.",
       "issueType": "Product Idea",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "Payment Instruction",
-      "productsImpacted": "",
+      "productsImpacted": "Payment Instruction",
       "owner": "Bianca",
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
@@ -1008,29 +1176,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "Payment Instruction",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Payment instruction and Operation"
+      ],
       "products": [
         "Payment Instruction"
+      ],
+      "primaryProduct": "Payment Instruction",
+      "product": "Payment Instruction",
+      "journeyStages": [
+        "Payment processing"
       ]
     },
     {
       "id": "ID-35",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Standardisation & Interoperability",
-      "category2": "",
       "journeyStage": "Preparation and data creation",
       "title": "Lack of standardised integration and customer experience.",
       "problemScenario": "Currently, the NPP rules didn't dictate how Participants build their offerings to their customers, each Participant has built bespoke formats and integration. This results in making it difficult for DSPs to adopt NPP as they cannot afford to build and maintain different integration for each of the banks. Additionally, it makes it difficult for smaller financial institution to get DSPs to adopt their formats. There is a need to standardise formats and integration and experiences",
       "issueType": "PE",
       "dependencies": "Participants, Payment instruction, A2A Vision",
       "relatedInitiative": "",
-      "primaryProduct": "Payment Instruction",
-      "productsImpacted": "",
+      "productsImpacted": "Payment Instruction",
       "owner": "Bianca",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -1043,29 +1217,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "Payment Instruction",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Standardisation & Interoperability"
+      ],
       "products": [
         "Payment Instruction"
+      ],
+      "primaryProduct": "Payment Instruction",
+      "product": "Payment Instruction",
+      "journeyStages": [
+        "Preparation and data creation"
       ]
     },
     {
       "id": "ID-37",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "PayTo service variability",
       "problemScenario": "Currently PayTo capabilities vary significantly across banks, including whether initiation capabilities is supported, business account availability, customer approval processes This results in an inconsistent experience for users and increased operational complexity for providers. There is a need to standardise PayTo capabilities across the ecosystem, potentially through defining minimum scheme requirements.",
       "issueType": "Gap",
       "dependencies": "Participants",
       "relatedInitiative": "",
-      "primaryProduct": "PayTo",
-      "productsImpacted": "",
+      "productsImpacted": "PayTo",
       "owner": "Edith",
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
@@ -1078,29 +1258,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayTo",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "PayTo"
+      ],
+      "primaryProduct": "PayTo",
+      "product": "PayTo",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-38",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Payment Setup & Configuration",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "PayTo limits are too low for use cases",
       "problemScenario": "Currently PayTo limits are set to a value that doesn't cater for use cases such as super and payroll. This is tied to the work associated with PayTo liability. This results in a negative experience for initiators and the payers who can't create PayTo agreement as it will be rejected by the banks. For the case of super, it prevents employers from meeting their Payday super legislation. There needs to be limits that can accommodate for the values expected for these use cases especially where they pertain B2B.",
       "issueType": "Opportunity",
       "dependencies": "Participants",
       "relatedInitiative": "",
-      "primaryProduct": "PayTo",
-      "productsImpacted": "",
+      "productsImpacted": "PayTo",
       "owner": "Edith",
       "priority": "HIGH",
       "horizon": "MEDIUM",
@@ -1113,29 +1299,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayTo",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Payment Setup & Configuration"
+      ],
       "products": [
         "PayTo"
+      ],
+      "primaryProduct": "PayTo",
+      "product": "PayTo",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-39",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Payment Setup & Configuration",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "The population of ultimate creditor in the PayTo agreement and subsequent payment",
       "problemScenario": "Currently, with the third party model via PayTo is becoming a common model. This is when PayTo is used for funding and separate Osko payments are made to distribute the payments. This results in the third party being displayed within the agreement and/or account statement (as opposed to the business the Payer is dealing with) which can cause confusion. There needs to be guidance on how an initatior is populating the parties within the agreement and payment initation as well as potential rules updates to expose more information in reporting, statements etc",
       "issueType": "Risk",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayTo",
-      "productsImpacted": "",
+      "productsImpacted": "PayTo",
       "owner": "Edith",
       "priority": "MEDIUM",
       "horizon": "SHORT",
@@ -1148,29 +1340,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayTo",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Payment Setup & Configuration"
+      ],
       "products": [
         "PayTo"
+      ],
+      "primaryProduct": "PayTo",
+      "product": "PayTo",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-40",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Payment processing",
       "title": "Education of the implications of fast fail to businesses",
       "problemScenario": "Currently, with direct debits, payment failures due to issues such as insufficient funds can often be managed by the payer’s bank. For example through processing order controls - prioritising direct credits before debits. As a result, businesses may not need to take any action when a payment initially fails. However, PayTo is fast fail therefore the payer bank cannot do similar processing to avoid the failure. This results in the business requiring to reinitiate the payment initation when the debit fails. The action they take will depend on the reason for the failure. There needs to be education on how businesses deal with fast fail in comparison to how they manage direct debits today.",
       "issueType": "Product Idea",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayTo",
-      "productsImpacted": "",
+      "productsImpacted": "PayTo",
       "owner": "Bianca",
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
@@ -1183,29 +1381,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayTo",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "PayTo"
+      ],
+      "primaryProduct": "PayTo",
+      "product": "PayTo",
+      "journeyStages": [
+        "Payment processing"
       ]
     },
     {
       "id": "ID-41",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Payment processing",
       "title": "PayTo liability impact and implications to the ecosystem",
       "problemScenario": "As PayTo is adopted, the liability model are not clearly defined and how it affects the parties across the value chain which is impacting limits. This results in uncertainty for participants and introduces operational and risk management challenges. There is a need to establish clear scheme-level rules and guidance on liability and fraud handling to ensure consistency and confidence across the ecosystem.",
       "issueType": "PE",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayTo",
-      "productsImpacted": "",
+      "productsImpacted": "PayTo",
       "owner": "Edith",
       "priority": "HIGH",
       "horizon": "MEDIUM",
@@ -1218,29 +1422,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayTo",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "PayTo"
+      ],
+      "primaryProduct": "PayTo",
+      "product": "PayTo",
+      "journeyStages": [
+        "Payment processing"
       ]
     },
     {
       "id": "ID-42",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Fraud hold or rejection for PayTo transactions",
       "problemScenario": "Currently, once a PayTo agreement is accepted, Participants can apply fraud controls to the payment initation request. This is occuring even for payments in low risk use cases. This results in the payment initation either failing or it's held and no outcome can be passed onto the initatior. This impacts the experience particularly for use cases such as super. There needs to be enough information that is passed on the Initating Participant to appropriately advise the initatior. Additionally, friction should be applied appropriately to the use case so it doesn't impact the overall experience while protecting the Payer.",
       "issueType": "Dependency",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayTo",
-      "productsImpacted": "",
+      "productsImpacted": "PayTo",
       "owner": "Edith",
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
@@ -1253,29 +1463,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayTo",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "PayTo"
+      ],
+      "primaryProduct": "PayTo",
+      "product": "PayTo",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-43",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Payment Setup & Configuration",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Lack of consistency and ease to approve PayTo agreements especially for businesses",
       "problemScenario": "Currently, the focus on CX has been within the retail banking channels however a similar issue exists for business banking channels. There is also added complexity with mutli-signatories and opt in processes. This results in a poor customer experience and impacts the adoption of PayTo if they cannot successful setup and approve PayTo agreements. There needs to be consistent CX that is also applied to the business channels to improve authorisation rates especially as many businesses are multi-banked",
       "issueType": "Gap",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayTo",
-      "productsImpacted": "",
+      "productsImpacted": "PayTo",
       "owner": "Edith",
       "priority": "MEDIUM",
       "horizon": "SHORT",
@@ -1288,29 +1504,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayTo",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Payment Setup & Configuration"
+      ],
       "products": [
         "PayTo"
+      ],
+      "primaryProduct": "PayTo",
+      "product": "PayTo",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-44",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Standardisation & Interoperability",
-      "category2": "",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Lack of standardised PayTo APIs hinders adoption by Digital Service Providers",
       "problemScenario": "Currently, Participants and PSPs have built bespoked PayTo APIs implementation This results in DSPs having to implement and maintain different integration or prevent DSPs from implementing. There needs to be a level of standardisation to enable DSPs to adopt while also allowing competition and innovation.",
       "issueType": "Opportunity",
       "dependencies": "A2A vision",
       "relatedInitiative": "",
-      "primaryProduct": "PayTo",
-      "productsImpacted": "",
+      "productsImpacted": "PayTo",
       "owner": "Edith",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -1323,29 +1545,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayTo",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Standardisation & Interoperability"
+      ],
       "products": [
         "PayTo"
+      ],
+      "primaryProduct": "PayTo",
+      "product": "PayTo",
+      "journeyStages": [
+        "Set up & Account, onboarding"
       ]
     },
     {
       "id": "ID-45",
-      "mainUseCase": "Super",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super",
       "category": "Reconciliation, Reporting & Traceability",
-      "category2": "",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Inconsistent pass through of the PRN",
       "problemScenario": "Currently, the end to end field which the PRN is populated in, is not consistently exposed to the Payee. This results in the super fund unable to reconcile the payment. This means that they may need to do this manually. This can impact the employer's ability to meet their Payday super obligation There needs to be the pass through of the PRN in full in reporting that the Payee can use as part of their reconciliation",
       "issueType": "Risk",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "Reporting",
-      "productsImpacted": "",
+      "productsImpacted": "Reporting",
       "owner": "Bianca",
       "priority": "HIGH",
       "horizon": "SHORT",
@@ -1358,29 +1586,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super",
       "useCases": [
         "Super"
       ],
-      "product": "Reporting",
+      "mainUseCase": "Super",
+      "useCase": "Super",
+      "category2": "",
+      "categories": [
+        "Reconciliation, Reporting & Traceability"
+      ],
       "products": [
         "Reporting"
+      ],
+      "primaryProduct": "Reporting",
+      "product": "Reporting",
+      "journeyStages": [
+        "Receiving, validating, reconciling, and reporting"
       ]
     },
     {
       "id": "ID-46",
-      "mainUseCase": "Super",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "Super",
       "category": "Exceptions, Returns & Error Handling",
-      "category2": "",
       "journeyStage": "Investigation and returns (unhappy path)",
       "title": "Lack of details to return payment back to source",
       "problemScenario": "Currently, under BECS, the Payer account details are provided to the Payee so that they can use this to make payments back to the source. This information is not available for NPP payments. This results in customers unable to pay back to source by sending a new payment without contacting their bank. There needs to be the ability for a Payee to return payments back to the source (either as an unsolicited payment return or as a brand new payment)",
       "issueType": "Product Idea",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "Reporting",
-      "productsImpacted": "",
+      "productsImpacted": "Reporting",
       "owner": "Nick",
       "priority": "HIGH",
       "horizon": "MEDIUM",
@@ -1393,29 +1627,35 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "Super",
       "useCases": [
         "Super"
       ],
-      "product": "Reporting",
+      "mainUseCase": "Super",
+      "useCase": "Super",
+      "category2": "",
+      "categories": [
+        "Exceptions, Returns & Error Handling"
+      ],
       "products": [
         "Reporting"
+      ],
+      "primaryProduct": "Reporting",
+      "product": "Reporting",
+      "journeyStages": [
+        "Investigation and returns (unhappy path)"
       ]
     },
     {
       "id": "ID-48",
-      "mainUseCase": "All",
-      "useCasesImpacted": "",
+      "useCasesImpacted": "All",
       "category": "Ecosystem Readiness & External Constraints",
-      "category2": "",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Lack of business account reach for PayTo",
       "problemScenario": "Currently, there a large portion of accounts that aren't PayTo enable for businesses (including those with the majors) This results in PayTo agreement being rejected or confused customers who are trying to set PayTo agreements out There needs to be better coverage for business accounts to improve experiences for the initatior.",
       "issueType": "Dependency",
       "dependencies": "",
       "relatedInitiative": "",
-      "primaryProduct": "PayTo",
-      "productsImpacted": "",
+      "productsImpacted": "PayTo",
       "owner": "Nick",
       "priority": "MEDIUM",
       "horizon": "LONG",
@@ -1428,13 +1668,22 @@ window.ISSUES_DATA = {
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "isExecSummary": true,
-      "useCase": "All",
       "useCases": [
         "All"
       ],
-      "product": "PayTo",
+      "mainUseCase": "All",
+      "useCase": "All",
+      "category2": "",
+      "categories": [
+        "Ecosystem Readiness & External Constraints"
+      ],
       "products": [
         "PayTo"
+      ],
+      "primaryProduct": "PayTo",
+      "product": "PayTo",
+      "journeyStages": [
+        "Receiving, validating, reconciling, and reporting"
       ]
     }
   ]

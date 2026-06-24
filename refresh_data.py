@@ -15,18 +15,15 @@ OUTPUT_PATH = ROOT / "issues-data.js"
 
 FIELD_MAP = {
     "ID (Unique Identifier)": "id",
-    "Main Use Case": "mainUseCase",
-    "Use Cases (Others)": "useCasesImpacted",
-    "Category 1": "category",
-    "Category 2": "category2",
+    "Use Cases": "useCasesImpacted",
+    "Category": "category",
     "Journey Stage": "journeyStage",
     "Issue Title": "title",
     "Problem Scenario\n[context] + [problem] + [impact] + [current state] + [Direction]": "problemScenario",
     "Issue Type": "issueType",
     "Dependencies\n": "dependencies",
     "Related Initiative / PE / Jira / Confluence": "relatedInitiative",
-    "Primary Product": "primaryProduct",
-    "Products Impacted (Others)": "productsImpacted",
+    "Product": "productsImpacted",
     "Product Owner (Accountable)": "owner",
     "Priority to unlock the use case": "priority",
     "Time Horizon Short Term - 0 -6 months\nMedium Term - 6 months -2 years\nLong Term - 2 years+": "horizon",
@@ -59,11 +56,11 @@ def split_values(*values):
     items = []
     seen = set()
     for value in values:
-        text = clean_text(value)
+        text = "" if value is None else str(value).strip()
         if not text:
             continue
-        for item in re.split(r"\s*[;,]\s*", text):
-            item = item.strip()
+        for item in re.split(r"\s*(?:;|\n)\s*", text):
+            item = clean_text(item)
             key = item.lower()
             if item and key not in seen:
                 items.append(item)
@@ -91,10 +88,19 @@ def main() -> None:
         issue["status"] = normalize(issue["status"])
         issue["isExecSummary"] = issue["execSummaryTag"].lower() == "yes"
 
-        issue["useCase"] = issue["mainUseCase"]
-        issue["useCases"] = split_values(issue["mainUseCase"], issue["useCasesImpacted"])
-        issue["product"] = issue["primaryProduct"]
-        issue["products"] = split_values(issue["primaryProduct"], issue["productsImpacted"])
+        issue["useCases"] = split_values(raw.get("Use Cases"))
+        issue["useCasesImpacted"] = "; ".join(issue["useCases"])
+        issue["mainUseCase"] = issue["useCasesImpacted"]
+        issue["useCase"] = issue["useCasesImpacted"]
+        issue["category2"] = ""
+        issue["categories"] = split_values(raw.get("Category"))
+        issue["category"] = "; ".join(issue["categories"])
+        issue["products"] = split_values(raw.get("Product"))
+        issue["productsImpacted"] = "; ".join(issue["products"])
+        issue["primaryProduct"] = issue["productsImpacted"]
+        issue["product"] = issue["productsImpacted"]
+        issue["journeyStages"] = split_values(raw.get("Journey Stage"))
+        issue["journeyStage"] = "; ".join(issue["journeyStages"])
         issues.append(issue)
 
     payload = {
