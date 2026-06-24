@@ -702,13 +702,31 @@ h3 {
 }
 
 .compact-list li {
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.compact-issue-button {
   display: grid;
   grid-template-columns: 10px minmax(0, 1fr) auto;
   gap: 10px;
   align-items: start;
+  width: 100%;
+  padding: 8px;
   color: var(--ink);
-  font-size: 14px;
-  line-height: 1.35;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.compact-issue-button:hover,
+.compact-issue-button:focus-visible {
+  background: #fbfcff;
+  border-color: #dfe4ef;
+  outline: 0;
 }
 
 .dot {
@@ -727,16 +745,27 @@ h3 {
 
 .compact-list li.decision-item {
   position: relative;
+}
+
+.decision-button {
+  position: relative;
+  display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: start;
+  width: 100%;
   min-height: 72px;
   padding: 14px;
+  color: var(--ink);
   background: #fbfcff;
   border: 1px solid #edf0f6;
   border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
 }
 
-.compact-list li.decision-item:hover,
-.compact-list li.decision-item:focus-visible {
+.decision-button:hover,
+.decision-button:focus-visible {
   border-color: #b8c6df;
   box-shadow: 0 8px 18px rgba(18, 22, 41, 0.1);
   outline: 0;
@@ -775,8 +804,8 @@ h3 {
   content: "";
 }
 
-.decision-item:hover .decision-tooltip,
-.decision-item:focus-visible .decision-tooltip {
+.decision-button:hover .decision-tooltip,
+.decision-button:focus-visible .decision-tooltip {
   display: block;
 }
 

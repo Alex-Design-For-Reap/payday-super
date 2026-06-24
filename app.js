@@ -474,9 +474,11 @@ function renderList(element, items, labelFn, metaFn) {
     .map(
       item => `
         <li>
-          <span class="dot"></span>
-          <span>${escapeHtml(labelFn(item))}</span>
-          <span class="list-owner">${escapeHtml(metaFn(item))}</span>
+          <button class="compact-issue-button" type="button" data-issue-id="${escapeHtml(item.id)}">
+            <span class="dot"></span>
+            <span>${escapeHtml(labelFn(item))}</span>
+            <span class="list-owner">${escapeHtml(metaFn(item))}</span>
+          </button>
         </li>
       `,
     )
@@ -492,11 +494,13 @@ function renderDecisionList(element, items) {
   element.innerHTML = items
     .map(
       issue => `
-        <li class="decision-item" tabindex="0">
-          <span class="id-pill">${escapeHtml(issue.id)}</span>
-          <span class="decision-copy">${escapeHtml(issue.decisionNeeded)}</span>
-          <span class="list-owner">${escapeHtml(issue.owner || "TBD")}</span>
-          <span class="decision-tooltip" role="tooltip">${escapeHtml(issue.title || "Untitled issue")}</span>
+        <li class="decision-item">
+          <button class="decision-button" type="button" data-issue-id="${escapeHtml(issue.id)}">
+            <span class="id-pill">${escapeHtml(issue.id)}</span>
+            <span class="decision-copy">${escapeHtml(issue.decisionNeeded)}</span>
+            <span class="list-owner">${escapeHtml(issue.owner || "TBD")}</span>
+            <span class="decision-tooltip" role="tooltip">${escapeHtml(issue.title || "Untitled issue")}</span>
+          </button>
         </li>
       `,
     )
@@ -618,6 +622,14 @@ function setupControls() {
     const row = event.target.closest("[data-issue-id]");
     if (!row) return;
     openIssueModal(row.dataset.issueId);
+  });
+
+  [els.progressList, els.dependencyList, els.decisionList, els.watchList].forEach(list => {
+    list.addEventListener("click", event => {
+      const item = event.target.closest("[data-issue-id]");
+      if (!item) return;
+      openIssueModal(item.dataset.issueId);
+    });
   });
 
   els.journeyMap.addEventListener("click", event => {
