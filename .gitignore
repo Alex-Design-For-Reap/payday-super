@@ -1,6 +1,8 @@
 # Local source workbook and generated/temporary report assets
 Issues Register.xlsx
+Issues Register.xlsm
 ~$*.xlsx
+~$*.xlsm
 Report*.png
 
 # macOS

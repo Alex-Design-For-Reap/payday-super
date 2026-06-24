@@ -9,7 +9,7 @@ import openpyxl
 
 
 ROOT = Path(__file__).resolve().parent
-WORKBOOK_PATH = ROOT / "Issues Register.xlsx"
+WORKBOOK_PATH = ROOT / "Issues Register.xlsm"
 OUTPUT_PATH = ROOT / "issues-data.js"
 
 

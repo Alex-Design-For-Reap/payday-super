@@ -58,7 +58,7 @@ Folder: / (root)
 
 When the spreadsheet changes:
 
-1. Save `Issues Register.xlsx`.
+1. Save `Issues Register.xlsm`.
 2. Run:
 
 ```bash
