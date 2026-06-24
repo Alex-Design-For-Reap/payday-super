@@ -246,7 +246,7 @@ function renderViewShell() {
   els.kpiGrid.hidden = isJourneyView || isRegisterView;
   els.productSections.hidden = state.view !== "product";
   els.dashboardGrid.hidden = isJourneyView || isRegisterView;
-  els.registerSection.hidden = isJourneyView;
+  els.registerSection.hidden = isJourneyView || state.view === "executive";
   els.watchModule.hidden = state.view === "executive";
 }
 
