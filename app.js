@@ -48,21 +48,22 @@ const views = [
   {
     id: "enablement",
     icon: "↗",
-    title: "Enablement Workbench",
-    nav: "Enablement",
+    title: "Enablement Actions",
+    nav: "Enablement Actions",
     audience: "Enablement Team",
     description:
-      "A working view of open issues that still need action, owner follow-up, scenario completion, or progress updates.",
-    filter: issue => issue.status !== "COMPLETED" && issue.status !== "CLOSED",
+      "A working view of issues with active actions, WIP status, blockers, or follow-up needed by owners.",
+    filter: issue =>
+      Boolean(issue.currentAction) || issue.status === "WIP" || issue.status === "HOLD / BLOCKED",
   },
   {
     id: "dependencies",
     icon: "⌘",
-    title: "Dependencies & Decisions",
-    nav: "Dependencies & Decisions",
+    title: "Decisions & Dependencies",
+    nav: "Decisions & Dependencies",
     audience: "Enablement / Product Leadership",
     description:
-      "A coordination view of issue-to-issue dependencies, related external initiatives or delivery artefacts, and decisions needed from owners or leaders.",
+      "A coordination view of issue-to-issue blockers, related external initiatives, and decisions needed from owners or leaders.",
     filter: issue => Boolean(issue.dependencies) || Boolean(issue.relatedInitiative) || Boolean(issue.decisionNeeded),
   },
   {
