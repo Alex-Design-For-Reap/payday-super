@@ -1,10 +1,10 @@
 window.ISSUES_DATA = {
-  "generatedAt": "2026-06-24 16:16",
+  "generatedAt": "2026-06-24 18:56",
   "source": "Issues Register.xlsm",
   "issues": [
     {
       "id": "ID-01",
-      "useCasesImpacted": "Super; Payroll; Business Payments",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Understanding of the usage of off-system BSBs",
@@ -24,22 +24,31 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "Super",
         "Payroll",
+        "Government",
         "Business Payments"
       ],
-      "mainUseCase": "Super; Payroll; Business Payments",
-      "useCase": "Super; Payroll; Business Payments",
-      "category2": "",
+      "useCase": "Super; Payroll; Government; Business Payments",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "Accounts"
       ],
-      "primaryProduct": "Accounts",
       "product": "Accounts",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -47,7 +56,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-02",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments",
       "category": "Payment instruction and Operation; Ecosystem Readiness & External Constraints",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Account Reach",
@@ -67,13 +76,25 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments"
       ],
-      "mainUseCase": "All",
-      "useCase": "All",
-      "category2": "",
+      "useCase": "Super; Payroll; Government; Business Payments",
       "categories": [
         "Payment instruction and Operation",
         "Ecosystem Readiness & External Constraints"
@@ -81,7 +102,6 @@ window.ISSUES_DATA = {
       "products": [
         "Accounts"
       ],
-      "primaryProduct": "Accounts",
       "product": "Accounts",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -89,7 +109,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-03",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Payment processing",
       "title": "BSB Redirection",
@@ -109,20 +129,31 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments"
       ],
-      "mainUseCase": "All",
-      "useCase": "All",
-      "category2": "",
+      "useCase": "Super; Payroll; Government; Business Payments",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "Accounts"
       ],
-      "primaryProduct": "Accounts",
       "product": "Accounts",
       "journeyStages": [
         "Payment processing"
@@ -130,7 +161,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-04",
-      "useCasesImpacted": "Super",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Readiness of super funds to receive NPP payments by 1 July",
@@ -150,20 +181,31 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "Super"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments"
       ],
-      "mainUseCase": "Super",
-      "useCase": "Super",
-      "category2": "",
+      "useCase": "Super; Payroll; Government; Business Payments",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "Accounts"
       ],
-      "primaryProduct": "Accounts",
       "product": "Accounts",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
@@ -191,20 +233,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Data Quality & Validation"
       ],
       "products": [
         "CoP"
       ],
-      "primaryProduct": "CoP",
       "product": "CoP",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -232,20 +282,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "Other"
       ],
-      "primaryProduct": "Other",
       "product": "Other",
       "journeyStages": [
         "Preparation and data creation"
@@ -253,7 +311,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-10",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "All; Super; Payroll; Government; Business Payments",
       "category": "Exceptions, Returns & Error Handling",
       "journeyStage": "Investigation and returns (unhappy path)",
       "title": "Lack of automated payment return solutions by Participants",
@@ -273,20 +331,32 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "All",
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments"
       ],
-      "mainUseCase": "All",
-      "useCase": "All",
-      "category2": "",
+      "useCase": "All; Super; Payroll; Government; Business Payments",
       "categories": [
         "Exceptions, Returns & Error Handling"
       ],
       "products": [
         "Other"
       ],
-      "primaryProduct": "Other",
       "product": "Other",
       "journeyStages": [
         "Investigation and returns (unhappy path)"
@@ -314,20 +384,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "Super"
       ],
-      "mainUseCase": "Super",
       "useCase": "Super",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "Other"
       ],
-      "primaryProduct": "Other",
       "product": "Other",
       "journeyStages": [
         "Payment processing"
@@ -355,20 +433,28 @@ window.ISSUES_DATA = {
       "link2": "PRN reporting and Enablers analysis and tracking.xlsx",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "Super"
       ],
-      "mainUseCase": "Super",
       "useCase": "Super",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "Other"
       ],
-      "primaryProduct": "Other",
       "product": "Other",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
@@ -396,20 +482,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "Other"
       ],
-      "primaryProduct": "Other",
       "product": "Other",
       "journeyStages": [
         "Payment processing"
@@ -437,20 +531,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Reconciliation, Reporting & Traceability"
       ],
       "products": [
         "Reporting"
       ],
-      "primaryProduct": "Reporting",
       "product": "Reporting",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
@@ -478,20 +580,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Payment instruction and Operation"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Preparation and data creation"
@@ -519,20 +629,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Payment instruction and Operation"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -560,20 +678,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "Super"
       ],
-      "mainUseCase": "Super",
       "useCase": "Super",
-      "category2": "",
       "categories": [
         "Addressing Model (PayID & Account Structure)"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -601,20 +727,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -642,20 +776,28 @@ window.ISSUES_DATA = {
       "link2": "Member Capability Matrix _PayID only.xlsx",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -683,20 +825,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Addressing Model (PayID & Account Structure)"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Payment processing"
@@ -724,20 +874,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "Super"
       ],
-      "mainUseCase": "Super",
       "useCase": "Super",
-      "category2": "",
       "categories": [
         "Addressing Model (PayID & Account Structure)"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
@@ -765,20 +923,28 @@ window.ISSUES_DATA = {
       "link2": "Member Capability Matrix _PayID only.xlsx",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -806,20 +972,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -847,20 +1021,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Data Quality & Validation"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Preparation and data creation"
@@ -888,20 +1070,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Addressing Model (PayID & Account Structure)"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -929,20 +1119,28 @@ window.ISSUES_DATA = {
       "link2": "Member Capability Matrix _PayID only.xlsx",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Payment instruction and Operation"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -970,20 +1168,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Addressing Model (PayID & Account Structure)"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Preparation and data creation"
@@ -1011,20 +1217,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "Super"
       ],
-      "mainUseCase": "Super",
       "useCase": "Super",
-      "category2": "",
       "categories": [
         "Data Quality & Validation"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
@@ -1052,20 +1266,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "Super"
       ],
-      "mainUseCase": "Super",
       "useCase": "Super",
-      "category2": "",
       "categories": [
         "Addressing Model (PayID & Account Structure)"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -1093,20 +1315,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "Super"
       ],
-      "mainUseCase": "Super",
       "useCase": "Super",
-      "category2": "",
       "categories": [
         "Addressing Model (PayID & Account Structure)"
       ],
       "products": [
         "PayID"
       ],
-      "primaryProduct": "PayID",
       "product": "PayID",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
@@ -1134,20 +1364,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Payment instruction and Operation"
       ],
       "products": [
         "Payment Instruction"
       ],
-      "primaryProduct": "Payment Instruction",
       "product": "Payment Instruction",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
@@ -1175,20 +1413,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Payment instruction and Operation"
       ],
       "products": [
         "Payment Instruction"
       ],
-      "primaryProduct": "Payment Instruction",
       "product": "Payment Instruction",
       "journeyStages": [
         "Payment processing"
@@ -1216,20 +1462,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Standardisation & Interoperability"
       ],
       "products": [
         "Payment Instruction"
       ],
-      "primaryProduct": "Payment Instruction",
       "product": "Payment Instruction",
       "journeyStages": [
         "Preparation and data creation"
@@ -1257,20 +1511,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "PayTo"
       ],
-      "primaryProduct": "PayTo",
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -1298,20 +1560,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Payment Setup & Configuration"
       ],
       "products": [
         "PayTo"
       ],
-      "primaryProduct": "PayTo",
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -1339,20 +1609,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Payment Setup & Configuration"
       ],
       "products": [
         "PayTo"
       ],
-      "primaryProduct": "PayTo",
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -1380,20 +1658,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "PayTo"
       ],
-      "primaryProduct": "PayTo",
       "product": "PayTo",
       "journeyStages": [
         "Payment processing"
@@ -1421,20 +1707,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "PayTo"
       ],
-      "primaryProduct": "PayTo",
       "product": "PayTo",
       "journeyStages": [
         "Payment processing"
@@ -1462,20 +1756,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "PayTo"
       ],
-      "primaryProduct": "PayTo",
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -1503,20 +1805,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Payment Setup & Configuration"
       ],
       "products": [
         "PayTo"
       ],
-      "primaryProduct": "PayTo",
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -1544,20 +1854,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Standardisation & Interoperability"
       ],
       "products": [
         "PayTo"
       ],
-      "primaryProduct": "PayTo",
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
@@ -1585,20 +1903,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "Super"
       ],
-      "mainUseCase": "Super",
       "useCase": "Super",
-      "category2": "",
       "categories": [
         "Reconciliation, Reporting & Traceability"
       ],
       "products": [
         "Reporting"
       ],
-      "primaryProduct": "Reporting",
       "product": "Reporting",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
@@ -1626,20 +1952,28 @@ window.ISSUES_DATA = {
       "link2": "PRN reporting and Enablers analysis and tracking.xlsx",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "Super"
       ],
-      "mainUseCase": "Super",
       "useCase": "Super",
-      "category2": "",
       "categories": [
         "Exceptions, Returns & Error Handling"
       ],
       "products": [
         "Reporting"
       ],
-      "primaryProduct": "Reporting",
       "product": "Reporting",
       "journeyStages": [
         "Investigation and returns (unhappy path)"
@@ -1667,20 +2001,28 @@ window.ISSUES_DATA = {
       "link2": "",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
+      "strategicObjective": "",
+      "scorecardItem": "",
+      "readinessStatus": "",
+      "readinessRationale": "",
+      "decisionOwner": "",
+      "decisionDueDate": "",
+      "dependencyOwnerType": "",
+      "impactDriver": "",
+      "roadmapAlignment": "",
+      "externalMessagingStatus": "",
+      "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
         "All"
       ],
-      "mainUseCase": "All",
       "useCase": "All",
-      "category2": "",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
       "products": [
         "PayTo"
       ],
-      "primaryProduct": "PayTo",
       "product": "PayTo",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"

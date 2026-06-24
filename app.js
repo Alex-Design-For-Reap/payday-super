@@ -8,15 +8,48 @@ const journeyPhases = [
   "Investigation and returns (unhappy path)",
 ];
 
+const strategicUseCases = [
+  "Super",
+  "Payroll",
+  "Tax",
+  "Electronic conveyancing (eConveyancing)",
+  "eInvoicing",
+  "Securities",
+  "Government",
+  "Business Payments",
+  "MDDR",
+  "All",
+];
+
+const externalDependencyTypes = [
+  { type: "Participants", terms: ["participant", "member"] },
+  { type: "Banks", terms: ["bank", "ad i", "adi"] },
+  { type: "Schemes", terms: ["scheme"] },
+  { type: "DSPs", terms: ["dsp", "erp", "software provider"] },
+  { type: "Regulators", terms: ["regulator", "ato", "apra", "asic"] },
+  { type: "Clearing Houses", terms: ["clearing house", "superstream", "gateway"] },
+  { type: "Other External Parties", terms: ["external", "vendor", "provider", "third party"] },
+];
+
 const views = [
   {
     id: "executive",
     icon: "◇",
-    title: "Executive Summary",
-    nav: "Executive Summary",
+    title: "Strategic Use Case Readiness",
+    nav: "Strategic Readiness",
     audience: "Exec / Business Payments",
     description:
-      "A leadership view of issues tagged for executive attention or marked high priority. Metrics count the visible issues in this view after filters are applied.",
+      "An outcome-first leadership view of readiness, decisions, dependencies, and capability friction across Business Payments strategic use cases.",
+    filter: () => true,
+  },
+  {
+    id: "issue-summary",
+    icon: "!",
+    title: "Issue Summary",
+    nav: "Issue Summary",
+    audience: "Exec / Business Payments",
+    description:
+      "The previous issue-led executive view, kept visible for comparison with the strategic readiness landing page.",
     filter: issue => issue.isExecSummary || issue.priority === "HIGH",
   },
   {
@@ -26,8 +59,8 @@ const views = [
     nav: "Product & Capability",
     audience: "Product / Capability Owners",
     description:
-      "A product-owner view of issues with a primary or impacted product. Use the Product filter to focus on PayID, PayTo, Accounts, CoP, Reporting, or Payment Instruction.",
-    filter: issue => Boolean(issue.primaryProduct || issue.product),
+      "A product-owner view of issues by impacted product or capability. Use the Product filter to focus the capability lens.",
+    filter: issue => Boolean((issue.products || []).length || issue.product),
   },
   {
     id: "journey",
@@ -120,6 +153,14 @@ const els = {
   registerSection: document.querySelector("#registerSection"),
   registerCount: document.querySelector("#registerCount"),
   issueCards: document.querySelector("#issueCards"),
+  strategicExecutiveSection: document.querySelector("#strategicExecutiveSection"),
+  readinessSummary: document.querySelector("#readinessSummary"),
+  readinessGrid: document.querySelector("#readinessGrid"),
+  executiveAttentionList: document.querySelector("#executiveAttentionList"),
+  strategicDecisionList: document.querySelector("#strategicDecisionList"),
+  capabilityBottleneckList: document.querySelector("#capabilityBottleneckList"),
+  externalDependencyList: document.querySelector("#externalDependencyList"),
+  governanceWatchoutList: document.querySelector("#governanceWatchoutList"),
   issueModal: document.querySelector("#issueModal"),
   modalIssueId: document.querySelector("#modalIssueId"),
   modalTitle: document.querySelector("#modalTitle"),
@@ -157,7 +198,7 @@ function filteredIssues() {
   return data.issues.filter(issue => {
     if (!view.filter(issue)) return false;
     if (state.category !== "All" && !(issue.categories || [issue.category]).includes(state.category)) return false;
-    if (state.useCase !== "All" && !(issue.useCases || [issue.useCase]).includes(state.useCase)) return false;
+    if (state.useCase !== "All" && !getIssueUseCases(issue).includes(state.useCase)) return false;
     if (state.product !== "All" && !(issue.products || [issue.product]).includes(state.product)) return false;
     if (state.issueType !== "All" && issue.issueType !== state.issueType) return false;
     if (state.status !== "All" && issue.status !== state.status) return false;
@@ -240,12 +281,14 @@ function renderHeader(issues) {
 function renderViewShell() {
   const isJourneyView = state.view === "journey";
   const isRegisterView = state.view === "register";
+  const isStrategicExecutive = state.view === "executive";
   els.dashboardGrid.dataset.view = state.view;
-  els.kpiGrid.hidden = isJourneyView || isRegisterView;
+  els.kpiGrid.hidden = isJourneyView || isRegisterView || isStrategicExecutive;
   els.productSections.hidden = state.view !== "product";
-  els.dashboardGrid.hidden = isJourneyView || isRegisterView;
+  els.dashboardGrid.hidden = isJourneyView || isRegisterView || isStrategicExecutive;
   els.registerSection.hidden = !isRegisterView;
-  els.watchModule.hidden = state.view === "executive";
+  els.strategicExecutiveSection.hidden = !isStrategicExecutive;
+  els.watchModule.hidden = state.view === "issue-summary";
 }
 
 function renderKpis(issues) {
@@ -276,6 +319,273 @@ function renderKpis(issues) {
           <div class="kpi-value">${value}</div>
           <div class="kpi-note">${note}</div>
         </article>
+      `,
+    )
+    .join("");
+}
+
+function renderStrategicExecutive(issues) {
+  if (state.view !== "executive") {
+    els.readinessGrid.innerHTML = "";
+    return;
+  }
+
+  const readiness = aggregateUseCaseReadiness(issues);
+  const attentionIssues = sortExecutiveAttention(issues).slice(0, 8);
+  const decisionIssues = sortExecutiveAttention(issues.filter(issue => issue.decisionNeeded)).slice(0, 8);
+  const bottlenecks = aggregateCapabilityBottlenecks(issues).slice(0, 8);
+  const externalDependencies = aggregateExternalDependencies(issues).slice(0, 8);
+  const governanceWatchouts = aggregateGovernanceWatchouts(issues);
+  const atRiskCount = readiness.filter(item => ["Red", "Amber"].includes(item.status)).length;
+
+  els.readinessSummary.textContent = `${atRiskCount} use case${atRiskCount === 1 ? "" : "s"} need attention`;
+  els.readinessGrid.innerHTML = readiness.map(renderReadinessCard).join("");
+  els.executiveAttentionList.innerHTML = renderExecutiveIssueList(
+    attentionIssues,
+    "No leadership attention items match the current filters.",
+  );
+  els.strategicDecisionList.innerHTML = renderDecisionExecutiveList(
+    decisionIssues,
+    "No decisions required in the current filters.",
+  );
+  els.capabilityBottleneckList.innerHTML = renderBottleneckList(
+    bottlenecks,
+    "No capability bottlenecks match the current filters.",
+  );
+  els.externalDependencyList.innerHTML = renderDependencyGroupList(
+    externalDependencies,
+    "No external dependencies match the current filters.",
+  );
+  els.governanceWatchoutList.innerHTML = renderGovernanceList(governanceWatchouts);
+}
+
+function aggregateUseCaseReadiness(issues) {
+  return strategicUseCases.map(useCase => {
+    const linkedIssues = issues.filter(issue => getIssueUseCases(issue).includes(useCase));
+    const highIssues = linkedIssues.filter(issue => issue.priority === "HIGH");
+    const decisions = linkedIssues.filter(issue => issue.decisionNeeded);
+    const dependencies = linkedIssues.filter(issue => issue.dependencies);
+    const blocked = linkedIssues.filter(issue => isBlocked(issue));
+    const status = deriveReadinessStatus(useCase, linkedIssues, highIssues, decisions, dependencies, blocked);
+    const topCapability = topValue(linkedIssues.flatMap(issue => getIssueProducts(issue))) || "Not captured";
+
+    return {
+      useCase,
+      status,
+      issueCount: linkedIssues.length,
+      highCount: highIssues.length,
+      decisionCount: decisions.length,
+      dependencyCount: dependencies.length,
+      topCapability,
+    };
+  });
+}
+
+function deriveReadinessStatus(useCase, issues, highIssues, decisions, dependencies, blocked) {
+  if (useCase === "All") return "Cross-cutting";
+  if (!issues.length) return "Not Started";
+  if (blocked.length || (highIssues.length && decisions.length)) return "Red";
+  if (highIssues.length || dependencies.length || decisions.length) return "Amber";
+  if (issues.every(issue => ["NOT STARTED", "BACKLOG", "ACKNOWLEDGE"].includes(issue.status))) return "Discovery";
+  return "Green";
+}
+
+function renderReadinessCard(item) {
+  return `
+    <article class="readiness-card">
+      <div class="readiness-card-head">
+        <h4>${escapeHtml(item.useCase)}</h4>
+        <span class="${readinessClass(item.status)}">${escapeHtml(item.status)}</span>
+      </div>
+      <dl class="readiness-metrics">
+        <div><dt>Issues</dt><dd>${item.issueCount}</dd></div>
+        <div><dt>High</dt><dd>${item.highCount}</dd></div>
+        <div><dt>Decisions</dt><dd>${item.decisionCount}</dd></div>
+        <div><dt>Dependencies</dt><dd>${item.dependencyCount}</dd></div>
+      </dl>
+      <p><span>Top capability</span>${escapeHtml(item.topCapability)}</p>
+    </article>
+  `;
+}
+
+function sortExecutiveAttention(issues) {
+  return [...issues]
+    .filter(issue => issue.priority === "HIGH" || isBlocked(issue) || issue.decisionNeeded || isExternalDependency(issue))
+    .sort((a, b) => executiveAttentionScore(b) - executiveAttentionScore(a));
+}
+
+function executiveAttentionScore(issue) {
+  let score = 0;
+  if (issue.priority === "HIGH") score += 40;
+  if (isBlocked(issue)) score += 35;
+  if (issue.decisionNeeded) score += 25;
+  if (isExternalDependency(issue)) score += 15;
+  if (issue.dependencies) score += 10;
+  return score;
+}
+
+function renderExecutiveIssueList(issues, emptyMessage) {
+  if (!issues.length) return `<div class="empty-state">${escapeHtml(emptyMessage)}</div>`;
+  return issues
+    .map(
+      issue => `
+        <button class="executive-issue-card" type="button" data-issue-id="${escapeHtml(issue.id)}">
+          <div>
+            <span class="id-pill">${escapeHtml(issue.id)}</span>
+            <strong>${escapeHtml(issue.title || "Untitled issue")}</strong>
+          </div>
+          <p>${escapeHtml(summarise(issue.problemScenario || issue.currentAction || issue.notes || "Business impact not captured."))}</p>
+          <span class="executive-meta">
+            <span>${escapeHtml(issue.owner || "TBD owner")}</span>
+            <span class="${statusClass(issue.status)}">${escapeHtml(displayStatus(issue.status))}</span>
+            <span>${escapeHtml(formatList(getIssueUseCases(issue)))}</span>
+          </span>
+        </button>
+      `,
+    )
+    .join("");
+}
+
+function renderDecisionExecutiveList(issues, emptyMessage) {
+  if (!issues.length) return `<div class="empty-state">${escapeHtml(emptyMessage)}</div>`;
+  return issues
+    .map(
+      issue => `
+        <button class="executive-issue-card compact-executive-card" type="button" data-issue-id="${escapeHtml(issue.id)}">
+          <div>
+            <span class="id-pill">${escapeHtml(issue.id)}</span>
+            <strong>${escapeHtml(issue.decisionNeeded || "Decision required")}</strong>
+          </div>
+          <span class="executive-meta">
+            <span>${escapeHtml(issue.owner || "TBD owner")}</span>
+            <span>${escapeHtml(formatList(getIssueUseCases(issue)))}</span>
+            <span>${escapeHtml(formatList(getIssueProducts(issue)))}</span>
+            <span class="${statusClass(issue.status)}">${escapeHtml(displayStatus(issue.status))}</span>
+          </span>
+        </button>
+      `,
+    )
+    .join("");
+}
+
+function aggregateCapabilityBottlenecks(issues) {
+  const groups = groupByValues(issues, getIssueProducts, "Not captured");
+  return [...groups.entries()]
+    .map(([capability, groupedIssues]) => ({
+      label: capability,
+      issueCount: groupedIssues.length,
+      highCount: groupedIssues.filter(issue => issue.priority === "HIGH").length,
+      dependencyCount: groupedIssues.filter(issue => issue.dependencies).length,
+      decisionCount: groupedIssues.filter(issue => issue.decisionNeeded).length,
+    }))
+    .sort((a, b) => bottleneckScore(b) - bottleneckScore(a));
+}
+
+function bottleneckScore(item) {
+  return item.issueCount + item.highCount * 3 + item.dependencyCount * 2 + item.decisionCount * 2;
+}
+
+function renderBottleneckList(items, emptyMessage) {
+  if (!items.length) return `<div class="empty-state">${escapeHtml(emptyMessage)}</div>`;
+  return items
+    .map(
+      item => `
+        <div class="bottleneck-row">
+          <strong>${escapeHtml(item.label)}</strong>
+          <span>${item.issueCount} issues</span>
+          <span>${item.highCount} high</span>
+          <span>${item.dependencyCount} deps</span>
+          <span>${item.decisionCount} decisions</span>
+        </div>
+      `,
+    )
+    .join("");
+}
+
+function aggregateExternalDependencies(issues) {
+  const groups = new Map();
+  issues.filter(issue => issue.dependencies && isExternalDependency(issue)).forEach(issue => {
+    const type = dependencyOwnerType(issue);
+    if (!groups.has(type)) groups.set(type, []);
+    groups.get(type).push(issue);
+  });
+  return [...groups.entries()]
+    .map(([type, groupedIssues]) => ({
+      label: type,
+      issueCount: groupedIssues.length,
+      highCount: groupedIssues.filter(issue => issue.priority === "HIGH").length,
+      decisionCount: groupedIssues.filter(issue => issue.decisionNeeded).length,
+      examples: groupedIssues.slice(0, 3),
+    }))
+    .sort((a, b) => b.issueCount + b.highCount * 2 - (a.issueCount + a.highCount * 2));
+}
+
+function renderDependencyGroupList(items, emptyMessage) {
+  if (!items.length) return `<div class="empty-state">${escapeHtml(emptyMessage)}</div>`;
+  return items
+    .map(
+      item => `
+        <div class="dependency-group">
+          <div class="bottleneck-row">
+            <strong>${escapeHtml(item.label)}</strong>
+            <span>${item.issueCount} issues</span>
+            <span>${item.highCount} high</span>
+            <span>${item.decisionCount} decisions</span>
+          </div>
+          <div class="dependency-examples">
+            ${item.examples
+              .map(
+                issue => `
+                  <button type="button" data-issue-id="${escapeHtml(issue.id)}">
+                    <span class="id-pill">${escapeHtml(issue.id)}</span>
+                    ${escapeHtml(issue.dependencies)}
+                  </button>
+                `,
+              )
+              .join("")}
+          </div>
+        </div>
+      `,
+    )
+    .join("");
+}
+
+function aggregateGovernanceWatchouts(issues) {
+  const checks = [
+    {
+      label: "Missing owner",
+      issues: issues.filter(issue => !issue.owner),
+    },
+    {
+      label: "Missing problem scenario",
+      issues: issues.filter(issue => !issue.problemScenario),
+    },
+    {
+      label: "Missing current action",
+      issues: issues.filter(issue => !issue.currentAction),
+    },
+    {
+      label: "Decision owner/date not captured",
+      issues: issues.filter(issue => issue.decisionNeeded && (!issue.decisionOwner || !issue.decisionDueDate)),
+    },
+    {
+      label: "Roadmap alignment not captured",
+      issues: issues.filter(issue => !issue.roadmapAlignment),
+    },
+  ];
+
+  return checks.filter(check => check.issues.length);
+}
+
+function renderGovernanceList(items) {
+  if (!items.length) return `<div class="empty-state">No governance watchouts in the current filters.</div>`;
+  return items
+    .map(
+      item => `
+        <div class="governance-row">
+          <strong>${escapeHtml(item.label)}</strong>
+          <span>${item.issues.length} issue${item.issues.length === 1 ? "" : "s"}</span>
+        </div>
       `,
     )
     .join("");
@@ -392,7 +702,7 @@ function renderJourneyIssue(issue) {
       <span class="journey-dot ${priorityDotClass(issue.priority)}"></span>
       <span>
         <strong>${escapeHtml(issue.id)}</strong>
-        <small>${escapeHtml(issue.primaryProduct || issue.product || "No product")}</small>
+        <small>${escapeHtml(productScope(issue))}</small>
       </span>
     </button>
   `;
@@ -458,7 +768,7 @@ function renderCompactLists(issues) {
       if (issue.status === "HOLD / BLOCKED") return `${issue.title} is blocked`;
       return issue.title;
     },
-    issue => issue.primaryProduct || issue.product || issue.category || "Review",
+    issue => productScope(issue) || issue.category || "Review",
   );
 }
 
@@ -528,7 +838,7 @@ function renderCards(issues) {
           <div class="card-footer">
             <span class="${priorityClass(issue.priority)}">${escapeHtml(displayValue(issue.priority))}</span>
             ${renderOptionalBadge(issue.issueType)}
-            <span class="badge status">${escapeHtml(issue.primaryProduct || issue.product || "No product")}</span>
+            <span class="badge status">${escapeHtml(productScope(issue))}</span>
             <span class="badge status">${escapeHtml(displayImpacts(issue.products || [issue.product]))}</span>
             <span class="badge status not-started">${escapeHtml(issue.owner || "TBD")}</span>
           </div>
@@ -544,19 +854,29 @@ function render() {
   renderViewShell();
   renderHeader(issues);
 
+  if (state.view === "executive") {
+    renderStrategicExecutive(issues);
+    renderProductSections(issues);
+    renderJourney(issues);
+    return;
+  }
+
   if (state.view === "journey") {
+    renderStrategicExecutive(issues);
     renderProductSections(issues);
     renderJourney(issues);
     return;
   }
 
   if (state.view === "register") {
+    renderStrategicExecutive(issues);
     renderProductSections(issues);
     renderJourney(issues);
     renderCards(issues);
     return;
   }
 
+  renderStrategicExecutive(issues);
   renderKpis(issues);
   renderProductSections(issues);
   renderJourney(issues);
@@ -567,7 +887,12 @@ function render() {
 
 function setupControls() {
   fillSelect(els.categoryFilter, uniqueValues("categories"));
-  fillSelect(els.useCaseFilter, uniqueValues("useCases"));
+  const workbookUseCases = uniqueList(data.issues.flatMap(getIssueUseCases));
+  const useCaseOptions = [
+    ...strategicUseCases.filter(value => value !== "All"),
+    ...workbookUseCases.filter(value => !strategicUseCases.includes(value) && value !== "All"),
+  ];
+  fillSelect(els.useCaseFilter, useCaseOptions);
   fillSelect(els.productFilter, uniqueValues("products"));
   fillSelect(els.issueTypeFilter, uniqueValues("issueType"));
   fillSelect(els.statusFilter, uniqueValues("status").map(displayStatus));
@@ -640,6 +965,18 @@ function setupControls() {
     const row = event.target.closest("[data-issue-id]");
     if (!row) return;
     openIssueModal(row.dataset.issueId);
+  });
+
+  [
+    els.executiveAttentionList,
+    els.strategicDecisionList,
+    els.externalDependencyList,
+  ].forEach(container => {
+    container.addEventListener("click", event => {
+      const item = event.target.closest("[data-issue-id]");
+      if (!item) return;
+      openIssueModal(item.dataset.issueId);
+    });
   });
 
   els.opportunityToggle.addEventListener("click", () => {
@@ -799,6 +1136,107 @@ function renderChipField(label, values) {
       </div>
     </div>
   `;
+}
+
+function getIssueUseCases(issue) {
+  const values = Array.isArray(issue.useCases) && issue.useCases.length
+    ? issue.useCases
+    : splitMultiValue(issue.useCase || issue.useCasesImpacted);
+  const normalised = values.map(normaliseUseCaseName).filter(Boolean);
+  return uniqueList(normalised.length ? normalised : ["All"]);
+}
+
+function normaliseUseCaseName(value) {
+  const text = String(value || "").trim();
+  const key = text
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+  const aliases = {
+    all: "All",
+    super: "Super",
+    "payday super": "Super",
+    payroll: "Payroll",
+    tax: "Tax",
+    econveyancing: "Electronic conveyancing (eConveyancing)",
+    "electronic conveyancing": "Electronic conveyancing (eConveyancing)",
+    "electronic conveyancing econveyancing": "Electronic conveyancing (eConveyancing)",
+    einvoicing: "eInvoicing",
+    "e invoicing": "eInvoicing",
+    securities: "Securities",
+    government: "Government",
+    "business payments": "Business Payments",
+    bp: "Business Payments",
+    mddr: "MDDR",
+  };
+  return aliases[key] || strategicUseCases.find(useCase => useCase.toLowerCase() === text.toLowerCase()) || text;
+}
+
+function getIssueProducts(issue) {
+  const values = Array.isArray(issue.products) && issue.products.length ? issue.products : splitMultiValue(issue.product);
+  return uniqueList(values.filter(Boolean));
+}
+
+function groupByValues(issues, valuesFn, fallback) {
+  const groups = new Map();
+  issues.forEach(issue => {
+    const values = valuesFn(issue);
+    const groupValues = values.length ? values : [fallback];
+    groupValues.forEach(value => {
+      if (!groups.has(value)) groups.set(value, []);
+      groups.get(value).push(issue);
+    });
+  });
+  return groups;
+}
+
+function topValue(values) {
+  const counts = new Map();
+  values.filter(Boolean).forEach(value => counts.set(value, (counts.get(value) || 0) + 1));
+  return [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] || "";
+}
+
+function isBlocked(issue) {
+  return String(issue.status || "").toLowerCase().includes("blocked") || String(issue.status || "").toLowerCase().includes("hold");
+}
+
+function isExternalDependency(issue) {
+  return dependencyOwnerType(issue) !== "Internal / Not Classified";
+}
+
+function dependencyOwnerType(issue) {
+  const text = String(issue.dependencyOwnerType || issue.dependencies || "").toLowerCase();
+  if (!text) return "Internal / Not Classified";
+  const match = externalDependencyTypes.find(group => group.terms.some(term => text.includes(term)));
+  return match ? match.type : "Other External Parties";
+}
+
+function readinessClass(status) {
+  const key = String(status || "").toLowerCase();
+  if (key === "green") return "readiness-status readiness-green";
+  if (key === "amber") return "readiness-status readiness-amber";
+  if (key === "red") return "readiness-status readiness-red";
+  if (key === "discovery") return "readiness-status readiness-discovery";
+  if (key === "cross-cutting") return "readiness-status readiness-cross";
+  return "readiness-status readiness-not-started";
+}
+
+function formatList(values) {
+  const cleanValues = uniqueList((values || []).filter(Boolean));
+  if (!cleanValues.length) return "Not captured";
+  if (cleanValues.length <= 3) return cleanValues.join(", ");
+  return `${cleanValues.slice(0, 3).join(", ")} +${cleanValues.length - 3}`;
+}
+
+function uniqueList(values) {
+  const seen = new Set();
+  return values.filter(value => {
+    const key = String(value || "").toLowerCase();
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function issueJourneyPhases(issue) {

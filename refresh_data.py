@@ -37,6 +37,38 @@ FIELD_MAP = {
     "Exec Summary Tag": "execSummaryTag",
 }
 
+OPTIONAL_FIELD_MAP = {
+    "Strategic Objective": "strategicObjective",
+    "Scorecard Item": "scorecardItem",
+    "Readiness Status": "readinessStatus",
+    "Readiness Rationale": "readinessRationale",
+    "Decision Owner": "decisionOwner",
+    "Decision Due Date": "decisionDueDate",
+    "Dependency Owner Type": "dependencyOwnerType",
+    "Impact Driver": "impactDriver",
+    "Roadmap Alignment": "roadmapAlignment",
+    "External Messaging Status": "externalMessagingStatus",
+    "Review Date": "reviewDate",
+}
+
+USE_CASE_ALIASES = {
+    "all": "All",
+    "super": "Super",
+    "payday super": "Super",
+    "payroll": "Payroll",
+    "tax": "Tax",
+    "econveyancing": "Electronic conveyancing (eConveyancing)",
+    "electronic conveyancing": "Electronic conveyancing (eConveyancing)",
+    "electronic conveyancing econveyancing": "Electronic conveyancing (eConveyancing)",
+    "einvoicing": "eInvoicing",
+    "e invoicing": "eInvoicing",
+    "securities": "Securities",
+    "government": "Government",
+    "business payments": "Business Payments",
+    "bp": "Business Payments",
+    "mddr": "MDDR",
+}
+
 
 def clean_text(value):
     if value is None:
@@ -68,6 +100,12 @@ def split_values(*values):
     return items
 
 
+def normalize_use_case(value):
+    text = clean_text(value)
+    key = re.sub(r"[^a-z0-9]+", " ", text.lower().replace("&", "and")).strip()
+    return USE_CASE_ALIASES.get(key, text)
+
+
 def main() -> None:
     workbook = openpyxl.load_workbook(WORKBOOK_PATH, data_only=True)
     sheet = workbook["IssuesRegister"]
@@ -82,22 +120,21 @@ def main() -> None:
         issue = {}
         for source, target in FIELD_MAP.items():
             issue[target] = clean_text(raw.get(source))
+        for source, target in OPTIONAL_FIELD_MAP.items():
+            issue[target] = clean_text(raw.get(source))
 
         issue["priority"] = normalize(issue["priority"])
         issue["horizon"] = normalize(issue["horizon"])
         issue["status"] = normalize(issue["status"])
         issue["isExecSummary"] = issue["execSummaryTag"].lower() == "yes"
 
-        issue["useCases"] = split_values(raw.get("Use Cases"))
+        issue["useCases"] = [normalize_use_case(value) for value in split_values(raw.get("Use Cases"))]
         issue["useCasesImpacted"] = "; ".join(issue["useCases"])
-        issue["mainUseCase"] = issue["useCasesImpacted"]
         issue["useCase"] = issue["useCasesImpacted"]
-        issue["category2"] = ""
         issue["categories"] = split_values(raw.get("Category"))
         issue["category"] = "; ".join(issue["categories"])
         issue["products"] = split_values(raw.get("Product"))
         issue["productsImpacted"] = "; ".join(issue["products"])
-        issue["primaryProduct"] = issue["productsImpacted"]
         issue["product"] = issue["productsImpacted"]
         issue["journeyStages"] = split_values(raw.get("Journey Stage"))
         issue["journeyStage"] = "; ".join(issue["journeyStages"])

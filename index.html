@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Payday Super Enablement View</title>
+    <title>Business Payments Strategic Enablement Dashboard</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -21,7 +21,7 @@
 
         <section class="side-panel">
           <p class="panel-label">Source</p>
-          <strong>Issues Register</strong>
+          <strong>Strategic Enablement Register</strong>
           <span id="sourceMeta">Loading register</span>
         </section>
       </aside>
@@ -68,6 +68,69 @@
         </section>
 
         <section class="kpis" id="kpiGrid" aria-label="Key metrics"></section>
+
+        <section class="strategic-executive" id="strategicExecutiveSection" hidden>
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Strategic use case readiness</p>
+              <h3>Readiness Across Business Payments</h3>
+            </div>
+            <span id="readinessSummary"></span>
+          </div>
+          <div class="readiness-grid" id="readinessGrid"></div>
+
+          <div class="executive-grid">
+            <article class="module module-large">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon alert-icon">!</span>
+                  <h3>Executive Attention</h3>
+                </div>
+              </div>
+              <div class="executive-list" id="executiveAttentionList"></div>
+            </article>
+
+            <article class="module">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon decision-icon">?</span>
+                  <h3>Decisions Required</h3>
+                </div>
+              </div>
+              <div class="executive-list" id="strategicDecisionList"></div>
+            </article>
+
+            <article class="module">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon progress-icon">↗</span>
+                  <h3>Capability Bottlenecks</h3>
+                </div>
+              </div>
+              <div class="bottleneck-list" id="capabilityBottleneckList"></div>
+            </article>
+
+            <article class="module">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon dependency-icon">⌘</span>
+                  <h3>External Dependencies</h3>
+                </div>
+              </div>
+              <div class="bottleneck-list" id="externalDependencyList"></div>
+            </article>
+
+            <article class="module">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon gap-icon">△</span>
+                  <h3>Data Quality / Governance Watchouts</h3>
+                </div>
+              </div>
+              <div class="bottleneck-list" id="governanceWatchoutList"></div>
+            </article>
+          </div>
+        </section>
 
         <section class="journey-section" id="journeySection" hidden>
           <div class="section-head">
@@ -161,7 +224,7 @@
           <div class="section-head">
             <div>
               <p class="eyebrow">Source of truth</p>
-              <h3>Issue Register View</h3>
+              <h3>Strategic Enablement Register</h3>
             </div>
             <span id="registerCount"></span>
           </div>
