@@ -45,7 +45,7 @@ const views = [
     id: "executive",
     icon: "◇",
     title: "Business Payments Strategic Enablement",
-    nav: "Strategic Readiness",
+    nav: "Strategy & Outcomes",
     audience: "Exec / Business Payments",
     description:
       "Readiness, dependencies and decisions across strategic Business Payments use cases.",
@@ -288,7 +288,7 @@ function renderHeader(issues) {
   els.audienceLabel.textContent = `Audience: ${view.audience}`;
   els.metricsLabel.textContent =
     state.view === "executive"
-      ? "Focus: Use case readiness, capability friction and executive decisions."
+      ? "Focus: FY27 strategy, scorecard outcomes, use case readiness and executive decisions."
       : `Metrics: ${issues.length} visible issue${issues.length === 1 ? "" : "s"} after filters`;
   els.lastUpdated.textContent = `Last updated: ${formatDate(latest)}`;
   els.sourceMeta.textContent = `${data.source} • ${data.issues.length} issues • refreshed ${data.generatedAt}`;
@@ -397,15 +397,6 @@ function renderStrategyOutcomes(issues, readiness) {
   const priorityCards = linkedStrategy.length ? linkedStrategy : (data.strategy || []).slice(0, 3);
   const objectiveCards = linkedObjectives.length ? linkedObjectives : (data.objectives || []).slice(0, 3);
   const scorecardCards = linkedScorecard.length ? linkedScorecard : (data.scorecard || []).slice(0, 2);
-  const transformationUseCases = strategicUseCaseNames().map(name => {
-    const ref = useCaseReference(name);
-    const readinessItem = readiness.find(item => item.useCase === name);
-    return {
-      name,
-      status: ref?.status || readinessItem?.status || "Discovery",
-      desiredOutcome: ref?.desiredOutcome || ref?.description || readinessItem?.statusNote || "Outcome to be defined.",
-    };
-  });
 
   return `
     <div class="strategy-section-head">
@@ -429,14 +420,6 @@ function renderStrategyOutcomes(issues, readiness) {
         ${renderScorecardStack(scorecardCards)}
       </article>
     </div>
-    <article class="strategy-panel transformation-panel">
-      <div class="strategy-panel-heading">
-        <span>Transformation Use Cases</span>
-      </div>
-      <div class="transformation-use-cases">
-        ${transformationUseCases.map(renderTransformationUseCase).join("")}
-      </div>
-    </article>
   `;
 }
 
@@ -478,16 +461,6 @@ function renderScorecardStack(items) {
   `;
 }
 
-function renderTransformationUseCase(item) {
-  return `
-    <div class="transformation-use-case">
-      <strong>${escapeHtml(item.name)}</strong>
-      <span class="${readinessClass(item.status)}">${escapeHtml(item.status)}</span>
-      <p>${escapeHtml(summarise(item.desiredOutcome, 130))}</p>
-    </div>
-  `;
-}
-
 function renderStrategicSummaryStrip(summary) {
   const items = [
     ["Use cases needing attention", summary.attention],
@@ -521,19 +494,23 @@ function aggregateUseCaseReadiness(issues) {
       const activeWork = linkedIssues.filter(issue => issue.status === "WIP");
       const externalDependencies = linkedIssues.filter(isExternalDependency);
       const reference = useCaseReference(useCase);
-      const status = reference?.status || deriveReadinessStatus(useCase, linkedIssues, highIssues, externalDependencies, blocked, activeWork);
+      const status = useCase === "All"
+        ? "Cross-cutting"
+        : reference?.status || deriveReadinessStatus(useCase, linkedIssues, highIssues, externalDependencies, blocked, activeWork);
       const statusNote = deriveReadinessNote(useCase, linkedIssues, status);
-      const topCapability = topValue(linkedIssues.flatMap(issue => getIssueProducts(issue))) || "Not captured";
+      const topCapabilities = topValues(linkedIssues.flatMap(issue => getIssueCapabilityNames(issue)), 3);
 
       return {
         useCase,
+        displayName: useCase === "All" ? "Cross-cutting" : useCase,
+        description: reference?.description || reference?.desiredOutcome || statusNote,
         status,
         statusNote,
         issueCount: linkedIssues.length,
         highCount: highIssues.length,
         decisionCount: decisions.length,
         dependencyCount: dependencies.length,
-        topCapability,
+        topCapabilities,
       };
     })
     .sort((a, b) => readinessSort(a, b, useCaseNames));
@@ -573,17 +550,17 @@ function renderReadinessCard(item) {
   return `
     <article class="readiness-card ${item.useCase === "All" ? "readiness-card-cross" : ""}">
       <div class="readiness-card-head">
-        <h4>${escapeHtml(item.useCase)}</h4>
+        <h4>${escapeHtml(item.displayName || item.useCase)}</h4>
         <span class="${readinessClass(item.status)}">${escapeHtml(item.status)}</span>
       </div>
-      <p class="readiness-note">${escapeHtml(item.statusNote)}</p>
+      <p class="readiness-description">${escapeHtml(summarise(item.description || item.statusNote, 175))}</p>
       <dl class="readiness-metrics">
         <div><dt>Records</dt><dd>${item.issueCount}</dd></div>
         <div><dt>High risk</dt><dd>${item.highCount}</dd></div>
         <div><dt>Decisions</dt><dd>${item.decisionCount}</dd></div>
         <div><dt>Deps</dt><dd>${item.dependencyCount}</dd></div>
       </dl>
-      <p><span>Top capability</span>${escapeHtml(item.topCapability)}</p>
+      <p><span>Top linked capabilities</span>${escapeHtml(item.topCapabilities.length ? item.topCapabilities.join(", ") : "Not captured")}</p>
     </article>
   `;
 }
@@ -1319,10 +1296,13 @@ function renderChipField(label, values) {
 }
 
 function getIssueUseCases(issue) {
-  const values = Array.isArray(issue.useCases) && issue.useCases.length
+  const referenceValues = Array.isArray(issue.useCaseRefs)
+    ? issue.useCaseRefs.map(useCase => useCase.name).filter(Boolean)
+    : [];
+  const rawValues = Array.isArray(issue.useCases) && issue.useCases.length
     ? issue.useCases
     : splitMultiValue(issue.useCase || issue.useCasesImpacted);
-  const normalised = values.map(normaliseUseCaseName).filter(Boolean);
+  const normalised = [...referenceValues, ...rawValues].map(normaliseUseCaseName).filter(Boolean);
   return uniqueList(normalised.length ? normalised : ["All"]);
 }
 
@@ -1376,6 +1356,13 @@ function getIssueProducts(issue) {
   return uniqueList(values.filter(Boolean));
 }
 
+function getIssueCapabilityNames(issue) {
+  const referenceNames = Array.isArray(issue.capabilityRefs)
+    ? issue.capabilityRefs.map(capability => capability.name).filter(Boolean)
+    : [];
+  return uniqueList(referenceNames.length ? referenceNames : getIssueProducts(issue));
+}
+
 function groupByValues(issues, valuesFn, fallback) {
   const groups = new Map();
   issues.forEach(issue => {
@@ -1393,6 +1380,15 @@ function topValue(values) {
   const counts = new Map();
   values.filter(Boolean).forEach(value => counts.set(value, (counts.get(value) || 0) + 1));
   return [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] || "";
+}
+
+function topValues(values, limit = 3) {
+  const counts = new Map();
+  values.filter(Boolean).forEach(value => counts.set(value, (counts.get(value) || 0) + 1));
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, limit)
+    .map(([value]) => value);
 }
 
 function isBlocked(issue) {

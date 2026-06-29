@@ -359,40 +359,6 @@ h3 {
   line-height: 1.4;
 }
 
-.transformation-panel {
-  display: grid;
-  gap: 10px;
-}
-
-.transformation-use-cases {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.transformation-use-case {
-  display: grid;
-  gap: 8px;
-  align-content: start;
-  min-height: 150px;
-  padding: 12px;
-  background: #ffffff;
-  border: 1px solid #edf0f6;
-  border-radius: 8px;
-}
-
-.transformation-use-case strong {
-  font-size: 14px;
-  line-height: 1.25;
-}
-
-.transformation-use-case p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.4;
-}
-
 .strategic-summary-strip {
   display: grid;
   grid-template-columns: repeat(5, minmax(130px, 1fr));
@@ -544,10 +510,12 @@ h3 {
   line-height: 1.35;
 }
 
+.readiness-description,
 .readiness-note {
   color: var(--muted);
   font-size: 12px;
   font-weight: 800;
+  line-height: 1.4;
 }
 
 .executive-grid {
@@ -1463,10 +1431,6 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .transformation-use-cases {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .product-sections {
     grid-template-columns: 1fr;
   }
@@ -1483,10 +1447,6 @@ h3 {
 
   .strategic-summary-strip {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .transformation-use-cases {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .issue-row-meta {
@@ -1548,7 +1508,4 @@ h3 {
     display: grid;
   }
 
-  .transformation-use-cases {
-    grid-template-columns: 1fr;
-  }
 }
