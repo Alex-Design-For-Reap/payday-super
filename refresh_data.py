@@ -33,6 +33,9 @@ FIELD_MAP = {
     "Comments / Notes": "notes",
     "Link 1\n(details of the issue)": "link1",
     "Link 2": "link2",
+    "Strategic Priority ID": "strategicPriorityId",
+    "Objective ID": "objectiveId",
+    "Scorecard ID": "scorecardId",
     "Last Updated": "lastUpdated",
     "Exec Summary Tag": "execSummaryTag",
 }
@@ -57,9 +60,9 @@ USE_CASE_ALIASES = {
     "payday super": "Super",
     "payroll": "Payroll",
     "tax": "Tax",
-    "econveyancing": "Electronic conveyancing (eConveyancing)",
-    "electronic conveyancing": "Electronic conveyancing (eConveyancing)",
-    "electronic conveyancing econveyancing": "Electronic conveyancing (eConveyancing)",
+    "econveyancing": "eConveyancing",
+    "electronic conveyancing": "eConveyancing",
+    "electronic conveyancing econveyancing": "eConveyancing",
     "einvoicing": "eInvoicing",
     "e invoicing": "eInvoicing",
     "securities": "Securities",
@@ -106,10 +109,92 @@ def normalize_use_case(value):
     return USE_CASE_ALIASES.get(key, text)
 
 
+def normalize_key(value):
+    return clean_text(value).lower()
+
+
+def read_sheet_records(workbook, sheet_name, field_map):
+    if sheet_name not in workbook.sheetnames:
+        return []
+
+    sheet = workbook[sheet_name]
+    headers = [cell.value for cell in sheet[1]]
+    records = []
+    for row in sheet.iter_rows(min_row=2, values_only=True):
+        raw = dict(zip(headers, row))
+        if not any(value is not None for value in raw.values()):
+            continue
+
+        record = {}
+        for source, target in field_map.items():
+            record[target] = clean_text(raw.get(source))
+        if any(record.values()):
+            records.append(record)
+    return records
+
+
+def build_lookup(records, field):
+    return {normalize_key(record.get(field)): record for record in records if record.get(field)}
+
+
 def main() -> None:
     workbook = openpyxl.load_workbook(WORKBOOK_PATH, data_only=True)
-    sheet = workbook["IssuesRegister"]
+    sheet = workbook["IssuesRegister"] if "IssuesRegister" in workbook.sheetnames else workbook.active
     headers = [cell.value for cell in sheet[1]]
+
+    strategy = read_sheet_records(
+        workbook,
+        "Ref_Strategy",
+        {
+            "Strategic Priority ID": "id",
+            "Strategic Priority": "title",
+        },
+    )
+    objectives = read_sheet_records(
+        workbook,
+        "Ref_Objectives",
+        {
+            "Objective ID": "id",
+            "Objective": "title",
+            "Description": "description",
+        },
+    )
+    scorecard = read_sheet_records(
+        workbook,
+        "Ref_Scorecard",
+        {
+            "Scorecard ID": "id",
+            "Key Result": "keyResult",
+            "Threshold": "threshold",
+            "Target": "target",
+            "Maximum": "maximum",
+        },
+    )
+    use_cases = read_sheet_records(
+        workbook,
+        "Ref_Use_Cases",
+        {
+            "Use Case": "name",
+            "Description": "description",
+            "Desired Outcome": "desiredOutcome",
+            "Status": "status",
+        },
+    )
+    capabilities = read_sheet_records(
+        workbook,
+        "Ref_Capabilities",
+        {
+            "Capability": "name",
+            "Owner": "owner",
+            "Description": "description",
+        },
+    )
+
+    strategy_by_id = build_lookup(strategy, "id")
+    objectives_by_id = build_lookup(objectives, "id")
+    scorecard_by_id = build_lookup(scorecard, "id")
+    use_cases_by_name = {normalize_key(normalize_use_case(item.get("name"))): item for item in use_cases if item.get("name")}
+    capabilities_by_name = build_lookup(capabilities, "name")
 
     issues = []
     for row in sheet.iter_rows(min_row=2, values_only=True):
@@ -138,11 +223,30 @@ def main() -> None:
         issue["product"] = issue["productsImpacted"]
         issue["journeyStages"] = split_values(raw.get("Journey Stage"))
         issue["journeyStage"] = "; ".join(issue["journeyStages"])
+
+        issue["strategicPriority"] = strategy_by_id.get(normalize_key(issue.get("strategicPriorityId")), {})
+        issue["objective"] = objectives_by_id.get(normalize_key(issue.get("objectiveId")), {})
+        issue["scorecard"] = scorecard_by_id.get(normalize_key(issue.get("scorecardId")), {})
+        issue["useCaseRefs"] = [
+            use_cases_by_name.get(normalize_key(use_case), {})
+            for use_case in issue["useCases"]
+            if use_cases_by_name.get(normalize_key(use_case))
+        ]
+        issue["capabilityRefs"] = [
+            capabilities_by_name.get(normalize_key(product), {})
+            for product in issue["products"]
+            if capabilities_by_name.get(normalize_key(product))
+        ]
         issues.append(issue)
 
     payload = {
         "generatedAt": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "source": WORKBOOK_PATH.name,
+        "strategy": strategy,
+        "objectives": objectives,
+        "scorecard": scorecard,
+        "useCases": use_cases,
+        "capabilities": capabilities,
         "issues": issues,
     }
 

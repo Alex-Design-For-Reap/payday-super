@@ -1,6 +1,196 @@
 window.ISSUES_DATA = {
-  "generatedAt": "2026-06-24 18:56",
+  "generatedAt": "2026-06-29 15:44",
   "source": "Issues Register.xlsm",
+  "strategy": [
+    {
+      "id": "SP01",
+      "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+    },
+    {
+      "id": "SP02",
+      "title": "Extend Eftpos addressable market"
+    },
+    {
+      "id": "SP03",
+      "title": "Defend and extend our role in bill payments"
+    },
+    {
+      "id": "SP04",
+      "title": "Grow ConnectID"
+    },
+    {
+      "id": "SP05",
+      "title": "Increase security and resilience"
+    },
+    {
+      "id": "SP06",
+      "title": "Continue risk management uplift"
+    },
+    {
+      "id": "SP07",
+      "title": "Enhance fraud and scam protections"
+    },
+    {
+      "id": "SP08",
+      "title": "Simplify & transform business"
+    },
+    {
+      "id": "SP09",
+      "title": "Digital assets strategy"
+    },
+    {
+      "id": "SP10",
+      "title": "Agentic commerce strategy"
+    },
+    {
+      "id": "SP11",
+      "title": "Integrate identity into payments flows"
+    },
+    {
+      "id": "SP12",
+      "title": "Integrated product and asset strategy"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "OBJ01",
+      "title": "Critically Important",
+      "description": "Our infrastructure underpins economically significant flows in Australia"
+    },
+    {
+      "id": "OBJ02",
+      "title": "Secure, resilient and competitive",
+      "description": "National payments and identity infrastructure that are best-in-class"
+    },
+    {
+      "id": "OBJ03",
+      "title": "Leverage emerging trends",
+      "description": "Enable members to leverage emerging trends to win and create opportunities to derive economic value"
+    }
+  ],
+  "scorecard": [
+    {
+      "id": "KR01",
+      "keyResult": "Support Australia’s vision for a digital economy with NPP",
+      "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+      "target": "Threshold plus 4+ clearing houses using NPP",
+      "maximum": "Target plus 200k PayTo Super transactions"
+    }
+  ],
+  "useCases": [
+    {
+      "name": "Super",
+      "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+      "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+      "status": "Amber"
+    },
+    {
+      "name": "Payroll",
+      "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+      "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+      "status": "Discovery"
+    },
+    {
+      "name": "MDDR",
+      "description": "Enable the migration of Direct Debit Request (DDR) capabilities to modern NPP-based payment experiences, supporting improved customer outcomes and future payment innovation.",
+      "desiredOutcome": "",
+      "status": "Discovery"
+    },
+    {
+      "name": "Government",
+      "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+      "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+      "status": "Discovery"
+    },
+    {
+      "name": "Business Payments",
+      "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+      "desiredOutcome": "",
+      "status": "Discovery"
+    },
+    {
+      "name": "Tax",
+      "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+      "desiredOutcome": "",
+      "status": "Discovery"
+    },
+    {
+      "name": "eInvoicing",
+      "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+      "desiredOutcome": "",
+      "status": "Discovery"
+    },
+    {
+      "name": "eConveyancing",
+      "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+      "desiredOutcome": "",
+      "status": "Discovery"
+    },
+    {
+      "name": "Securities",
+      "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+      "desiredOutcome": "",
+      "status": "Discovery"
+    },
+    {
+      "name": "All",
+      "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+      "desiredOutcome": "",
+      "status": "Amber"
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "Accounts",
+      "owner": "Nick",
+      "description": "Account enablement, reachability and routing"
+    },
+    {
+      "name": "CATSCT",
+      "owner": "TBD",
+      "description": ""
+    },
+    {
+      "name": "CoP",
+      "owner": "Tina",
+      "description": "Confirmation of Payee"
+    },
+    {
+      "name": "Osko",
+      "owner": "TBD",
+      "description": ""
+    },
+    {
+      "name": "Payment Instruction",
+      "owner": "Bianca",
+      "description": ""
+    },
+    {
+      "name": "PayID",
+      "owner": "Ronita",
+      "description": "Addressing capability"
+    },
+    {
+      "name": "PayTo",
+      "owner": "Edith",
+      "description": "Payment initiation capability"
+    },
+    {
+      "name": "Reporting",
+      "owner": "Bianca",
+      "description": "Reporting and reconciliation"
+    },
+    {
+      "name": "SCT",
+      "owner": "TBD",
+      "description": ""
+    },
+    {
+      "name": "Other",
+      "owner": "Bianca",
+      "description": ""
+    }
+  ],
   "issues": [
     {
       "id": "ID-01",
@@ -22,6 +212,9 @@ window.ISSUES_DATA = {
       "notes": "As part of the account reach reporting, details of the usage of BSB was collected",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -52,6 +245,52 @@ window.ISSUES_DATA = {
       "product": "Accounts",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Accounts",
+          "owner": "Nick",
+          "description": "Account enablement, reachability and routing"
+        }
       ]
     },
     {
@@ -74,6 +313,9 @@ window.ISSUES_DATA = {
       "notes": "Account Reach data for Feb 2026 has been collected. August data cycle to begin soon",
       "link1": "NPP Bank account enablement - Troubleshooting - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -105,6 +347,55 @@ window.ISSUES_DATA = {
       "product": "Accounts",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Accounts",
+          "owner": "Nick",
+          "description": "Account enablement, reachability and routing"
+        }
       ]
     },
     {
@@ -127,6 +418,9 @@ window.ISSUES_DATA = {
       "notes": "Analysis on possible solutions are being undertaken. Was discussed in the June PRC",
       "link1": "BSB Redirection Troubleshooting",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -157,6 +451,52 @@ window.ISSUES_DATA = {
       "product": "Accounts",
       "journeyStages": [
         "Payment processing"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Accounts",
+          "owner": "Nick",
+          "description": "Account enablement, reachability and routing"
+        }
       ]
     },
     {
@@ -179,6 +519,9 @@ window.ISSUES_DATA = {
       "notes": "Tracking of SF readiness - 96% of large APRA super funds are NPP reachable.",
       "link1": "NPP Bank account enablement - Troubleshooting - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -209,6 +552,55 @@ window.ISSUES_DATA = {
       "product": "Accounts",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Accounts",
+          "owner": "Nick",
+          "description": "Account enablement, reachability and routing"
+        }
       ]
     },
     {
@@ -231,6 +623,9 @@ window.ISSUES_DATA = {
       "notes": "External privacy advice currently underway with June PRC paper planned to address Use Case N12.5.3b expansion",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "SP07",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -258,6 +653,37 @@ window.ISSUES_DATA = {
       "product": "CoP",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {
+        "id": "SP07",
+        "title": "Enhance fraud and scam protections"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "CoP",
+          "owner": "Tina",
+          "description": "Confirmation of Payee"
+        }
       ]
     },
     {
@@ -280,6 +706,9 @@ window.ISSUES_DATA = {
       "notes": "Create general awareness of the impacts of cash flow management (Base deck/FAQs/Implementation Guide)",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -307,6 +736,34 @@ window.ISSUES_DATA = {
       "product": "Other",
       "journeyStages": [
         "Preparation and data creation"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Other",
+          "owner": "Bianca",
+          "description": ""
+        }
       ]
     },
     {
@@ -329,6 +786,9 @@ window.ISSUES_DATA = {
       "notes": "Next Step: Understanding what are current offerings - incorporated into the scorecard",
       "link1": "NPP for super contribution refunds - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -360,6 +820,61 @@ window.ISSUES_DATA = {
       "product": "Other",
       "journeyStages": [
         "Investigation and returns (unhappy path)"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        },
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Other",
+          "owner": "Bianca",
+          "description": ""
+        }
       ]
     },
     {
@@ -376,12 +891,15 @@ window.ISSUES_DATA = {
       "owner": "Bianca",
       "priority": "HIGH",
       "horizon": "SHORT",
-      "status": "NOT STARTED",
+      "status": "WIP",
       "currentAction": "",
       "decisionNeeded": "",
       "notes": "Next Step: Education of the ecosystem (Base deck/FAQs)",
       "link1": "To be created",
       "link2": "",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -409,6 +927,37 @@ window.ISSUES_DATA = {
       "product": "Other",
       "journeyStages": [
         "Payment processing"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Other",
+          "owner": "Bianca",
+          "description": ""
+        }
       ]
     },
     {
@@ -431,6 +980,9 @@ window.ISSUES_DATA = {
       "notes": "Enablement: Tracking of CH readiness. Pilots are underway",
       "link1": "To be created",
       "link2": "PRN reporting and Enablers analysis and tracking.xlsx",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -458,6 +1010,37 @@ window.ISSUES_DATA = {
       "product": "Other",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Other",
+          "owner": "Bianca",
+          "description": ""
+        }
       ]
     },
     {
@@ -480,6 +1063,9 @@ window.ISSUES_DATA = {
       "notes": "Next Steps: Understanding some of the product differences when understanding the use cases",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -507,6 +1093,34 @@ window.ISSUES_DATA = {
       "product": "Other",
       "journeyStages": [
         "Payment processing"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Other",
+          "owner": "Bianca",
+          "description": ""
+        }
       ]
     },
     {
@@ -529,6 +1143,9 @@ window.ISSUES_DATA = {
       "notes": "Enablement: Is doing analysis of what reporting is available for PayID and PayTo Next steps: Discussions with Participants",
       "link1": "PayID Reconciliation on bank statements - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -556,6 +1173,34 @@ window.ISSUES_DATA = {
       "product": "Reporting",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Reporting",
+          "owner": "Bianca",
+          "description": "Reporting and reconciliation"
+        }
       ]
     },
     {
@@ -578,6 +1223,9 @@ window.ISSUES_DATA = {
       "notes": "Enablement: Is doing analysis of what reporting is available for PayID and PayTo",
       "link1": "PayID - Payment Instruction - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -605,6 +1253,37 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Preparation and data creation"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -627,6 +1306,9 @@ window.ISSUES_DATA = {
       "notes": "Enablement: Working with DSPANZ, SAP, Xero on their implementation. Trying to get traction with Oracle Payroll providers will be targetted next",
       "link1": "Minimal coverage from the banks to pay to a PayID outside of an IB channel - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -654,6 +1336,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -676,6 +1386,9 @@ window.ISSUES_DATA = {
       "notes": "Enablement: Working with DSPs to include PayID and understand existing reporting for reconciliation Next Steps: Education of employers and understanding the impacts (FAQs)",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -703,6 +1416,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -725,6 +1466,9 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -752,6 +1496,37 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -769,11 +1544,14 @@ window.ISSUES_DATA = {
       "priority": "HIGH",
       "horizon": "SHORT",
       "status": "WIP",
-      "currentAction": "Makes reports action-oriented instead of note-oriented",
+      "currentAction": "",
       "decisionNeeded": "",
       "notes": "Creating the Capability Matrix and collecting the information",
       "link1": "Payments via PayID Limits - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "Member Capability Matrix _PayID only.xlsx",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -801,6 +1579,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -823,6 +1629,9 @@ window.ISSUES_DATA = {
       "notes": "PE raised: i.110",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -850,6 +1659,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Payment processing"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -866,12 +1703,15 @@ window.ISSUES_DATA = {
       "owner": "Ronita",
       "priority": "MEDIUM",
       "horizon": "LONG",
-      "status": "HOLD / BLOCKED",
+      "status": "WIP",
       "currentAction": "",
       "decisionNeeded": "Decisions pending.",
-      "notes": "",
+      "notes": "PE raised: i.150 and is currently in progress Internal discussions and analysis in progress",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -899,6 +1739,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -916,11 +1784,14 @@ window.ISSUES_DATA = {
       "priority": "MEDIUM",
       "horizon": "MEDIUM",
       "status": "WIP",
-      "currentAction": "Makes reports action-oriented instead of note-oriented",
+      "currentAction": "",
       "decisionNeeded": "Decisions pending.",
       "notes": "Creating the Capability Matrix and collecting the information",
       "link1": "",
       "link2": "Member Capability Matrix _PayID only.xlsx",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -948,6 +1819,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -970,6 +1869,9 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "Payments to PayID availability - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -997,6 +1899,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -1019,6 +1949,9 @@ window.ISSUES_DATA = {
       "notes": "Paper is being taken up to PRC",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1046,6 +1979,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Preparation and data creation"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -1068,6 +2029,9 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1095,6 +2059,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -1117,6 +2109,9 @@ window.ISSUES_DATA = {
       "notes": "Creating the Capability Matrix and collecting the information to understand existing limits",
       "link1": "",
       "link2": "Member Capability Matrix _PayID only.xlsx",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1144,6 +2139,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -1166,6 +2189,9 @@ window.ISSUES_DATA = {
       "notes": "Next Step: Understand the business processes that may be required. Do we need to look at the maintaince of banks?",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1193,6 +2219,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Preparation and data creation"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -1215,6 +2269,9 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1242,6 +2299,37 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -1264,6 +2352,9 @@ window.ISSUES_DATA = {
       "notes": "Enablement backlog",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1291,6 +2382,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -1313,6 +2432,9 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1340,6 +2462,34 @@ window.ISSUES_DATA = {
       "product": "PayID",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayID",
+          "owner": "Ronita",
+          "description": "Addressing capability"
+        }
       ]
     },
     {
@@ -1362,6 +2512,9 @@ window.ISSUES_DATA = {
       "notes": "Was being incorporated in the standard payment instruction Review of payment instructions were had",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1389,6 +2542,34 @@ window.ISSUES_DATA = {
       "product": "Payment Instruction",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Payment Instruction",
+          "owner": "Bianca",
+          "description": ""
+        }
       ]
     },
     {
@@ -1411,6 +2592,9 @@ window.ISSUES_DATA = {
       "notes": "Enablement: Working with DSPs (SAP) to enable bulk payment instruction.",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1438,6 +2622,34 @@ window.ISSUES_DATA = {
       "product": "Payment Instruction",
       "journeyStages": [
         "Payment processing"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Payment Instruction",
+          "owner": "Bianca",
+          "description": ""
+        }
       ]
     },
     {
@@ -1460,6 +2672,9 @@ window.ISSUES_DATA = {
       "notes": "Work on a standard payment instruction is ongoing however is dependent on the A2A vision and roadmap",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1487,6 +2702,34 @@ window.ISSUES_DATA = {
       "product": "Payment Instruction",
       "journeyStages": [
         "Preparation and data creation"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Payment Instruction",
+          "owner": "Bianca",
+          "description": ""
+        }
       ]
     },
     {
@@ -1509,6 +2752,9 @@ window.ISSUES_DATA = {
       "notes": "Working on the March Service Variability report",
       "link1": "Payments via PayTo availability - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1536,6 +2782,34 @@ window.ISSUES_DATA = {
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayTo",
+          "owner": "Edith",
+          "description": "Payment initiation capability"
+        }
       ]
     },
     {
@@ -1558,6 +2832,9 @@ window.ISSUES_DATA = {
       "notes": "Enablement/PayTo: Working on a Super PayTo agreement proposal",
       "link1": "PayTo Limits - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1585,6 +2862,34 @@ window.ISSUES_DATA = {
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayTo",
+          "owner": "Edith",
+          "description": "Payment initiation capability"
+        }
       ]
     },
     {
@@ -1607,6 +2912,9 @@ window.ISSUES_DATA = {
       "notes": "Enablement/PayTo: Working on a Super PayTo agreement proposal",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1634,6 +2942,37 @@ window.ISSUES_DATA = {
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayTo",
+          "owner": "Edith",
+          "description": "Payment initiation capability"
+        }
       ]
     },
     {
@@ -1656,6 +2995,9 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1683,6 +3025,34 @@ window.ISSUES_DATA = {
       "product": "PayTo",
       "journeyStages": [
         "Payment processing"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayTo",
+          "owner": "Edith",
+          "description": "Payment initiation capability"
+        }
       ]
     },
     {
@@ -1705,6 +3075,9 @@ window.ISSUES_DATA = {
       "notes": "Continued work on liability and claim process",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1732,6 +3105,34 @@ window.ISSUES_DATA = {
       "product": "PayTo",
       "journeyStages": [
         "Payment processing"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayTo",
+          "owner": "Edith",
+          "description": "Payment initiation capability"
+        }
       ]
     },
     {
@@ -1754,6 +3155,9 @@ window.ISSUES_DATA = {
       "notes": "With the PayTo Super agreement, further discussions about what it means when we get to the payment",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "SP07",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1781,6 +3185,37 @@ window.ISSUES_DATA = {
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {
+        "id": "SP07",
+        "title": "Enhance fraud and scam protections"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayTo",
+          "owner": "Edith",
+          "description": "Payment initiation capability"
+        }
       ]
     },
     {
@@ -1803,6 +3238,9 @@ window.ISSUES_DATA = {
       "notes": "This is not just affecting super but other implementation e.g. Xero. Understand the processes around who is approving and how it works in practice in a business context Next Steps: Enablement can work through the thinking of the processes and recommendations",
       "link1": "PayTo approval process for businesses - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1830,6 +3268,34 @@ window.ISSUES_DATA = {
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayTo",
+          "owner": "Edith",
+          "description": "Payment initiation capability"
+        }
       ]
     },
     {
@@ -1852,6 +3318,9 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1879,6 +3348,34 @@ window.ISSUES_DATA = {
       "product": "PayTo",
       "journeyStages": [
         "Set up & Account, onboarding"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayTo",
+          "owner": "Edith",
+          "description": "Payment initiation capability"
+        }
       ]
     },
     {
@@ -1901,6 +3398,9 @@ window.ISSUES_DATA = {
       "notes": "Analysing how the PRN is being populated",
       "link1": "PRN Reconciliation - Troubleshooting - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1928,6 +3428,37 @@ window.ISSUES_DATA = {
       "product": "Reporting",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Reporting",
+          "owner": "Bianca",
+          "description": "Reporting and reconciliation"
+        }
       ]
     },
     {
@@ -1950,6 +3481,9 @@ window.ISSUES_DATA = {
       "notes": "Discussions have been had about the Osko CX",
       "link1": "NPP for super contribution refunds - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "PRN reporting and Enablers analysis and tracking.xlsx",
+      "strategicPriorityId": "SP01",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -1977,6 +3511,37 @@ window.ISSUES_DATA = {
       "product": "Reporting",
       "journeyStages": [
         "Investigation and returns (unhappy path)"
+      ],
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "Reporting",
+          "owner": "Bianca",
+          "description": "Reporting and reconciliation"
+        }
       ]
     },
     {
@@ -1990,15 +3555,18 @@ window.ISSUES_DATA = {
       "dependencies": "",
       "relatedInitiative": "",
       "productsImpacted": "PayTo",
-      "owner": "Nick",
-      "priority": "MEDIUM",
-      "horizon": "LONG",
-      "status": "ACKNOWLEDGE",
+      "owner": "Edith",
+      "priority": "HIGH",
+      "horizon": "MEDIUM",
+      "status": "WIP",
       "currentAction": "",
       "decisionNeeded": "",
       "notes": "",
       "link1": "",
       "link2": "",
+      "strategicPriorityId": "",
+      "objectiveId": "OBJ01",
+      "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -2026,6 +3594,34 @@ window.ISSUES_DATA = {
       "product": "PayTo",
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
+      ],
+      "strategicPriority": {},
+      "objective": {
+        "id": "OBJ01",
+        "title": "Critically Important",
+        "description": "Our infrastructure underpins economically significant flows in Australia"
+      },
+      "scorecard": {
+        "id": "KR01",
+        "keyResult": "Support Australia’s vision for a digital economy with NPP",
+        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
+        "target": "Threshold plus 4+ clearing houses using NPP",
+        "maximum": "Target plus 200k PayTo Super transactions"
+      },
+      "useCaseRefs": [
+        {
+          "name": "All",
+          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+          "desiredOutcome": "",
+          "status": "Amber"
+        }
+      ],
+      "capabilityRefs": [
+        {
+          "name": "PayTo",
+          "owner": "Edith",
+          "description": "Payment initiation capability"
+        }
       ]
     }
   ]
