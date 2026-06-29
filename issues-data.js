@@ -1,5 +1,5 @@
 window.ISSUES_DATA = {
-  "generatedAt": "2026-06-29 15:44",
+  "generatedAt": "2026-06-29 16:09",
   "source": "Issues Register.xlsm",
   "strategy": [
     {
@@ -212,7 +212,7 @@ window.ISSUES_DATA = {
       "notes": "As part of the account reach reporting, details of the usage of BSB was collected",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
@@ -246,7 +246,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -418,7 +421,7 @@ window.ISSUES_DATA = {
       "notes": "Analysis on possible solutions are being undertaken. Was discussed in the June PRC",
       "link1": "BSB Redirection Troubleshooting",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
@@ -452,7 +455,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Payment processing"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -706,7 +712,7 @@ window.ISSUES_DATA = {
       "notes": "Create general awareness of the impacts of cash flow management (Base deck/FAQs/Implementation Guide)",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
@@ -737,7 +743,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Preparation and data creation"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -1063,7 +1072,7 @@ window.ISSUES_DATA = {
       "notes": "Next Steps: Understanding some of the product differences when understanding the use cases",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
@@ -1094,7 +1103,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Payment processing"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -1143,7 +1155,7 @@ window.ISSUES_DATA = {
       "notes": "Enablement: Is doing analysis of what reporting is available for PayID and PayTo Next steps: Discussions with Participants",
       "link1": "PayID Reconciliation on bank statements - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
@@ -1174,7 +1186,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -1306,7 +1321,7 @@ window.ISSUES_DATA = {
       "notes": "Enablement: Working with DSPANZ, SAP, Xero on their implementation. Trying to get traction with Oracle Payroll providers will be targetted next",
       "link1": "Minimal coverage from the banks to pay to a PayID outside of an IB channel - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
@@ -1337,7 +1352,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -1386,7 +1404,7 @@ window.ISSUES_DATA = {
       "notes": "Enablement: Working with DSPs to include PayID and understand existing reporting for reconciliation Next Steps: Education of employers and understanding the impacts (FAQs)",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
@@ -1417,7 +1435,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -1549,7 +1570,7 @@ window.ISSUES_DATA = {
       "notes": "Creating the Capability Matrix and collecting the information",
       "link1": "Payments via PayID Limits - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "Member Capability Matrix _PayID only.xlsx",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
@@ -1580,7 +1601,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -1629,7 +1653,7 @@ window.ISSUES_DATA = {
       "notes": "PE raised: i.110",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
@@ -1660,7 +1684,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Payment processing"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -1709,7 +1736,7 @@ window.ISSUES_DATA = {
       "notes": "PE raised: i.150 and is currently in progress Internal discussions and analysis in progress",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
@@ -1740,7 +1767,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -1789,7 +1819,7 @@ window.ISSUES_DATA = {
       "notes": "Creating the Capability Matrix and collecting the information",
       "link1": "",
       "link2": "Member Capability Matrix _PayID only.xlsx",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
@@ -1820,7 +1850,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -1869,7 +1902,7 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "Payments to PayID availability - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
@@ -1900,7 +1933,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -1949,7 +1985,7 @@ window.ISSUES_DATA = {
       "notes": "Paper is being taken up to PRC",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
@@ -1980,7 +2016,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Preparation and data creation"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2029,7 +2068,7 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "",
@@ -2060,7 +2099,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2109,7 +2151,7 @@ window.ISSUES_DATA = {
       "notes": "Creating the Capability Matrix and collecting the information to understand existing limits",
       "link1": "",
       "link2": "Member Capability Matrix _PayID only.xlsx",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
@@ -2140,7 +2182,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2189,7 +2234,7 @@ window.ISSUES_DATA = {
       "notes": "Next Step: Understand the business processes that may be required. Do we need to look at the maintaince of banks?",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
@@ -2220,7 +2265,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Preparation and data creation"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2352,7 +2400,7 @@ window.ISSUES_DATA = {
       "notes": "Enablement backlog",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
@@ -2383,7 +2431,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2432,7 +2483,7 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-04-01",
@@ -2463,7 +2514,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2512,7 +2566,7 @@ window.ISSUES_DATA = {
       "notes": "Was being incorporated in the standard payment instruction Review of payment instructions were had",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
@@ -2543,7 +2597,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2592,7 +2649,7 @@ window.ISSUES_DATA = {
       "notes": "Enablement: Working with DSPs (SAP) to enable bulk payment instruction.",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "",
@@ -2623,7 +2680,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Payment processing"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2672,7 +2732,7 @@ window.ISSUES_DATA = {
       "notes": "Work on a standard payment instruction is ongoing however is dependent on the A2A vision and roadmap",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
@@ -2703,7 +2763,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Preparation and data creation"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2752,7 +2815,7 @@ window.ISSUES_DATA = {
       "notes": "Working on the March Service Variability report",
       "link1": "Payments via PayTo availability - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
@@ -2783,7 +2846,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2832,7 +2898,7 @@ window.ISSUES_DATA = {
       "notes": "Enablement/PayTo: Working on a Super PayTo agreement proposal",
       "link1": "PayTo Limits - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
@@ -2863,7 +2929,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -2995,7 +3064,7 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "",
@@ -3026,7 +3095,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Payment processing"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -3075,7 +3147,7 @@ window.ISSUES_DATA = {
       "notes": "Continued work on liability and claim process",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "",
@@ -3106,7 +3178,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Payment processing"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -3238,7 +3313,7 @@ window.ISSUES_DATA = {
       "notes": "This is not just affecting super but other implementation e.g. Xero. Understand the processes around who is approving and how it works in practice in a business context Next Steps: Enablement can work through the thinking of the processes and recommendations",
       "link1": "PayTo approval process for businesses - Move to NPP (MTN) Program Squad - Confluence",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-22",
@@ -3269,7 +3344,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -3318,7 +3396,7 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "",
@@ -3349,7 +3427,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Set up & Account, onboarding"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
@@ -3564,7 +3645,7 @@ window.ISSUES_DATA = {
       "notes": "",
       "link1": "",
       "link2": "",
-      "strategicPriorityId": "",
+      "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
       "scorecardId": "KR01",
       "lastUpdated": "2026-06-26",
@@ -3595,7 +3676,10 @@ window.ISSUES_DATA = {
       "journeyStages": [
         "Receiving, validating, reconciling, and reporting"
       ],
-      "strategicPriority": {},
+      "strategicPriority": {
+        "id": "SP01",
+        "title": "Continue the Move to NPP and deliver economic transformation opportunities"
+      },
       "objective": {
         "id": "OBJ01",
         "title": "Critically Important",
