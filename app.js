@@ -446,10 +446,10 @@ function renderReadinessCard(item) {
       </div>
       <p class="readiness-note">${escapeHtml(item.statusNote)}</p>
       <dl class="readiness-metrics">
-        <div><dt>Linked records</dt><dd>${item.issueCount}</dd></div>
+        <div><dt>Records</dt><dd>${item.issueCount}</dd></div>
         <div><dt>High risk</dt><dd>${item.highCount}</dd></div>
         <div><dt>Decisions</dt><dd>${item.decisionCount}</dd></div>
-        <div><dt>Dependencies</dt><dd>${item.dependencyCount}</dd></div>
+        <div><dt>Deps</dt><dd>${item.dependencyCount}</dd></div>
       </dl>
       <p><span>Top capability</span>${escapeHtml(item.topCapability)}</p>
     </article>
