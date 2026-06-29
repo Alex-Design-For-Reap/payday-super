@@ -395,29 +395,44 @@ function renderStrategicSummaryStrip(summary) {
 }
 
 function aggregateUseCaseReadiness(issues) {
-  return strategicUseCases.map(useCase => {
-    const linkedIssues = issues.filter(issue => getIssueUseCases(issue).includes(useCase));
-    const highIssues = linkedIssues.filter(issue => issue.priority === "HIGH");
-    const decisions = linkedIssues.filter(issue => issue.decisionNeeded);
-    const dependencies = linkedIssues.filter(issue => issue.dependencies);
-    const blocked = linkedIssues.filter(issue => isBlocked(issue));
-    const activeWork = linkedIssues.filter(issue => issue.status === "WIP");
-    const externalDependencies = linkedIssues.filter(isExternalDependency);
-    const status = deriveReadinessStatus(useCase, linkedIssues, highIssues, externalDependencies, blocked, activeWork);
-    const statusNote = deriveReadinessNote(useCase, linkedIssues, status);
-    const topCapability = topValue(linkedIssues.flatMap(issue => getIssueProducts(issue))) || "Not captured";
+  return strategicUseCases
+    .map(useCase => {
+      const linkedIssues = issues.filter(issue => getIssueUseCases(issue).includes(useCase));
+      const highIssues = linkedIssues.filter(issue => issue.priority === "HIGH");
+      const decisions = linkedIssues.filter(issue => issue.decisionNeeded);
+      const dependencies = linkedIssues.filter(issue => issue.dependencies);
+      const blocked = linkedIssues.filter(issue => isBlocked(issue));
+      const activeWork = linkedIssues.filter(issue => issue.status === "WIP");
+      const externalDependencies = linkedIssues.filter(isExternalDependency);
+      const status = deriveReadinessStatus(useCase, linkedIssues, highIssues, externalDependencies, blocked, activeWork);
+      const statusNote = deriveReadinessNote(useCase, linkedIssues, status);
+      const topCapability = topValue(linkedIssues.flatMap(issue => getIssueProducts(issue))) || "Not captured";
 
-    return {
-      useCase,
-      status,
-      statusNote,
-      issueCount: linkedIssues.length,
-      highCount: highIssues.length,
-      decisionCount: decisions.length,
-      dependencyCount: dependencies.length,
-      topCapability,
-    };
-  });
+      return {
+        useCase,
+        status,
+        statusNote,
+        issueCount: linkedIssues.length,
+        highCount: highIssues.length,
+        decisionCount: decisions.length,
+        dependencyCount: dependencies.length,
+        topCapability,
+      };
+    })
+    .sort(readinessSort);
+}
+
+function readinessSort(a, b) {
+  const statusOrder = {
+    "Cross-cutting": 1,
+    Red: 2,
+    Amber: 3,
+    Green: 4,
+    Discovery: 5,
+  };
+  const statusDelta = (statusOrder[a.status] || 9) - (statusOrder[b.status] || 9);
+  if (statusDelta) return statusDelta;
+  return b.issueCount - a.issueCount || strategicUseCases.indexOf(a.useCase) - strategicUseCases.indexOf(b.useCase);
 }
 
 function deriveReadinessStatus(useCase, issues, highIssues, externalDependencies, blocked, activeWork) {
