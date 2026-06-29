@@ -12,7 +12,7 @@ const strategicUseCases = [
   "Super",
   "Payroll",
   "Tax",
-  "Electronic conveyancing (eConveyancing)",
+  "eConveyancing",
   "eInvoicing",
   "Securities",
   "Government",
@@ -35,11 +35,11 @@ const views = [
   {
     id: "executive",
     icon: "◇",
-    title: "Strategic Use Case Readiness",
+    title: "Business Payments Strategic Enablement",
     nav: "Strategic Readiness",
     audience: "Exec / Business Payments",
     description:
-      "An outcome-first leadership view of readiness, decisions, dependencies, and capability friction across Business Payments strategic use cases.",
+      "Readiness, dependencies and decisions across strategic Business Payments use cases.",
     filter: () => true,
   },
   {
@@ -154,6 +154,7 @@ const els = {
   registerCount: document.querySelector("#registerCount"),
   issueCards: document.querySelector("#issueCards"),
   strategicExecutiveSection: document.querySelector("#strategicExecutiveSection"),
+  strategicSummaryStrip: document.querySelector("#strategicSummaryStrip"),
   readinessSummary: document.querySelector("#readinessSummary"),
   readinessGrid: document.querySelector("#readinessGrid"),
   executiveAttentionList: document.querySelector("#executiveAttentionList"),
@@ -270,7 +271,10 @@ function renderHeader(issues) {
   els.viewTitle.textContent = view.title;
   els.viewDescription.textContent = view.description;
   els.audienceLabel.textContent = `Audience: ${view.audience}`;
-  els.metricsLabel.textContent = `Metrics: ${issues.length} visible issue${issues.length === 1 ? "" : "s"} after filters`;
+  els.metricsLabel.textContent =
+    state.view === "executive"
+      ? "Focus: Use case readiness, capability friction and executive decisions."
+      : `Metrics: ${issues.length} visible issue${issues.length === 1 ? "" : "s"} after filters`;
   els.lastUpdated.textContent = `Last updated: ${formatDate(latest)}`;
   els.sourceMeta.textContent = `${data.source} • ${data.issues.length} issues • refreshed ${data.generatedAt}`;
   els.registerCount.textContent = `${issues.length} issue${issues.length === 1 ? "" : "s"} shown`;
@@ -327,18 +331,28 @@ function renderKpis(issues) {
 function renderStrategicExecutive(issues) {
   if (state.view !== "executive") {
     els.readinessGrid.innerHTML = "";
+    els.strategicSummaryStrip.innerHTML = "";
     return;
   }
 
   const readiness = aggregateUseCaseReadiness(issues);
   const attentionIssues = sortExecutiveAttention(issues).slice(0, 8);
   const decisionIssues = sortExecutiveAttention(issues.filter(issue => issue.decisionNeeded)).slice(0, 8);
-  const bottlenecks = aggregateCapabilityBottlenecks(issues).slice(0, 8);
-  const externalDependencies = aggregateExternalDependencies(issues).slice(0, 8);
+  const allBottlenecks = aggregateCapabilityBottlenecks(issues);
+  const allExternalDependencies = aggregateExternalDependencies(issues);
+  const bottlenecks = allBottlenecks.slice(0, 8);
+  const externalDependencies = allExternalDependencies.slice(0, 8);
   const governanceWatchouts = aggregateGovernanceWatchouts(issues);
   const atRiskCount = readiness.filter(item => ["Red", "Amber"].includes(item.status)).length;
 
-  els.readinessSummary.textContent = `${atRiskCount} use case${atRiskCount === 1 ? "" : "s"} need attention`;
+  els.strategicSummaryStrip.innerHTML = renderStrategicSummaryStrip({
+    attention: readiness.filter(item => item.useCase !== "All" && ["Red", "Amber"].includes(item.status)).length,
+    decisions: issues.filter(issue => issue.decisionNeeded).length,
+    externalDependencies: issues.filter(isExternalDependency).length,
+    bottlenecks: allBottlenecks.length,
+    governance: governanceWatchouts.reduce((total, item) => total + item.issues.length, 0),
+  });
+  els.readinessSummary.textContent = `${atRiskCount} readiness area${atRiskCount === 1 ? "" : "s"} need attention`;
   els.readinessGrid.innerHTML = readiness.map(renderReadinessCard).join("");
   els.executiveAttentionList.innerHTML = renderExecutiveIssueList(
     attentionIssues,
@@ -359,6 +373,27 @@ function renderStrategicExecutive(issues) {
   els.governanceWatchoutList.innerHTML = renderGovernanceList(governanceWatchouts);
 }
 
+function renderStrategicSummaryStrip(summary) {
+  const items = [
+    ["Use cases needing attention", summary.attention],
+    ["Executive decisions required", summary.decisions],
+    ["External dependencies", summary.externalDependencies],
+    ["Capability bottlenecks", summary.bottlenecks],
+    ["Governance watchouts", summary.governance],
+  ];
+
+  return items
+    .map(
+      ([label, value]) => `
+        <article class="strategic-summary-item">
+          <strong>${value}</strong>
+          <span>${escapeHtml(label)}</span>
+        </article>
+      `,
+    )
+    .join("");
+}
+
 function aggregateUseCaseReadiness(issues) {
   return strategicUseCases.map(useCase => {
     const linkedIssues = issues.filter(issue => getIssueUseCases(issue).includes(useCase));
@@ -366,12 +401,16 @@ function aggregateUseCaseReadiness(issues) {
     const decisions = linkedIssues.filter(issue => issue.decisionNeeded);
     const dependencies = linkedIssues.filter(issue => issue.dependencies);
     const blocked = linkedIssues.filter(issue => isBlocked(issue));
-    const status = deriveReadinessStatus(useCase, linkedIssues, highIssues, decisions, dependencies, blocked);
+    const activeWork = linkedIssues.filter(issue => issue.status === "WIP");
+    const externalDependencies = linkedIssues.filter(isExternalDependency);
+    const status = deriveReadinessStatus(useCase, linkedIssues, highIssues, externalDependencies, blocked, activeWork);
+    const statusNote = deriveReadinessNote(useCase, linkedIssues, status);
     const topCapability = topValue(linkedIssues.flatMap(issue => getIssueProducts(issue))) || "Not captured";
 
     return {
       useCase,
       status,
+      statusNote,
       issueCount: linkedIssues.length,
       highCount: highIssues.length,
       decisionCount: decisions.length,
@@ -381,25 +420,34 @@ function aggregateUseCaseReadiness(issues) {
   });
 }
 
-function deriveReadinessStatus(useCase, issues, highIssues, decisions, dependencies, blocked) {
+function deriveReadinessStatus(useCase, issues, highIssues, externalDependencies, blocked, activeWork) {
   if (useCase === "All") return "Cross-cutting";
-  if (!issues.length) return "Not Started";
-  if (blocked.length || (highIssues.length && decisions.length)) return "Red";
-  if (highIssues.length || dependencies.length || decisions.length) return "Amber";
-  if (issues.every(issue => ["NOT STARTED", "BACKLOG", "ACKNOWLEDGE"].includes(issue.status))) return "Discovery";
+  if (!issues.length) return "Discovery";
+  if (blocked.length || highIssues.some(issue => isBlocked(issue))) return "Red";
+  if (highIssues.length || externalDependencies.length) return "Amber";
+  if (activeWork.length) return "Green";
   return "Green";
+}
+
+function deriveReadinessNote(useCase, issues, status) {
+  if (useCase === "All") return "Cross-cutting capability friction";
+  if (!issues.length) return "Not yet assessed";
+  if (status === "Red") return "Blocked or high-risk blocker";
+  if (status === "Amber") return "High risk or external dependency";
+  return "Active work with no high risks";
 }
 
 function renderReadinessCard(item) {
   return `
-    <article class="readiness-card">
+    <article class="readiness-card ${item.useCase === "All" ? "readiness-card-cross" : ""}">
       <div class="readiness-card-head">
         <h4>${escapeHtml(item.useCase)}</h4>
         <span class="${readinessClass(item.status)}">${escapeHtml(item.status)}</span>
       </div>
+      <p class="readiness-note">${escapeHtml(item.statusNote)}</p>
       <dl class="readiness-metrics">
-        <div><dt>Issues</dt><dd>${item.issueCount}</dd></div>
-        <div><dt>High</dt><dd>${item.highCount}</dd></div>
+        <div><dt>Linked records</dt><dd>${item.issueCount}</dd></div>
+        <div><dt>High risk</dt><dd>${item.highCount}</dd></div>
         <div><dt>Decisions</dt><dd>${item.decisionCount}</dd></div>
         <div><dt>Dependencies</dt><dd>${item.dependencyCount}</dd></div>
       </dl>
@@ -492,7 +540,7 @@ function renderBottleneckList(items, emptyMessage) {
       item => `
         <div class="bottleneck-row">
           <strong>${escapeHtml(item.label)}</strong>
-          <span>${item.issueCount} issues</span>
+          <span>${item.issueCount} records</span>
           <span>${item.highCount} high</span>
           <span>${item.dependencyCount} deps</span>
           <span>${item.decisionCount} decisions</span>
@@ -528,7 +576,7 @@ function renderDependencyGroupList(items, emptyMessage) {
         <div class="dependency-group">
           <div class="bottleneck-row">
             <strong>${escapeHtml(item.label)}</strong>
-            <span>${item.issueCount} issues</span>
+            <span>${item.issueCount} records</span>
             <span>${item.highCount} high</span>
             <span>${item.decisionCount} decisions</span>
           </div>
@@ -1159,9 +1207,9 @@ function normaliseUseCaseName(value) {
     "payday super": "Super",
     payroll: "Payroll",
     tax: "Tax",
-    econveyancing: "Electronic conveyancing (eConveyancing)",
-    "electronic conveyancing": "Electronic conveyancing (eConveyancing)",
-    "electronic conveyancing econveyancing": "Electronic conveyancing (eConveyancing)",
+    econveyancing: "eConveyancing",
+    "electronic conveyancing": "eConveyancing",
+    "electronic conveyancing econveyancing": "eConveyancing",
     einvoicing: "eInvoicing",
     "e invoicing": "eInvoicing",
     securities: "Securities",
