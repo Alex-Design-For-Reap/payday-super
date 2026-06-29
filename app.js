@@ -555,7 +555,7 @@ function renderReadinessCard(item) {
       </div>
       <p class="readiness-description">${escapeHtml(summarise(item.description || item.statusNote, 175))}</p>
       <dl class="readiness-metrics">
-        <div><dt>Records</dt><dd>${item.issueCount}</dd></div>
+        <div><dt>Linked items</dt><dd>${item.issueCount}</dd></div>
         <div><dt>High risk</dt><dd>${item.highCount}</dd></div>
         <div><dt>Decisions</dt><dd>${item.decisionCount}</dd></div>
         <div><dt>Deps</dt><dd>${item.dependencyCount}</dd></div>
@@ -1239,6 +1239,16 @@ function renderIssueModal(issue) {
     </section>
 
     <section class="detail-section">
+      <h4>Strategy Linkage</h4>
+      <div class="detail-grid">
+        ${renderField("Strategic Priority", issue.strategicPriority?.title || "Not linked yet")}
+        ${renderField("Objective", referenceLabel(issue.objective, "title"))}
+        ${renderField("Scorecard / Key Result", referenceLabel(issue.scorecard, "keyResult"))}
+        ${renderField("Threshold", issue.scorecard?.threshold)}
+      </div>
+    </section>
+
+    <section class="detail-section">
       <h4>Ownership And Tracking</h4>
       <div class="detail-grid">
         ${renderField("Owner", issue.owner)}
@@ -1259,6 +1269,11 @@ function renderIssueModal(issue) {
       ${renderLongField("Comments / Notes", issue.notes)}
     </section>
   `;
+}
+
+function referenceLabel(reference, field) {
+  if (!reference || !reference[field]) return "";
+  return reference.id ? `${reference.id}: ${reference[field]}` : reference[field];
 }
 
 function renderField(label, value) {
