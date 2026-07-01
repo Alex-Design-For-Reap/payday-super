@@ -1,5 +1,5 @@
 window.ISSUES_DATA = {
-  "generatedAt": "2026-07-02 09:49",
+  "generatedAt": "2026-07-02 09:55",
   "source": "Issues Register.xlsm",
   "strategy": [
     {
@@ -865,7 +865,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-10",
-      "useCasesImpacted": "All; Super; Payroll; Government; Business Payments",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments",
       "category": "Exceptions, Returns & Error Handling",
       "journeyStage": "Investigation and returns (unhappy path)",
       "title": "Lack of automated payment return solutions by Participants",
@@ -901,13 +901,12 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All",
         "Super",
         "Payroll",
         "Government",
         "Business Payments"
       ],
-      "useCase": "All; Super; Payroll; Government; Business Payments",
+      "useCase": "Super; Payroll; Government; Business Payments",
       "categories": [
         "Exceptions, Returns & Error Handling"
       ],
@@ -929,12 +928,6 @@ window.ISSUES_DATA = {
       },
       "scorecard": {},
       "useCaseRefs": [
-        {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
-          "status": "Amber"
-        },
         {
           "name": "Super",
           "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
@@ -1268,7 +1261,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-14",
-      "useCasesImpacted": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Reconciliation, Reporting & Traceability",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "NPP data elements within business reporting",
@@ -1304,7 +1297,6 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All",
         "Super",
         "Payroll",
         "Government",
@@ -1314,7 +1306,7 @@ window.ISSUES_DATA = {
         "eConveyancing",
         "Securities"
       ],
-      "useCase": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Reconciliation, Reporting & Traceability"
       ],
@@ -1342,12 +1334,6 @@ window.ISSUES_DATA = {
         "maximum": "Target plus 200k PayTo Super transactions"
       },
       "useCaseRefs": [
-        {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
-          "status": "Amber"
-        },
         {
           "name": "Super",
           "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
@@ -1407,7 +1393,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-15",
-      "useCasesImpacted": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Payment instruction and Operation",
       "journeyStage": "Preparation and data creation",
       "title": "PayID not available in the payment instruction",
@@ -1443,7 +1429,6 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All",
         "Super",
         "Payroll",
         "Government",
@@ -1453,7 +1438,7 @@ window.ISSUES_DATA = {
         "eConveyancing",
         "Securities"
       ],
-      "useCase": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Payment instruction and Operation"
       ],
@@ -1481,12 +1466,6 @@ window.ISSUES_DATA = {
         "maximum": "Target plus 200k PayTo Super transactions"
       },
       "useCaseRefs": [
-        {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
-          "status": "Amber"
-        },
         {
           "name": "Super",
           "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
@@ -1546,7 +1525,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-16",
-      "useCasesImpacted": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Payment instruction and Operation",
       "journeyStage": "Set up & Account, onboarding",
       "title": "DSP adoption of PayID",
@@ -1582,7 +1561,6 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All",
         "Super",
         "Payroll",
         "Government",
@@ -1592,7 +1570,7 @@ window.ISSUES_DATA = {
         "eConveyancing",
         "Securities"
       ],
-      "useCase": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Payment instruction and Operation"
       ],
@@ -1620,12 +1598,6 @@ window.ISSUES_DATA = {
         "maximum": "Target plus 200k PayTo Super transactions"
       },
       "useCaseRefs": [
-        {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
-          "status": "Amber"
-        },
         {
           "name": "Super",
           "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
@@ -1768,7 +1740,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-18",
-      "useCasesImpacted": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Lack of understanding the process of registration of ABN PayIDs",
@@ -1804,7 +1776,6 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All",
         "Super",
         "Payroll",
         "Government",
@@ -1814,7 +1785,7 @@ window.ISSUES_DATA = {
         "eConveyancing",
         "Securities"
       ],
-      "useCase": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -1842,12 +1813,6 @@ window.ISSUES_DATA = {
         "maximum": "Target plus 200k PayTo Super transactions"
       },
       "useCaseRefs": [
-        {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
-          "status": "Amber"
-        },
         {
           "name": "Super",
           "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
