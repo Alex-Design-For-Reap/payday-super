@@ -1,5 +1,5 @@
 window.ISSUES_DATA = {
-  "generatedAt": "2026-07-02 09:36",
+  "generatedAt": "2026-07-02 09:49",
   "source": "Issues Register.xlsm",
   "strategy": [
     {
@@ -601,7 +601,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-05",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Data Quality & Validation",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Opportunity: More information for COP calls for DSPs",
@@ -637,9 +637,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Data Quality & Validation"
       ],
@@ -668,10 +675,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -684,7 +733,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-08",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Preparation and data creation",
       "title": "Impacts on cashflow due to sequencing of payments",
@@ -720,9 +769,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -751,10 +807,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -1038,7 +1136,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-13",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Payment processing",
       "title": "Variability in bank offerings",
@@ -1074,9 +1172,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -1105,10 +1210,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -1121,7 +1268,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-14",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Reconciliation, Reporting & Traceability",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "NPP data elements within business reporting",
@@ -1157,9 +1304,17 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "All",
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Reconciliation, Reporting & Traceability"
       ],
@@ -1192,6 +1347,54 @@ window.ISSUES_DATA = {
           "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
           "desiredOutcome": "",
           "status": "Amber"
+        },
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -1204,7 +1407,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-15",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Payment instruction and Operation",
       "journeyStage": "Preparation and data creation",
       "title": "PayID not available in the payment instruction",
@@ -1240,9 +1443,17 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "All",
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Payment instruction and Operation"
       ],
@@ -1275,6 +1486,54 @@ window.ISSUES_DATA = {
           "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
           "desiredOutcome": "",
           "status": "Amber"
+        },
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -1287,7 +1546,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-16",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Payment instruction and Operation",
       "journeyStage": "Set up & Account, onboarding",
       "title": "DSP adoption of PayID",
@@ -1323,9 +1582,17 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "All",
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Payment instruction and Operation"
       ],
@@ -1358,6 +1625,54 @@ window.ISSUES_DATA = {
           "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
           "desiredOutcome": "",
           "status": "Amber"
+        },
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -1453,7 +1768,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-18",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Lack of understanding the process of registration of ABN PayIDs",
@@ -1489,9 +1804,17 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "All",
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "All; Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -1524,6 +1847,54 @@ window.ISSUES_DATA = {
           "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
           "desiredOutcome": "",
           "status": "Amber"
+        },
+        {
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
+          "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -1536,7 +1907,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-19",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Understanding the PayID limits that have been implemented by banks",
@@ -1572,9 +1943,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -1603,10 +1981,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -1619,7 +2039,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-20",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Addressing Model (PayID & Account Structure)",
       "journeyStage": "Payment processing",
       "title": "Bulk PayID Resolution",
@@ -1655,9 +2075,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Addressing Model (PayID & Account Structure)"
       ],
@@ -1686,10 +2113,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -1785,7 +2254,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-23",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Not all members support all types of PayID",
@@ -1821,9 +2290,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -1852,10 +2328,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -1868,7 +2386,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-24",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Set up & Account, onboarding",
       "title": "PayID is NOT a mandatory product to be implemented",
@@ -1904,9 +2422,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -1935,10 +2460,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -1951,7 +2518,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-25",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Data Quality & Validation",
       "journeyStage": "Preparation and data creation",
       "title": "Requirement for upfront validation of PayID by DSP",
@@ -1987,9 +2554,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Data Quality & Validation"
       ],
@@ -2018,10 +2592,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -2034,7 +2650,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-26",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Addressing Model (PayID & Account Structure)",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Capacity and performance implication on the Addressing Service due to increasing PayID usage",
@@ -2070,9 +2686,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Addressing Model (PayID & Account Structure)"
       ],
@@ -2101,10 +2724,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -2117,7 +2782,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-27",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Payment instruction and Operation",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Limits on PayIDs payments within a bulk payment instruction.",
@@ -2153,9 +2818,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Payment instruction and Operation"
       ],
@@ -2184,10 +2856,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -2200,7 +2914,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-28",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Addressing Model (PayID & Account Structure)",
       "journeyStage": "Preparation and data creation",
       "title": "Consistent ongoing maintenance of PayID",
@@ -2236,9 +2950,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Addressing Model (PayID & Account Structure)"
       ],
@@ -2267,10 +2988,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -2532,7 +3295,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-33",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Payment instruction and Operation",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Variability on NPP data elements included within the payment instruction",
@@ -2568,9 +3331,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Payment instruction and Operation"
       ],
@@ -2599,10 +3369,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -2615,7 +3427,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-34",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Payment instruction and Operation",
       "journeyStage": "Payment processing",
       "title": "A bulk payment instruction is not available across all Participants",
@@ -2651,9 +3463,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Payment instruction and Operation"
       ],
@@ -2682,10 +3501,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -2698,7 +3559,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-35",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Standardisation & Interoperability",
       "journeyStage": "Preparation and data creation",
       "title": "Lack of standardised integration and customer experience.",
@@ -2734,9 +3595,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Standardisation & Interoperability"
       ],
@@ -2765,10 +3633,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -2781,7 +3691,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-37",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Set up & Account, onboarding",
       "title": "PayTo service variability",
@@ -2817,9 +3727,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -2848,10 +3765,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -2864,7 +3823,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-38",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Payment Setup & Configuration",
       "journeyStage": "Set up & Account, onboarding",
       "title": "PayTo limits are too low for use cases",
@@ -2900,9 +3859,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Payment Setup & Configuration"
       ],
@@ -2931,10 +3897,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -2947,7 +3955,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-39",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Payment Setup & Configuration",
       "journeyStage": "Set up & Account, onboarding",
       "title": "The population of ultimate creditor in the PayTo agreement and subsequent payment",
@@ -2983,9 +3991,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Payment Setup & Configuration"
       ],
@@ -3014,10 +4029,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -3030,7 +4087,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-40",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Payment processing",
       "title": "Education of the implications of fast fail to businesses",
@@ -3066,9 +4123,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -3097,10 +4161,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -3113,7 +4219,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-41",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Payment processing",
       "title": "PayTo liability impact and implications to the ecosystem",
@@ -3149,9 +4255,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -3180,10 +4293,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -3196,7 +4351,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-42",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Fraud hold or rejection for PayTo transactions",
@@ -3232,9 +4387,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -3263,10 +4425,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -3279,7 +4483,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-43",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Payment Setup & Configuration",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Lack of consistency and ease to approve PayTo agreements especially for businesses",
@@ -3315,9 +4519,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Payment Setup & Configuration"
       ],
@@ -3346,10 +4557,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -3362,7 +4615,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-44",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Standardisation & Interoperability",
       "journeyStage": "Set up & Account, onboarding",
       "title": "Lack of standardised PayTo APIs hinders adoption by Digital Service Providers",
@@ -3398,9 +4651,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Standardisation & Interoperability"
       ],
@@ -3429,10 +4689,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
@@ -3611,7 +4913,7 @@ window.ISSUES_DATA = {
     },
     {
       "id": "ID-48",
-      "useCasesImpacted": "All",
+      "useCasesImpacted": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "category": "Ecosystem Readiness & External Constraints",
       "journeyStage": "Receiving, validating, reconciling, and reporting",
       "title": "Lack of business account reach for PayTo",
@@ -3647,9 +4949,16 @@ window.ISSUES_DATA = {
       "reviewDate": "",
       "isExecSummary": true,
       "useCases": [
-        "All"
+        "Super",
+        "Payroll",
+        "Government",
+        "Business Payments",
+        "Tax",
+        "eInvoicing",
+        "eConveyancing",
+        "Securities"
       ],
-      "useCase": "All",
+      "useCase": "Super; Payroll; Government; Business Payments; Tax; eInvoicing; eConveyancing; Securities",
       "categories": [
         "Ecosystem Readiness & External Constraints"
       ],
@@ -3678,10 +4987,52 @@ window.ISSUES_DATA = {
       },
       "useCaseRefs": [
         {
-          "name": "All",
-          "description": "Cross-cutting initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
-          "desiredOutcome": "",
+          "name": "Super",
+          "description": "Enable the superannuation ecosystem to adopt NPP and related capabilities, supporting Payday Super legislation, improved payment processing, reconciliation, and industry readiness.",
+          "desiredOutcome": "Employers, clearing houses and super funds can process super contributions using NPP with end-to-end reconciliation.",
           "status": "Amber"
+        },
+        {
+          "name": "Payroll",
+          "description": "Enable payroll providers, employers and financial institutions to process payroll payments using modern payment capabilities that improve speed, efficiency and customer experience.",
+          "desiredOutcome": "Payroll payments are processed using modern payment capabilities with improved speed and reliability.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Government",
+          "description": "Enable government agencies to send and receive payments using modern payment capabilities, improving service delivery, speed, reconciliation and citizen experience.",
+          "desiredOutcome": "Government payment services deliver faster, more transparent payment experiences.",
+          "status": "Discovery"
+        },
+        {
+          "name": "Business Payments",
+          "description": "Enable businesses to adopt modern payment capabilities across domestic payment scenarios, improving operational efficiency, automation, reconciliation and customer experience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Tax",
+          "description": "Enable tax-related payments and refunds to leverage modern payment capabilities, supporting faster processing, improved reconciliation and enhanced payment certainty.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eInvoicing",
+          "description": "Enable payment experiences that complement electronic invoicing by supporting straight-through processing, automation and improved business payment workflows.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "eConveyancing",
+          "description": "Enable property settlement and related payment processes through modern payment capabilities that improve settlement efficiency, certainty and customer outcomes.",
+          "desiredOutcome": "",
+          "status": "Discovery"
+        },
+        {
+          "name": "Securities",
+          "description": "Enable securities-related payment flows using modern payment capabilities to improve settlement efficiency, reconciliation and operational resilience.",
+          "desiredOutcome": "",
+          "status": "Discovery"
         }
       ],
       "capabilityRefs": [
