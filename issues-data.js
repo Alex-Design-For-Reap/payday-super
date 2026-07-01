@@ -1,5 +1,5 @@
 window.ISSUES_DATA = {
-  "generatedAt": "2026-06-29 16:09",
+  "generatedAt": "2026-07-02 09:36",
   "source": "Issues Register.xlsm",
   "strategy": [
     {
@@ -75,6 +75,20 @@ window.ISSUES_DATA = {
       "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
       "target": "Threshold plus 4+ clearing houses using NPP",
       "maximum": "Target plus 200k PayTo Super transactions"
+    },
+    {
+      "id": "KR02",
+      "keyResult": "Government KR",
+      "threshold": "Enable Services Australia",
+      "target": "NSW",
+      "maximum": "500M transactions"
+    },
+    {
+      "id": "KR03",
+      "keyResult": "Payroll KR",
+      "threshold": "DSPs enabled",
+      "target": "30% payroll systems",
+      "maximum": "120M transactions"
     }
   ],
   "useCases": [
@@ -214,7 +228,7 @@ window.ISSUES_DATA = {
       "link2": "",
       "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
-      "scorecardId": "KR01",
+      "scorecardId": "KR01; KR02;KR03",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -255,13 +269,7 @@ window.ISSUES_DATA = {
         "title": "Critically Important",
         "description": "Our infrastructure underpins economically significant flows in Australia"
       },
-      "scorecard": {
-        "id": "KR01",
-        "keyResult": "Support Australia’s vision for a digital economy with NPP",
-        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
-        "target": "Threshold plus 4+ clearing houses using NPP",
-        "maximum": "Target plus 200k PayTo Super transactions"
-      },
+      "scorecard": {},
       "useCaseRefs": [
         {
           "name": "Super",
@@ -318,7 +326,7 @@ window.ISSUES_DATA = {
       "link2": "",
       "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
-      "scorecardId": "KR01",
+      "scorecardId": "KR01; KR02;KR03",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -360,13 +368,7 @@ window.ISSUES_DATA = {
         "title": "Critically Important",
         "description": "Our infrastructure underpins economically significant flows in Australia"
       },
-      "scorecard": {
-        "id": "KR01",
-        "keyResult": "Support Australia’s vision for a digital economy with NPP",
-        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
-        "target": "Threshold plus 4+ clearing houses using NPP",
-        "maximum": "Target plus 200k PayTo Super transactions"
-      },
+      "scorecard": {},
       "useCaseRefs": [
         {
           "name": "Super",
@@ -423,7 +425,7 @@ window.ISSUES_DATA = {
       "link2": "",
       "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
-      "scorecardId": "KR01",
+      "scorecardId": "KR01; KR02;KR03",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -464,13 +466,7 @@ window.ISSUES_DATA = {
         "title": "Critically Important",
         "description": "Our infrastructure underpins economically significant flows in Australia"
       },
-      "scorecard": {
-        "id": "KR01",
-        "keyResult": "Support Australia’s vision for a digital economy with NPP",
-        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
-        "target": "Threshold plus 4+ clearing houses using NPP",
-        "maximum": "Target plus 200k PayTo Super transactions"
-      },
+      "scorecard": {},
       "useCaseRefs": [
         {
           "name": "Super",
@@ -527,7 +523,7 @@ window.ISSUES_DATA = {
       "link2": "",
       "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
-      "scorecardId": "KR01",
+      "scorecardId": "KR01; KR02;KR03",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -568,13 +564,7 @@ window.ISSUES_DATA = {
         "title": "Critically Important",
         "description": "Our infrastructure underpins economically significant flows in Australia"
       },
-      "scorecard": {
-        "id": "KR01",
-        "keyResult": "Support Australia’s vision for a digital economy with NPP",
-        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
-        "target": "Threshold plus 4+ clearing houses using NPP",
-        "maximum": "Target plus 200k PayTo Super transactions"
-      },
+      "scorecard": {},
       "useCaseRefs": [
         {
           "name": "Super",
@@ -797,7 +787,7 @@ window.ISSUES_DATA = {
       "link2": "",
       "strategicPriorityId": "SP01",
       "objectiveId": "OBJ01",
-      "scorecardId": "KR01",
+      "scorecardId": "KR01; KR02;KR03",
       "lastUpdated": "2026-06-22",
       "execSummaryTag": "Yes",
       "strategicObjective": "",
@@ -839,13 +829,7 @@ window.ISSUES_DATA = {
         "title": "Critically Important",
         "description": "Our infrastructure underpins economically significant flows in Australia"
       },
-      "scorecard": {
-        "id": "KR01",
-        "keyResult": "Support Australia’s vision for a digital economy with NPP",
-        "threshold": "Super enabled: all funds accepting NPP; PRN passed through",
-        "target": "Threshold plus 4+ clearing houses using NPP",
-        "maximum": "Target plus 200k PayTo Super transactions"
-      },
+      "scorecard": {},
       "useCaseRefs": [
         {
           "name": "All",
