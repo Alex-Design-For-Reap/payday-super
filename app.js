@@ -27,7 +27,6 @@ const fallbackStrategicUseCases = [
   "Government",
   "Business Payments",
   "MDDR",
-  "All",
 ];
 
 const externalDependencyTypes = [
@@ -511,7 +510,8 @@ function renderStrategicSummaryStrip(summary) {
 
 function aggregateUseCaseReadiness(issues) {
   const useCaseNames = strategicUseCaseNames();
-  return useCaseNames
+  const crossCuttingIssues = issues.filter(issue => useCasesForCrossCutting(issue).length > 1);
+  const readiness = useCaseNames
     .map(useCase => {
       const linkedIssues = issues.filter(issue => getIssueUseCases(issue).includes(useCase));
       const highIssues = linkedIssues.filter(issue => issue.priority === "HIGH");
@@ -529,7 +529,7 @@ function aggregateUseCaseReadiness(issues) {
 
       return {
         useCase,
-        displayName: useCase === "All" ? "Cross-cutting" : useCase,
+        displayName: useCase,
         description: reference?.description || reference?.desiredOutcome || statusNote,
         status,
         statusNote,
@@ -541,6 +541,8 @@ function aggregateUseCaseReadiness(issues) {
       };
     })
     .sort((a, b) => readinessSort(a, b, useCaseNames));
+
+  return [crossCuttingReadiness(crossCuttingIssues), ...readiness];
 }
 
 function readinessSort(a, b, useCaseNames = strategicUseCaseNames()) {
@@ -556,8 +558,26 @@ function readinessSort(a, b, useCaseNames = strategicUseCaseNames()) {
   return b.issueCount - a.issueCount || useCaseNames.indexOf(a.useCase) - useCaseNames.indexOf(b.useCase);
 }
 
+function crossCuttingReadiness(issues) {
+  const highIssues = issues.filter(issue => issue.priority === "HIGH");
+  const decisions = issues.filter(issue => issue.decisionNeeded);
+  const dependencies = issues.filter(issue => issue.dependencies);
+
+  return {
+    useCase: "Cross-cutting",
+    displayName: "Cross-cutting",
+    description: "Initiatives, capabilities or issues that apply across multiple strategic use cases rather than a single business scenario.",
+    status: "Cross-cutting",
+    statusNote: "Cross-cutting capability friction",
+    issueCount: issues.length,
+    highCount: highIssues.length,
+    decisionCount: decisions.length,
+    dependencyCount: dependencies.length,
+    topCapabilities: topValues(issues.flatMap(issue => getIssueCapabilityNames(issue)), 3),
+  };
+}
+
 function deriveReadinessStatus(useCase, issues, highIssues, externalDependencies, blocked, activeWork) {
-  if (useCase === "All") return "Cross-cutting";
   if (!issues.length) return "Discovery";
   if (blocked.length || highIssues.some(issue => isBlocked(issue))) return "Red";
   if (highIssues.length || externalDependencies.length) return "Amber";
@@ -566,7 +586,7 @@ function deriveReadinessStatus(useCase, issues, highIssues, externalDependencies
 }
 
 function deriveReadinessNote(useCase, issues, status) {
-  if (useCase === "All") return "Cross-cutting capability friction";
+  if (status === "Cross-cutting") return "Cross-cutting capability friction";
   if (!issues.length) return "Not yet assessed";
   if (status === "Red") return "Blocked or high-risk blocker";
   if (status === "Amber") return "High risk or external dependency";
@@ -575,7 +595,7 @@ function deriveReadinessNote(useCase, issues, status) {
 
 function renderReadinessCard(item) {
   return `
-    <article class="readiness-card ${item.useCase === "All" ? "readiness-card-cross" : ""}">
+    <article class="readiness-card ${item.status === "Cross-cutting" ? "readiness-card-cross" : ""}">
       <div class="readiness-card-head">
         <h4>${escapeHtml(item.displayName || item.useCase)}</h4>
         <span class="${readinessClass(item.status)}">${escapeHtml(item.status)}</span>
@@ -1354,6 +1374,10 @@ function getIssueUseCases(issue) {
     : splitMultiValue(issue.useCase || issue.useCasesImpacted);
   const normalised = [...referenceValues, ...rawValues].map(normaliseUseCaseName).filter(Boolean);
   return uniqueList(normalised.length ? normalised : ["All"]);
+}
+
+function useCasesForCrossCutting(issue) {
+  return getIssueUseCases(issue).filter(useCase => useCase !== "All");
 }
 
 function useCaseReference(name) {
