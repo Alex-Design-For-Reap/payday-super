@@ -163,6 +163,7 @@ const els = {
   strategicExecutiveSection: document.querySelector("#strategicExecutiveSection"),
   strategyOutcomeSection: document.querySelector("#strategyOutcomeSection"),
   strategicSummaryStrip: document.querySelector("#strategicSummaryStrip"),
+  readinessTitle: document.querySelector("#readinessTitle"),
   readinessGrid: document.querySelector("#readinessGrid"),
   executiveAttentionList: document.querySelector("#executiveAttentionList"),
   leadershipAttentionToggle: document.querySelector("[data-action='toggle-leadership-attention']"),
@@ -368,7 +369,7 @@ function renderStrategicExecutive(issues) {
     externalDependencies: issues.filter(isExternalDependency).length,
     bottlenecks: allBottlenecks.length,
   });
-  els.readinessGrid.innerHTML = readiness.map(renderReadinessCard).join("");
+  els.readinessGrid.innerHTML = renderReadinessGrid(readiness);
   els.leadershipAttentionToggle.hidden = allAttentionIssues.length <= 5;
   els.leadershipAttentionToggle.textContent = state.executiveExpanded.leadershipAttention ? "Show less" : "View all";
   els.executiveAttentionList.innerHTML = renderExecutiveIssueList(
@@ -592,6 +593,43 @@ function deriveReadinessNote(useCase, issues, status) {
   return "Active work with no high risks";
 }
 
+function renderReadinessGrid(readiness) {
+  const selectedUseCase = state.useCase;
+  const isFocusedUseCase = selectedUseCase !== "All";
+  els.readinessTitle.textContent = isFocusedUseCase
+    ? `${selectedUseCase} Readiness Context`
+    : "Readiness Across Business Payments";
+
+  if (!isFocusedUseCase) {
+    els.readinessGrid.className = "readiness-grid";
+    return readiness.map(renderReadinessCard).join("");
+  }
+
+  const crossCutting = readiness.find(item => item.useCase === "Cross-cutting");
+  const selected = readiness.find(item => item.useCase === selectedUseCase);
+  const primaryItems = [selected, crossCutting].filter(Boolean);
+  const secondaryItems = readiness.filter(
+    item => item.useCase !== selectedUseCase && item.useCase !== "Cross-cutting",
+  );
+
+  els.readinessGrid.className = "readiness-grid readiness-grid-focused";
+  return `
+    <section class="readiness-focus-band" aria-label="${escapeHtml(selectedUseCase)} focus area">
+      <div class="readiness-focus-grid">
+        ${primaryItems.map(renderReadinessCard).join("")}
+      </div>
+    </section>
+    <section class="readiness-secondary-band" aria-label="Other strategic use cases">
+      <div class="readiness-secondary-head">
+        <span>Other strategic use cases</span>
+      </div>
+      <div class="readiness-secondary-grid">
+        ${secondaryItems.map(renderCompactReadinessCard).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderReadinessCard(item) {
   return `
     <article class="readiness-card ${item.status === "Cross-cutting" ? "readiness-card-cross" : ""}">
@@ -607,6 +645,23 @@ function renderReadinessCard(item) {
         <div><dt>Deps</dt><dd>${item.dependencyCount}</dd></div>
       </dl>
       <p><span>Top linked capabilities</span>${escapeHtml(item.topCapabilities.length ? item.topCapabilities.join(", ") : "Not captured")}</p>
+    </article>
+  `;
+}
+
+function renderCompactReadinessCard(item) {
+  return `
+    <article class="readiness-card readiness-card-compact">
+      <div class="readiness-card-head">
+        <h4>${escapeHtml(item.displayName || item.useCase)}</h4>
+        <span class="${readinessClass(item.status)}">${escapeHtml(item.status)}</span>
+      </div>
+      <dl class="readiness-compact-metrics">
+        <div><dt>Linked</dt><dd>${item.issueCount}</dd></div>
+        <div><dt>High</dt><dd>${item.highCount}</dd></div>
+        <div><dt>Decisions</dt><dd>${item.decisionCount}</dd></div>
+      </dl>
+      <p><span>Top capabilities</span>${escapeHtml(item.topCapabilities.length ? item.topCapabilities.join(", ") : "Not captured")}</p>
     </article>
   `;
 }
