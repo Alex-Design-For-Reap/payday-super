@@ -141,77 +141,81 @@
         </section>
 
         <section class="dashboard-grid" id="dashboardGrid">
-          <article class="module module-large" id="priorityModule">
-            <div class="module-head">
-              <div>
-                <span class="module-icon alert-icon">!</span>
-                <h3 id="primaryListTitle">Top Priority Issues</h3>
+          <div class="dashboard-column">
+            <article class="module" id="priorityModule">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon alert-icon">!</span>
+                  <h3 id="primaryListTitle">Top Priority Issues</h3>
+                </div>
+                <button class="text-button" type="button" data-action="toggle-at-risk">View all</button>
               </div>
-              <button class="text-button" type="button" data-action="toggle-at-risk">View all</button>
-            </div>
-            <div class="issue-table" id="priorityTable"></div>
-          </article>
+              <div class="issue-table" id="priorityTable"></div>
+            </article>
 
-          <article class="module module-large" id="highPriorityProgressModule">
-            <div class="module-head">
-              <div>
-                <span class="module-icon progress-icon">↻</span>
-                <h3>High Priority In Progress</h3>
+            <article class="module" id="progressModule">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon progress-icon">↻</span>
+                  <h3>What's In Progress</h3>
+                </div>
               </div>
-              <button class="text-button" type="button" data-action="toggle-high-priority-progress">View all</button>
-            </div>
-            <div class="issue-table" id="highPriorityProgressTable"></div>
-          </article>
+              <ul class="compact-list" id="progressList"></ul>
+            </article>
 
-          <article class="module" id="progressModule">
-            <div class="module-head">
-              <div>
-                <span class="module-icon progress-icon">↻</span>
-                <h3>What's In Progress</h3>
+            <article class="module" id="dependencyModule">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon dependency-icon">⌘</span>
+                  <h3>Key Dependencies</h3>
+                </div>
               </div>
-            </div>
-            <ul class="compact-list" id="progressList"></ul>
-          </article>
+              <ul class="compact-list" id="dependencyList"></ul>
+            </article>
+          </div>
 
-          <article class="module" id="decisionModule">
-            <div class="module-head">
-              <div>
-                <span class="module-icon decision-icon">?</span>
-                <h3>Decisions Needed</h3>
+          <div class="dashboard-column">
+            <article class="module" id="highPriorityProgressModule">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon progress-icon">↻</span>
+                  <h3>High Priority In Progress</h3>
+                </div>
+                <button class="text-button" type="button" data-action="toggle-high-priority-progress">View all</button>
               </div>
-            </div>
-            <ul class="compact-list" id="decisionList"></ul>
-          </article>
+              <div class="issue-table" id="highPriorityProgressTable"></div>
+            </article>
 
-          <article class="module" id="dependencyModule">
-            <div class="module-head">
-              <div>
-                <span class="module-icon dependency-icon">⌘</span>
-                <h3>Key Dependencies</h3>
+            <article class="module" id="decisionModule">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon decision-icon">?</span>
+                  <h3>Decisions Needed</h3>
+                </div>
               </div>
-            </div>
-            <ul class="compact-list" id="dependencyList"></ul>
-          </article>
+              <ul class="compact-list" id="decisionList"></ul>
+            </article>
 
-          <article class="module" id="watchModule">
-            <div class="module-head">
-              <div>
-                <span class="module-icon gap-icon">△</span>
-                <h3>Gaps / Watch Outs</h3>
+            <article class="module" id="watchModule">
+              <div class="module-head">
+                <div>
+                  <span class="module-icon gap-icon">△</span>
+                  <h3>Gaps / Watch Outs</h3>
+                </div>
               </div>
-            </div>
-            <ul class="compact-list" id="watchList"></ul>
-          </article>
+              <ul class="compact-list" id="watchList"></ul>
+            </article>
 
-          <article class="module" id="governanceModule" hidden>
-            <div class="module-head">
-              <div>
-                <span class="module-icon gap-icon">△</span>
-                <h3>Governance hygiene TBD</h3>
+            <article class="module" id="governanceModule" hidden>
+              <div class="module-head">
+                <div>
+                  <span class="module-icon gap-icon">△</span>
+                  <h3>Governance hygiene TBD</h3>
+                </div>
               </div>
-            </div>
-            <div class="bottleneck-list" id="governanceWatchoutList"></div>
-          </article>
+              <div class="bottleneck-list" id="governanceWatchoutList"></div>
+            </article>
+          </div>
         </section>
 
         <section class="product-sections" id="productSections" hidden>

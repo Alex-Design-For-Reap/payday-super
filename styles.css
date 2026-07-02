@@ -895,6 +895,12 @@ h3 {
   align-items: start;
 }
 
+.dashboard-column {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
 .module {
   min-width: 0;
   padding: 16px;
