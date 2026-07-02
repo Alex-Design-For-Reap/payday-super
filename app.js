@@ -285,7 +285,7 @@ function renderHeader(issues) {
   els.sourceMeta.textContent = `${data.source} • ${data.issues.length} issues • refreshed ${data.generatedAt}`;
   els.registerCount.textContent = `${issues.length} issue${issues.length === 1 ? "" : "s"} shown`;
   els.primaryListTitle.textContent =
-    state.view === "delivery" ? "Blocked / At Risk" : "Priority Issues In Current Filter";
+    state.view === "delivery" ? "High Priority / At Risk" : "Priority Issues In Current Filter";
 }
 
 function renderViewShell() {
@@ -940,9 +940,9 @@ function renderPriorityTable(issues) {
   const priorityOrder = { HIGH: 1, MEDIUM: 2, LOW: 3, TBD: 4, "": 5 };
   const sourceRows =
     state.view === "delivery"
-      ? issues.filter(issue => issue.priority === "HIGH" || isBlocked(issue))
+      ? issues.filter(issue => isHighPriorityAtRisk(issue))
       : issues;
-  const rows = [...(sourceRows.length ? sourceRows : issues)]
+  const rows = [...sourceRows]
     .sort((a, b) => (priorityOrder[a.priority] || 9) - (priorityOrder[b.priority] || 9))
     .slice(0, 7);
 
@@ -1509,6 +1509,12 @@ function topValues(values, limit = 3) {
 
 function isBlocked(issue) {
   return String(issue.status || "").toLowerCase().includes("blocked") || String(issue.status || "").toLowerCase().includes("hold");
+}
+
+function isHighPriorityAtRisk(issue) {
+  if (issue.priority !== "HIGH") return false;
+  const status = String(issue.status || "").toLowerCase();
+  return ["not started", "blocked", "acknowledge", "hold"].some(term => status.includes(term));
 }
 
 function isExternalDependency(issue) {
