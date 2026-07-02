@@ -115,6 +115,10 @@ const state = {
     opportunities: false,
     capabilityGaps: false,
   },
+  deliveryExpanded: {
+    atRisk: false,
+    inProgress: false,
+  },
 };
 
 const els = {
@@ -142,7 +146,9 @@ const els = {
   journeyMap: document.querySelector("#journeyMap"),
   dashboardGrid: document.querySelector("#dashboardGrid"),
   priorityTable: document.querySelector("#priorityTable"),
+  atRiskToggle: document.querySelector("[data-action='toggle-at-risk']"),
   highPriorityProgressTable: document.querySelector("#highPriorityProgressTable"),
+  highPriorityProgressToggle: document.querySelector("[data-action='toggle-high-priority-progress']"),
   progressList: document.querySelector("#progressList"),
   dependencyList: document.querySelector("#dependencyList"),
   decisionList: document.querySelector("#decisionList"),
@@ -943,9 +949,12 @@ function renderPriorityTable(issues) {
     state.view === "delivery"
       ? issues.filter(issue => isHighPriorityAtRisk(issue))
       : issues;
-  const rows = [...sourceRows]
-    .sort((a, b) => (priorityOrder[a.priority] || 9) - (priorityOrder[b.priority] || 9))
-    .slice(0, 7);
+  const allRows = [...sourceRows]
+    .sort((a, b) => (priorityOrder[a.priority] || 9) - (priorityOrder[b.priority] || 9));
+  const rows = state.deliveryExpanded.atRisk ? allRows : allRows.slice(0, 5);
+
+  els.atRiskToggle.hidden = allRows.length <= 5;
+  els.atRiskToggle.textContent = state.deliveryExpanded.atRisk ? "Show less" : "View all";
 
   if (!rows.length) {
     els.priorityTable.innerHTML = `<div class="empty-state">No at-risk items match this view.</div>`;
@@ -963,9 +972,11 @@ function renderPriorityTable(issues) {
 }
 
 function renderHighPriorityProgressTable(issues) {
-  const rows = issues
-    .filter(issue => issue.priority === "HIGH" && issue.status === "WIP")
-    .slice(0, 7);
+  const allRows = issues.filter(issue => issue.priority === "HIGH" && issue.status === "WIP");
+  const rows = state.deliveryExpanded.inProgress ? allRows : allRows.slice(0, 5);
+
+  els.highPriorityProgressToggle.hidden = allRows.length <= 5;
+  els.highPriorityProgressToggle.textContent = state.deliveryExpanded.inProgress ? "Show less" : "View all";
 
   if (!rows.length) {
     els.highPriorityProgressTable.innerHTML = `<div class="empty-state">No high-priority in-progress items match this view.</div>`;
@@ -1189,6 +1200,16 @@ function setupControls() {
       render();
       els.registerSection.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+  });
+
+  els.atRiskToggle.addEventListener("click", () => {
+    state.deliveryExpanded.atRisk = !state.deliveryExpanded.atRisk;
+    render();
+  });
+
+  els.highPriorityProgressToggle.addEventListener("click", () => {
+    state.deliveryExpanded.inProgress = !state.deliveryExpanded.inProgress;
+    render();
   });
 
   els.issueCards.addEventListener("click", event => {
