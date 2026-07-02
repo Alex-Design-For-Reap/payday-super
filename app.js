@@ -968,15 +968,15 @@ function renderHighPriorityProgressTable(issues) {
   }
 
   els.highPriorityProgressTable.innerHTML = rows
-    .map(issue => renderIssueRow(issue, issue.notes || "No comments captured"))
+    .map(issue => renderIssueRow(issue, issue.notes || "No comments captured", "issue-row-meta-multiline"))
     .join("");
 }
 
-function renderIssueRow(issue, metaText) {
+function renderIssueRow(issue, metaText, metaClass = "") {
   return `
     <button class="issue-row issue-row-button" type="button" data-issue-id="${escapeHtml(issue.id)}">
       <span class="issue-title">${escapeHtml(issue.title)}</span>
-      <span class="issue-row-meta">
+      <span class="issue-row-meta ${escapeHtml(metaClass)}">
         <span class="id-pill">${escapeHtml(issue.id)}</span>
         <span class="issue-meta">${escapeHtml(metaText || "Not captured")}</span>
         <span class="issue-row-actions">
