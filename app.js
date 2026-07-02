@@ -393,10 +393,10 @@ function renderStrategicExecutive(issues) {
 function renderStrategyOutcomes(issues, readiness) {
   const linkedStrategy = referenceByIssueIds(issues, "strategicPriority");
   const linkedObjectives = referenceByIssueIds(issues, "objective");
-  const linkedScorecard = referenceByIssueIds(issues, "scorecard");
+  const linkedScorecard = scorecardsForUseCase(issues, state.useCase);
   const priorityCards = linkedStrategy.length ? linkedStrategy : (data.strategy || []).slice(0, 3);
   const objectiveCards = linkedObjectives.length ? linkedObjectives : (data.objectives || []).slice(0, 3);
-  const scorecardCards = linkedScorecard.length ? linkedScorecard : (data.scorecard || []).slice(0, 2);
+  const scorecardCards = linkedScorecard.length ? linkedScorecard : scorecardReferenceForUseCase(state.useCase);
 
   return `
     <div class="strategy-section-head">
@@ -459,6 +459,33 @@ function renderScorecardStack(items) {
         .join("")}
     </div>
   `;
+}
+
+function scorecardsForUseCase(issues, useCase) {
+  const selectedUseCase = useCase === "All" ? "All" : normaliseUseCaseName(useCase);
+  const seen = new Set();
+  const cards = [];
+
+  issues.forEach(issue => {
+    const issueUseCases = getIssueUseCases(issue);
+    if (selectedUseCase !== "All" && !issueUseCases.includes(selectedUseCase)) return;
+
+    getIssueScorecards(issue, selectedUseCase).forEach(scorecard => {
+      if (!scorecard.id || seen.has(scorecard.id)) return;
+      seen.add(scorecard.id);
+      cards.push(scorecard);
+    });
+  });
+
+  return cards;
+}
+
+function scorecardReferenceForUseCase(useCase) {
+  const selectedUseCase = useCase === "All" ? "All" : normaliseUseCaseName(useCase);
+  return (data.scorecard || []).filter(scorecard => {
+    const scorecardUseCases = scorecard.useCases || [];
+    return selectedUseCase === "All" || scorecardUseCases.includes(selectedUseCase);
+  });
 }
 
 function renderStrategicSummaryStrip(summary) {
@@ -1243,8 +1270,8 @@ function renderIssueModal(issue) {
       <div class="detail-grid">
         ${renderField("Strategic Priority", issue.strategicPriority?.title || "Not linked yet")}
         ${renderField("Objective", referenceLabel(issue.objective, "title"))}
-        ${renderField("Scorecard / Key Result", referenceLabel(issue.scorecard, "keyResult"))}
-        ${renderField("Threshold", issue.scorecard?.threshold)}
+        ${renderField("Scorecard / Key Result", scorecardFieldValue(issue, "keyResult"))}
+        ${renderField("Threshold", scorecardFieldValue(issue, "threshold"))}
       </div>
     </section>
 
@@ -1274,6 +1301,14 @@ function renderIssueModal(issue) {
 function referenceLabel(reference, field) {
   if (!reference || !reference[field]) return "";
   return reference.id ? `${reference.id}: ${reference[field]}` : reference[field];
+}
+
+function scorecardFieldValue(issue, field) {
+  const scorecards = getIssueScorecards(issue, state.useCase);
+  return scorecards
+    .map(scorecard => referenceLabel(scorecard, field))
+    .filter(Boolean)
+    .join("; ");
 }
 
 function renderField(label, value) {
@@ -1369,6 +1404,20 @@ function normaliseUseCaseName(value) {
 function getIssueProducts(issue) {
   const values = Array.isArray(issue.products) && issue.products.length ? issue.products : splitMultiValue(issue.product);
   return uniqueList(values.filter(Boolean));
+}
+
+function getIssueScorecards(issue, useCase = "All") {
+  const selectedUseCase = useCase === "All" ? "All" : normaliseUseCaseName(useCase);
+  const scorecards = Array.isArray(issue.scorecards) && issue.scorecards.length
+    ? issue.scorecards
+    : issue.scorecard?.id
+      ? [issue.scorecard]
+      : [];
+
+  return scorecards.filter(scorecard => {
+    const scorecardUseCases = scorecard.useCases || [];
+    return selectedUseCase === "All" || scorecardUseCases.includes(selectedUseCase);
+  });
 }
 
 function getIssueCapabilityNames(issue) {

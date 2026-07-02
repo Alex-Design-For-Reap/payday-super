@@ -127,7 +127,13 @@ def read_sheet_records(workbook, sheet_name, field_map):
 
         record = {}
         for source, target in field_map.items():
-            record[target] = clean_text(raw.get(source))
+            sources = source if isinstance(source, tuple) else (source,)
+            record[target] = ""
+            for candidate in sources:
+                value = clean_text(raw.get(candidate))
+                if value:
+                    record[target] = value
+                    break
         if any(record.values()):
             records.append(record)
     return records
@@ -168,6 +174,7 @@ def main() -> None:
             "Threshold": "threshold",
             "Target": "target",
             "Maximum": "maximum",
+            ("Use Case", "Use Cases", "Usa Case"): "useCasesImpacted",
         },
     )
     use_cases = read_sheet_records(
@@ -196,6 +203,9 @@ def main() -> None:
     use_cases_by_name = {normalize_key(normalize_use_case(item.get("name"))): item for item in use_cases if item.get("name")}
     capabilities_by_name = build_lookup(capabilities, "name")
 
+    for item in scorecard:
+        item["useCases"] = [normalize_use_case(value) for value in split_values(item.get("useCasesImpacted"))]
+
     issues = []
     for row in sheet.iter_rows(min_row=2, values_only=True):
         raw = dict(zip(headers, row))
@@ -223,10 +233,17 @@ def main() -> None:
         issue["product"] = issue["productsImpacted"]
         issue["journeyStages"] = split_values(raw.get("Journey Stage"))
         issue["journeyStage"] = "; ".join(issue["journeyStages"])
+        issue["scorecardIds"] = split_values(raw.get("Scorecard ID"))
+        issue["scorecardId"] = "; ".join(issue["scorecardIds"])
 
         issue["strategicPriority"] = strategy_by_id.get(normalize_key(issue.get("strategicPriorityId")), {})
         issue["objective"] = objectives_by_id.get(normalize_key(issue.get("objectiveId")), {})
-        issue["scorecard"] = scorecard_by_id.get(normalize_key(issue.get("scorecardId")), {})
+        issue["scorecards"] = [
+            scorecard_by_id.get(normalize_key(scorecard_id), {})
+            for scorecard_id in issue["scorecardIds"]
+            if scorecard_by_id.get(normalize_key(scorecard_id))
+        ]
+        issue["scorecard"] = issue["scorecards"][0] if issue["scorecards"] else {}
         issue["useCaseRefs"] = [
             use_cases_by_name.get(normalize_key(use_case), {})
             for use_case in issue["useCases"]
