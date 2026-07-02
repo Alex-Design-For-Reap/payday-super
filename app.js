@@ -142,6 +142,7 @@ const els = {
   journeyMap: document.querySelector("#journeyMap"),
   dashboardGrid: document.querySelector("#dashboardGrid"),
   priorityTable: document.querySelector("#priorityTable"),
+  highPriorityProgressTable: document.querySelector("#highPriorityProgressTable"),
   progressList: document.querySelector("#progressList"),
   dependencyList: document.querySelector("#dependencyList"),
   decisionList: document.querySelector("#decisionList"),
@@ -952,23 +953,40 @@ function renderPriorityTable(issues) {
   }
 
   els.priorityTable.innerHTML = rows
-    .map(
-      issue => `
-        <button class="issue-row issue-row-button" type="button" data-issue-id="${escapeHtml(issue.id)}">
-          <span class="issue-title">${escapeHtml(issue.title)}</span>
-          <span class="issue-row-meta">
-            <span class="id-pill">${escapeHtml(issue.id)}</span>
-            <span class="issue-meta">${escapeHtml(issue.category || "Uncategorised")}</span>
-            <span class="issue-row-actions">
-              <span class="${priorityClass(issue.priority)}">${escapeHtml(displayValue(issue.priority))}</span>
-              <span class="${statusClass(issue.status)}">${escapeHtml(displayStatus(issue.status))}</span>
-              <span class="list-owner">${escapeHtml(issue.owner || "TBD")}</span>
-            </span>
-          </span>
-        </button>
-      `,
-    )
+    .map(issue => renderIssueRow(issue, issue.category || "Uncategorised"))
     .join("");
+}
+
+function renderHighPriorityProgressTable(issues) {
+  const rows = issues
+    .filter(issue => issue.priority === "HIGH" && issue.status === "WIP")
+    .slice(0, 7);
+
+  if (!rows.length) {
+    els.highPriorityProgressTable.innerHTML = `<div class="empty-state">No high-priority in-progress items match this view.</div>`;
+    return;
+  }
+
+  els.highPriorityProgressTable.innerHTML = rows
+    .map(issue => renderIssueRow(issue, issue.notes || "No comments captured"))
+    .join("");
+}
+
+function renderIssueRow(issue, metaText) {
+  return `
+    <button class="issue-row issue-row-button" type="button" data-issue-id="${escapeHtml(issue.id)}">
+      <span class="issue-title">${escapeHtml(issue.title)}</span>
+      <span class="issue-row-meta">
+        <span class="id-pill">${escapeHtml(issue.id)}</span>
+        <span class="issue-meta">${escapeHtml(metaText || "Not captured")}</span>
+        <span class="issue-row-actions">
+          <span class="${priorityClass(issue.priority)}">${escapeHtml(displayValue(issue.priority))}</span>
+          <span class="${statusClass(issue.status)}">${escapeHtml(displayStatus(issue.status))}</span>
+          <span class="list-owner">${escapeHtml(issue.owner || "TBD")}</span>
+        </span>
+      </span>
+    </button>
+  `;
 }
 
 function renderCompactLists(issues) {
@@ -1113,6 +1131,7 @@ function render() {
   renderProductSections(issues);
   renderJourney(issues);
   renderPriorityTable(issues);
+  renderHighPriorityProgressTable(issues);
   renderCompactLists(issues);
   renderCards(issues);
 }
@@ -1174,6 +1193,12 @@ function setupControls() {
   });
 
   els.priorityTable.addEventListener("click", event => {
+    const row = event.target.closest("[data-issue-id]");
+    if (!row) return;
+    openIssueModal(row.dataset.issueId);
+  });
+
+  els.highPriorityProgressTable.addEventListener("click", event => {
     const row = event.target.closest("[data-issue-id]");
     if (!row) return;
     openIssueModal(row.dataset.issueId);
