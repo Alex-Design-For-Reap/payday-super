@@ -1,5 +1,5 @@
 window.ISSUES_DATA = {
-  "generatedAt": "2026-07-02 10:06",
+  "generatedAt": "2026-07-02 13:23",
   "source": "Issues Register.xlsm",
   "strategy": [
     {
@@ -5942,7 +5942,7 @@ window.ISSUES_DATA = {
       "owner": "Edith",
       "priority": "HIGH",
       "horizon": "MEDIUM",
-      "status": "WIP",
+      "status": "CLOSED",
       "currentAction": "",
       "decisionNeeded": "",
       "notes": "",
