@@ -157,6 +157,7 @@ const els = {
   decisionList: document.querySelector("#decisionList"),
   watchModule: document.querySelector("#watchModule"),
   watchList: document.querySelector("#watchList"),
+  governanceModule: document.querySelector("#governanceModule"),
   primaryListTitle: document.querySelector("#primaryListTitle"),
   registerSection: document.querySelector("#registerSection"),
   registerCount: document.querySelector("#registerCount"),
@@ -309,6 +310,7 @@ function renderViewShell() {
   els.registerSection.hidden = !isRegisterView;
   els.strategicExecutiveSection.hidden = !isStrategicExecutive;
   els.watchModule.hidden = state.view === "issue-summary";
+  els.governanceModule.hidden = state.view !== "issue-summary";
 }
 
 function renderKpis(issues) {
@@ -359,7 +361,6 @@ function renderStrategicExecutive(issues) {
   const allExternalDependencies = aggregateExternalDependencies(issues);
   const bottlenecks = allBottlenecks.slice(0, 8);
   const externalDependencies = allExternalDependencies.slice(0, 8);
-  const governanceWatchouts = aggregateGovernanceWatchouts(issues);
   const atRiskCount = readiness.filter(item => ["Red", "Amber"].includes(item.status)).length;
 
   els.strategyOutcomeSection.innerHTML = renderStrategyOutcomes(issues, readiness);
@@ -368,7 +369,6 @@ function renderStrategicExecutive(issues) {
     decisions: issues.filter(issue => issue.decisionNeeded).length,
     externalDependencies: issues.filter(isExternalDependency).length,
     bottlenecks: allBottlenecks.length,
-    governance: governanceWatchouts.reduce((total, item) => total + item.issues.length, 0),
   });
   els.readinessSummary.textContent = `${atRiskCount} readiness area${atRiskCount === 1 ? "" : "s"} need attention`;
   els.readinessGrid.innerHTML = readiness.map(renderReadinessCard).join("");
@@ -388,7 +388,6 @@ function renderStrategicExecutive(issues) {
     externalDependencies,
     "No external dependencies match the current filters.",
   );
-  els.governanceWatchoutList.innerHTML = renderGovernanceList(governanceWatchouts);
 }
 
 function renderStrategyOutcomes(issues, readiness) {
@@ -495,7 +494,6 @@ function renderStrategicSummaryStrip(summary) {
     ["Executive decisions required", summary.decisions],
     ["External dependencies", summary.externalDependencies],
     ["Capability bottlenecks", summary.bottlenecks],
-    ["Governance watchouts", summary.governance],
   ];
 
   return items
@@ -966,6 +964,7 @@ function renderCompactLists(issues) {
     issue => issue.owner || "TBD",
   );
   renderDecisionList(els.decisionList, decisions);
+  els.governanceWatchoutList.innerHTML = renderGovernanceList(aggregateGovernanceWatchouts(issues));
   renderList(
     els.watchList,
     watchOuts,
