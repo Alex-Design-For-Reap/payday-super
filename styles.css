@@ -525,8 +525,10 @@ h3 {
   align-items: start;
 }
 
-.executive-grid .module-large {
-  grid-row: span 2;
+.executive-column {
+  display: grid;
+  gap: 14px;
+  align-content: start;
 }
 
 .executive-list,

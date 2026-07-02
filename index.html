@@ -82,46 +82,50 @@
           <div class="readiness-grid" id="readinessGrid"></div>
 
           <div class="executive-grid">
-            <article class="module module-large">
-              <div class="module-head">
-                <div>
-                  <span class="module-icon alert-icon">!</span>
-                  <h3>Escalations & readiness risks</h3>
+            <div class="executive-column">
+              <article class="module">
+                <div class="module-head">
+                  <div>
+                    <span class="module-icon alert-icon">!</span>
+                    <h3>Escalations & readiness risks</h3>
+                  </div>
+                  <button class="text-button" type="button" data-action="toggle-leadership-attention">View all</button>
                 </div>
-                <button class="text-button" type="button" data-action="toggle-leadership-attention">View all</button>
-              </div>
-              <div class="executive-list" id="executiveAttentionList"></div>
-            </article>
+                <div class="executive-list" id="executiveAttentionList"></div>
+              </article>
 
-            <article class="module">
-              <div class="module-head">
-                <div>
-                  <span class="module-icon decision-icon">?</span>
-                  <h3>Decisions required to unlock progress</h3>
+              <article class="module">
+                <div class="module-head">
+                  <div>
+                    <span class="module-icon dependency-icon">⌘</span>
+                    <h3>Key Dependencies</h3>
+                  </div>
                 </div>
-              </div>
-              <div class="executive-list" id="strategicDecisionList"></div>
-            </article>
+                <div class="bottleneck-list" id="externalDependencyList"></div>
+              </article>
+            </div>
 
-            <article class="module">
-              <div class="module-head">
-                <div>
-                  <span class="module-icon progress-icon">↗</span>
-                  <h3>Capabilities creating friction</h3>
+            <div class="executive-column">
+              <article class="module">
+                <div class="module-head">
+                  <div>
+                    <span class="module-icon decision-icon">?</span>
+                    <h3>Decisions required to unlock progress</h3>
+                  </div>
                 </div>
-              </div>
-              <div class="bottleneck-list" id="capabilityBottleneckList"></div>
-            </article>
+                <div class="executive-list" id="strategicDecisionList"></div>
+              </article>
 
-            <article class="module">
-              <div class="module-head">
-                <div>
-                  <span class="module-icon dependency-icon">⌘</span>
-                  <h3>Key Dependencies</h3>
+              <article class="module">
+                <div class="module-head">
+                  <div>
+                    <span class="module-icon progress-icon">↗</span>
+                    <h3>Capabilities creating friction</h3>
+                  </div>
                 </div>
-              </div>
-              <div class="bottleneck-list" id="externalDependencyList"></div>
-            </article>
+                <div class="bottleneck-list" id="capabilityBottleneckList"></div>
+              </article>
+            </div>
           </div>
         </section>
 
