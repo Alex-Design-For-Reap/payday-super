@@ -51,26 +51,6 @@ const views = [
     filter: () => true,
   },
   {
-    id: "product",
-    icon: "▣",
-    title: "Product & Capability Lens",
-    nav: "Product & Capability",
-    audience: "Product / Capability Owners",
-    description:
-      "A product-owner view of issues by impacted product or capability. Use the Product filter to focus the capability lens.",
-    filter: issue => Boolean((issue.products || []).length || issue.product),
-  },
-  {
-    id: "journey",
-    icon: "↦",
-    title: "E2E Journey",
-    nav: "E2E Journey",
-    audience: "Product / Enablement",
-    description:
-      "A phase-by-phase view of where issues are landing across the end-to-end journey. Each dot is an issue and can be opened for detail.",
-    filter: () => true,
-  },
-  {
     id: "delivery",
     icon: "↗",
     title: "Delivery & Decisions",
@@ -90,6 +70,26 @@ const views = [
       !issue.owner ||
       !issue.problemScenario ||
       !issue.roadmapAlignment,
+  },
+  {
+    id: "journey",
+    icon: "↦",
+    title: "E2E Journey",
+    nav: "E2E Journey",
+    audience: "Product / Enablement",
+    description:
+      "A phase-by-phase view of where issues are landing across the end-to-end journey. Each dot is an issue and can be opened for detail.",
+    filter: () => true,
+  },
+  {
+    id: "product",
+    icon: "▣",
+    title: "Product & Capability Lens",
+    nav: "Product & Capability",
+    audience: "Product / Capability Owners",
+    description:
+      "A product-owner view of issues by impacted product or capability. Use the Product filter to focus the capability lens.",
+    filter: issue => Boolean((issue.products || []).length || issue.product),
   },
   {
     id: "register",
