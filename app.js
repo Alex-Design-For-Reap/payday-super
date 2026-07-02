@@ -358,9 +358,8 @@ function renderStrategicExecutive(issues) {
   const attentionIssues = sortExecutiveAttention(issues).slice(0, 8);
   const decisionIssues = sortExecutiveAttention(issues.filter(issue => issue.decisionNeeded)).slice(0, 8);
   const allBottlenecks = aggregateCapabilityBottlenecks(issues);
-  const allExternalDependencies = aggregateExternalDependencies(issues);
   const bottlenecks = allBottlenecks.slice(0, 8);
-  const externalDependencies = allExternalDependencies.slice(0, 8);
+  const externalDependencies = sortDependencyIssues(issues.filter(issue => issue.dependencies && isExternalDependency(issue))).slice(0, 8);
   const atRiskCount = readiness.filter(item => ["Red", "Amber"].includes(item.status)).length;
 
   els.strategyOutcomeSection.innerHTML = renderStrategyOutcomes(issues, readiness);
@@ -384,7 +383,7 @@ function renderStrategicExecutive(issues) {
     bottlenecks,
     "No capability bottlenecks match the current filters.",
   );
-  els.externalDependencyList.innerHTML = renderDependencyGroupList(
+  els.externalDependencyList.innerHTML = renderDependencyIssueList(
     externalDependencies,
     "No external dependencies match the current filters.",
   );
@@ -754,6 +753,44 @@ function renderDependencyGroupList(items, emptyMessage) {
     .join("");
 }
 
+function sortDependencyIssues(issues) {
+  return [...issues].sort((a, b) => {
+    const priorityOrder = { HIGH: 1, MEDIUM: 2, LOW: 3, TBD: 4, "": 5 };
+    const priorityDelta = (priorityOrder[a.priority] || 9) - (priorityOrder[b.priority] || 9);
+    if (priorityDelta) return priorityDelta;
+    if (isBlocked(a) !== isBlocked(b)) return isBlocked(a) ? -1 : 1;
+    if (Boolean(a.decisionNeeded) !== Boolean(b.decisionNeeded)) return a.decisionNeeded ? -1 : 1;
+    return String(a.id || "").localeCompare(String(b.id || ""));
+  });
+}
+
+function dependencyScope(issue) {
+  return issue.dependencies || issue.dependencyOwnerType || dependencyOwnerType(issue);
+}
+
+function renderDependencyIssueList(issues, emptyMessage, asCompactList = false) {
+  if (!issues.length) {
+    return asCompactList
+      ? `<li><span class="dot"></span><span>${escapeHtml(emptyMessage)}</span><span></span></li>`
+      : `<div class="empty-state">${escapeHtml(emptyMessage)}</div>`;
+  }
+
+  const rows = issues.map(
+    issue => `
+        <button class="dependency-issue-button" type="button" data-issue-id="${escapeHtml(issue.id)}">
+          <span class="id-pill">${escapeHtml(issue.id)}</span>
+          <span class="dependency-title">${escapeHtml(issue.title || "Untitled issue")}</span>
+          <span class="dependency-owner">Depends on: ${escapeHtml(dependencyScope(issue) || "TBD")}</span>
+        </button>
+      `,
+  );
+
+  if (!asCompactList) return rows.join("");
+  return rows
+    .map(row => `<li class="dependency-item">${row}</li>`)
+    .join("");
+}
+
 function aggregateGovernanceWatchouts(issues) {
   const checks = [
     {
@@ -945,7 +982,7 @@ function renderPriorityTable(issues) {
 
 function renderCompactLists(issues) {
   const inProgress = issues.filter(issue => issue.status === "WIP").slice(0, 6);
-  const dependencies = issues.filter(issue => issue.dependencies).slice(0, 6);
+  const dependencies = sortDependencyIssues(issues.filter(issue => issue.dependencies)).slice(0, 6);
   const decisions = issues.filter(issue => issue.decisionNeeded).slice(0, 6);
   const watchOuts = issues
     .filter(issue => issue.priority === "HIGH" || !issue.problemScenario || issue.status === "HOLD / BLOCKED")
@@ -957,11 +994,10 @@ function renderCompactLists(issues) {
     issue => issue.currentAction || issue.title,
     issue => issue.owner || "TBD",
   );
-  renderList(
-    els.dependencyList,
+  els.dependencyList.innerHTML = renderDependencyIssueList(
     dependencies,
-    issue => `${issue.dependencies}: ${issue.title}`,
-    issue => issue.owner || "TBD",
+    "No matching dependencies in this view.",
+    true,
   );
   renderDecisionList(els.decisionList, decisions);
   els.governanceWatchoutList.innerHTML = renderGovernanceList(aggregateGovernanceWatchouts(issues));
