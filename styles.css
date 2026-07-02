@@ -1052,23 +1052,6 @@ h3 {
   white-space: nowrap;
 }
 
-.issue-row-meta-multiline {
-  grid-template-columns: 72px minmax(0, 1fr);
-  align-items: start;
-}
-
-.issue-row-meta-multiline .issue-meta {
-  overflow: visible;
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
-.issue-row-meta-multiline .issue-row-actions {
-  grid-column: 2;
-  justify-self: start;
-  flex-wrap: wrap;
-}
-
 .issue-row-actions {
   display: flex;
   flex-wrap: nowrap;

@@ -953,7 +953,12 @@ function renderPriorityTable(issues) {
   }
 
   els.priorityTable.innerHTML = rows
-    .map(issue => renderIssueRow(issue, issue.category || "Uncategorised"))
+    .map(issue =>
+      renderDeliveryIssueCard(
+        issue,
+        issue.problemScenario || issue.currentAction || issue.notes || issue.category || "Context not captured",
+      ),
+    )
     .join("");
 }
 
@@ -968,22 +973,22 @@ function renderHighPriorityProgressTable(issues) {
   }
 
   els.highPriorityProgressTable.innerHTML = rows
-    .map(issue => renderIssueRow(issue, issue.notes || "No comments captured", "issue-row-meta-multiline"))
+    .map(issue => renderDeliveryIssueCard(issue, issue.notes || "No comments captured"))
     .join("");
 }
 
-function renderIssueRow(issue, metaText, metaClass = "") {
+function renderDeliveryIssueCard(issue, summaryText) {
   return `
-    <button class="issue-row issue-row-button" type="button" data-issue-id="${escapeHtml(issue.id)}">
-      <span class="issue-title">${escapeHtml(issue.title)}</span>
-      <span class="issue-row-meta ${escapeHtml(metaClass)}">
+    <button class="executive-issue-card" type="button" data-issue-id="${escapeHtml(issue.id)}">
+      <div>
         <span class="id-pill">${escapeHtml(issue.id)}</span>
-        <span class="issue-meta">${escapeHtml(metaText || "Not captured")}</span>
-        <span class="issue-row-actions">
-          <span class="${priorityClass(issue.priority)}">${escapeHtml(displayValue(issue.priority))}</span>
-          <span class="${statusClass(issue.status)}">${escapeHtml(displayStatus(issue.status))}</span>
-          <span class="list-owner">${escapeHtml(issue.owner || "TBD")}</span>
-        </span>
+        <strong>${escapeHtml(issue.title || "Untitled issue")}</strong>
+      </div>
+      <p>${escapeHtml(summarise(summaryText || "Context not captured.", 180))}</p>
+      <span class="executive-meta">
+        <span>${escapeHtml(issue.owner || "TBD owner")}</span>
+        <span class="${statusClass(issue.status)}">${escapeHtml(displayStatus(issue.status))}</span>
+        <span>${escapeHtml(formatList(getIssueUseCases(issue)))}</span>
       </span>
     </button>
   `;
