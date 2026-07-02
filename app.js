@@ -165,7 +165,6 @@ const els = {
   strategicExecutiveSection: document.querySelector("#strategicExecutiveSection"),
   strategyOutcomeSection: document.querySelector("#strategyOutcomeSection"),
   strategicSummaryStrip: document.querySelector("#strategicSummaryStrip"),
-  readinessSummary: document.querySelector("#readinessSummary"),
   readinessGrid: document.querySelector("#readinessGrid"),
   executiveAttentionList: document.querySelector("#executiveAttentionList"),
   strategicDecisionList: document.querySelector("#strategicDecisionList"),
@@ -360,8 +359,6 @@ function renderStrategicExecutive(issues) {
   const allBottlenecks = aggregateCapabilityBottlenecks(issues);
   const bottlenecks = allBottlenecks.slice(0, 8);
   const dependencyIssues = sortDependencyIssues(issues.filter(issue => issue.dependencies)).slice(0, 8);
-  const atRiskCount = readiness.filter(item => ["Red", "Amber"].includes(item.status)).length;
-
   els.strategyOutcomeSection.innerHTML = renderStrategyOutcomes(issues, readiness);
   els.strategicSummaryStrip.innerHTML = renderStrategicSummaryStrip({
     attention: readiness.filter(item => item.useCase !== "All" && ["Red", "Amber"].includes(item.status)).length,
@@ -369,8 +366,6 @@ function renderStrategicExecutive(issues) {
     externalDependencies: issues.filter(isExternalDependency).length,
     bottlenecks: allBottlenecks.length,
   });
-  els.readinessSummary.textContent =
-    atRiskCount === 1 ? "1 readiness area needs attention" : `${atRiskCount} readiness areas need attention`;
   els.readinessGrid.innerHTML = readiness.map(renderReadinessCard).join("");
   els.executiveAttentionList.innerHTML = renderExecutiveIssueList(
     attentionIssues,
