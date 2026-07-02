@@ -363,12 +363,16 @@ function renderStrategicExecutive(issues) {
   const bottlenecks = allBottlenecks.slice(0, 8);
   const dependencyIssues = sortDependencyIssues(issues.filter(issue => issue.dependencies)).slice(0, 8);
   els.strategyOutcomeSection.innerHTML = renderStrategyOutcomes(issues, readiness);
-  els.strategicSummaryStrip.innerHTML = renderStrategicSummaryStrip({
-    attention: readiness.filter(item => item.useCase !== "All" && ["Red", "Amber"].includes(item.status)).length,
-    decisions: issues.filter(issue => issue.decisionNeeded).length,
-    externalDependencies: issues.filter(isExternalDependency).length,
-    bottlenecks: allBottlenecks.length,
-  });
+  const showPortfolioSummary = state.useCase === "All";
+  els.strategicSummaryStrip.hidden = !showPortfolioSummary;
+  els.strategicSummaryStrip.innerHTML = showPortfolioSummary
+    ? renderStrategicSummaryStrip({
+        attention: readiness.filter(item => item.useCase !== "All" && ["Red", "Amber"].includes(item.status)).length,
+        decisions: issues.filter(issue => issue.decisionNeeded).length,
+        dependencies: issues.filter(issue => issue.dependencies).length,
+        bottlenecks: allBottlenecks.length,
+      })
+    : "";
   els.readinessGrid.innerHTML = renderReadinessGrid(readiness);
   els.leadershipAttentionToggle.hidden = allAttentionIssues.length <= 5;
   els.leadershipAttentionToggle.textContent = state.executiveExpanded.leadershipAttention ? "Show less" : "View all";
@@ -492,7 +496,7 @@ function renderStrategicSummaryStrip(summary) {
   const items = [
     ["Use cases needing attention", summary.attention],
     ["Executive decisions required", summary.decisions],
-    ["External dependencies", summary.externalDependencies],
+    ["Dependencies", summary.dependencies],
     ["Capability bottlenecks", summary.bottlenecks],
   ];
 
