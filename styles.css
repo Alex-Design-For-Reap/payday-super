@@ -497,8 +497,8 @@ h3 {
 
 .readiness-metrics dd {
   margin: 0;
-  font-size: 30px;
-  font-weight: 850;
+  font-size: 24px;
+  font-weight: 780;
   line-height: 1;
 }
 
@@ -514,7 +514,7 @@ h3 {
 .readiness-note {
   color: var(--muted);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.4;
 }
 
