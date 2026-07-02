@@ -369,7 +369,8 @@ function renderStrategicExecutive(issues) {
     externalDependencies: issues.filter(isExternalDependency).length,
     bottlenecks: allBottlenecks.length,
   });
-  els.readinessSummary.textContent = `${atRiskCount} readiness area${atRiskCount === 1 ? "" : "s"} need attention`;
+  els.readinessSummary.textContent =
+    atRiskCount === 1 ? "1 readiness area needs attention" : `${atRiskCount} readiness areas need attention`;
   els.readinessGrid.innerHTML = readiness.map(renderReadinessCard).join("");
   els.executiveAttentionList.innerHTML = renderExecutiveIssueList(
     attentionIssues,
