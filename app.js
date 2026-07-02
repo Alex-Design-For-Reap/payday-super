@@ -155,8 +155,6 @@ const els = {
   progressList: document.querySelector("#progressList"),
   dependencyList: document.querySelector("#dependencyList"),
   decisionList: document.querySelector("#decisionList"),
-  watchModule: document.querySelector("#watchModule"),
-  watchList: document.querySelector("#watchList"),
   governanceModule: document.querySelector("#governanceModule"),
   primaryListTitle: document.querySelector("#primaryListTitle"),
   registerSection: document.querySelector("#registerSection"),
@@ -310,7 +308,6 @@ function renderViewShell() {
   els.dashboardGrid.hidden = isJourneyView || isRegisterView || isStrategicExecutive || isProductView;
   els.registerSection.hidden = !isRegisterView;
   els.strategicExecutiveSection.hidden = !isStrategicExecutive;
-  els.watchModule.hidden = false;
   els.governanceModule.hidden = state.view !== "delivery";
 }
 
@@ -1031,19 +1028,14 @@ function renderDeliveryIssueCard(issue, summaryText) {
 }
 
 function renderCompactLists(issues) {
-  const inProgress = issues.filter(issue => issue.status === "WIP").slice(0, 6);
+  const recentlyUpdated = issues
+    .filter(issue => isUpdatedWithinDays(issue.lastUpdated, 14))
+    .sort((a, b) => dateValue(b.lastUpdated) - dateValue(a.lastUpdated))
+    .slice(0, 6);
   const dependencies = sortDependencyIssues(issues.filter(issue => issue.dependencies)).slice(0, 6);
   const decisions = issues.filter(issue => issue.decisionNeeded).slice(0, 6);
-  const watchOuts = issues
-    .filter(issue => issue.priority === "HIGH" || !issue.problemScenario || issue.status === "HOLD / BLOCKED")
-    .slice(0, 6);
 
-  renderList(
-    els.progressList,
-    inProgress,
-    issue => issue.currentAction || issue.title,
-    issue => issue.owner || "TBD",
-  );
+  renderRecentUpdates(els.progressList, recentlyUpdated);
   els.dependencyList.innerHTML = renderDependencyIssueList(
     dependencies,
     "No matching dependencies in this view.",
@@ -1051,16 +1043,22 @@ function renderCompactLists(issues) {
   );
   renderDecisionList(els.decisionList, decisions);
   els.governanceWatchoutList.innerHTML = renderGovernanceList(aggregateGovernanceWatchouts(issues));
-  renderList(
-    els.watchList,
-    watchOuts,
-    issue => {
-      if (!issue.problemScenario) return `${issue.title} needs problem scenario completion`;
-      if (issue.status === "HOLD / BLOCKED") return `${issue.title} is blocked`;
-      return issue.title;
-    },
-    issue => productScope(issue) || issue.category || "Review",
-  );
+}
+
+function renderRecentUpdates(element, issues) {
+  if (!issues.length) {
+    element.innerHTML = `<div class="empty-state">No issues have a Last Updated date in the last 2 weeks.</div>`;
+    return;
+  }
+
+  element.innerHTML = issues
+    .map(issue =>
+      renderDeliveryIssueCard(
+        issue,
+        `${issue.notes || issue.currentAction || issue.problemScenario || "Update context not captured."} Last updated: ${formatDate(issue.lastUpdated)}`,
+      ),
+    )
+    .join("");
 }
 
 function renderList(element, items, labelFn, metaFn) {
@@ -1260,7 +1258,7 @@ function setupControls() {
     openIssueModal(row.dataset.issueId);
   });
 
-  [els.progressList, els.dependencyList, els.decisionList, els.watchList].forEach(list => {
+  [els.progressList, els.dependencyList, els.decisionList].forEach(list => {
     list.addEventListener("click", event => {
       const item = event.target.closest("[data-issue-id]");
       if (!item) return;
@@ -1706,6 +1704,21 @@ function formatDate(value) {
     month: "short",
     year: "numeric",
   }).format(date);
+}
+
+function dateValue(value) {
+  if (!value) return 0;
+  const date = new Date(`${value}T00:00:00`);
+  return Number.isNaN(date.getTime()) ? 0 : date.getTime();
+}
+
+function isUpdatedWithinDays(value, days) {
+  const timestamp = dateValue(value);
+  if (!timestamp) return false;
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+  const ageMs = today - timestamp;
+  return ageMs >= 0 && ageMs <= days * 24 * 60 * 60 * 1000;
 }
 
 function summarise(text, maxLength = 230) {

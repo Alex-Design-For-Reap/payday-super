@@ -935,10 +935,6 @@ h3 {
   grid-column: 1;
 }
 
-.dashboard-grid[data-view="product"] #watchModule {
-  grid-column: 2;
-}
-
 .module-head,
 .section-head {
   display: flex;
