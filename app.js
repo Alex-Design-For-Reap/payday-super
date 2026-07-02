@@ -51,16 +51,6 @@ const views = [
     filter: () => true,
   },
   {
-    id: "issue-summary",
-    icon: "!",
-    title: "Issue Summary",
-    nav: "Issue Summary",
-    audience: "Exec / Business Payments",
-    description:
-      "The previous issue-led executive view, kept visible for comparison with the strategic readiness landing page.",
-    filter: issue => issue.isExecSummary || issue.priority === "HIGH",
-  },
-  {
     id: "product",
     icon: "▣",
     title: "Product & Capability Lens",
@@ -81,25 +71,25 @@ const views = [
     filter: () => true,
   },
   {
-    id: "enablement",
+    id: "delivery",
     icon: "↗",
-    title: "Enablement Actions",
-    nav: "Enablement Actions",
-    audience: "Enablement Team",
-    description:
-      "A working view of issues with active actions, WIP status, blockers, or follow-up needed by owners.",
-    filter: issue =>
-      Boolean(issue.currentAction) || issue.status === "WIP" || issue.status === "HOLD / BLOCKED",
-  },
-  {
-    id: "dependencies",
-    icon: "⌘",
-    title: "Decisions & Dependencies",
-    nav: "Decisions & Dependencies",
+    title: "Delivery & Decisions",
+    nav: "Delivery & Decisions",
     audience: "Enablement / Product Leadership",
     description:
-      "A coordination view of issue-to-issue blockers, related external initiatives, and decisions needed from owners or leaders.",
-    filter: issue => Boolean(issue.dependencies) || Boolean(issue.relatedInitiative) || Boolean(issue.decisionNeeded),
+      "A working view of actions in progress, decisions needed, key dependencies, blockers, and register hygiene items.",
+    filter: issue =>
+      Boolean(issue.currentAction) ||
+      Boolean(issue.dependencies) ||
+      Boolean(issue.relatedInitiative) ||
+      Boolean(issue.decisionNeeded) ||
+      issue.priority === "HIGH" ||
+      issue.status === "WIP" ||
+      issue.status === "HOLD / BLOCKED" ||
+      issue.isExecSummary ||
+      !issue.owner ||
+      !issue.problemScenario ||
+      !issue.roadmapAlignment,
   },
   {
     id: "register",
@@ -295,21 +285,22 @@ function renderHeader(issues) {
   els.sourceMeta.textContent = `${data.source} • ${data.issues.length} issues • refreshed ${data.generatedAt}`;
   els.registerCount.textContent = `${issues.length} issue${issues.length === 1 ? "" : "s"} shown`;
   els.primaryListTitle.textContent =
-    state.view === "register" ? "Priority Issues In Current Filter" : "Top Priority Issues";
+    state.view === "delivery" ? "Blocked / At Risk" : "Priority Issues In Current Filter";
 }
 
 function renderViewShell() {
   const isJourneyView = state.view === "journey";
   const isRegisterView = state.view === "register";
   const isStrategicExecutive = state.view === "executive";
+  const isProductView = state.view === "product";
   els.dashboardGrid.dataset.view = state.view;
-  els.kpiGrid.hidden = isJourneyView || isRegisterView || isStrategicExecutive;
+  els.kpiGrid.hidden = isJourneyView || isRegisterView || isStrategicExecutive || isProductView;
   els.productSections.hidden = state.view !== "product";
-  els.dashboardGrid.hidden = isJourneyView || isRegisterView || isStrategicExecutive;
+  els.dashboardGrid.hidden = isJourneyView || isRegisterView || isStrategicExecutive || isProductView;
   els.registerSection.hidden = !isRegisterView;
   els.strategicExecutiveSection.hidden = !isStrategicExecutive;
-  els.watchModule.hidden = state.view === "issue-summary";
-  els.governanceModule.hidden = state.view !== "issue-summary";
+  els.watchModule.hidden = false;
+  els.governanceModule.hidden = state.view !== "delivery";
 }
 
 function renderKpis(issues) {
@@ -947,12 +938,16 @@ function renderJourneyIssue(issue) {
 
 function renderPriorityTable(issues) {
   const priorityOrder = { HIGH: 1, MEDIUM: 2, LOW: 3, TBD: 4, "": 5 };
-  const rows = [...issues]
+  const sourceRows =
+    state.view === "delivery"
+      ? issues.filter(issue => issue.priority === "HIGH" || isBlocked(issue))
+      : issues;
+  const rows = [...(sourceRows.length ? sourceRows : issues)]
     .sort((a, b) => (priorityOrder[a.priority] || 9) - (priorityOrder[b.priority] || 9))
     .slice(0, 7);
 
   if (!rows.length) {
-    els.priorityTable.innerHTML = `<div class="empty-state">No priority issues match this view.</div>`;
+    els.priorityTable.innerHTML = `<div class="empty-state">No at-risk items match this view.</div>`;
     return;
   }
 
