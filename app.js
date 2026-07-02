@@ -250,7 +250,9 @@ function percent(value, total) {
 }
 
 function strategicUseCaseNames() {
-  const referenceNames = (data.useCases || []).map(useCase => normaliseUseCaseName(useCase.name)).filter(Boolean);
+  const referenceNames = (data.useCases || [])
+    .map(useCase => normaliseUseCaseName(useCase.name))
+    .filter(useCase => useCase && useCase !== "All");
   return uniqueList([...referenceNames, ...fallbackStrategicUseCases]);
 }
 
