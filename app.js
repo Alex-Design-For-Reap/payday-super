@@ -359,7 +359,7 @@ function renderStrategicExecutive(issues) {
   const decisionIssues = sortExecutiveAttention(issues.filter(issue => issue.decisionNeeded)).slice(0, 8);
   const allBottlenecks = aggregateCapabilityBottlenecks(issues);
   const bottlenecks = allBottlenecks.slice(0, 8);
-  const externalDependencies = sortDependencyIssues(issues.filter(issue => issue.dependencies && isExternalDependency(issue))).slice(0, 8);
+  const dependencyIssues = sortDependencyIssues(issues.filter(issue => issue.dependencies)).slice(0, 8);
   const atRiskCount = readiness.filter(item => ["Red", "Amber"].includes(item.status)).length;
 
   els.strategyOutcomeSection.innerHTML = renderStrategyOutcomes(issues, readiness);
@@ -384,8 +384,8 @@ function renderStrategicExecutive(issues) {
     "No capability bottlenecks match the current filters.",
   );
   els.externalDependencyList.innerHTML = renderDependencyIssueList(
-    externalDependencies,
-    "No external dependencies match the current filters.",
+    dependencyIssues,
+    "No dependencies match the current filters.",
   );
 }
 
