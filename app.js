@@ -66,6 +66,7 @@ const views = [
       issue.priority === "HIGH" ||
       issue.status === "WIP" ||
       issue.status === "HOLD / BLOCKED" ||
+      isResolved(issue) ||
       issue.isExecSummary ||
       !issue.owner ||
       !issue.problemScenario ||
@@ -319,6 +320,7 @@ function renderKpis(issues) {
   const dependency = metricCount(issues, issue => Boolean(issue.dependencies));
   const framingGaps = metricCount(issues, issue => !issue.problemScenario);
   const decisions = metricCount(issues, issue => Boolean(issue.decisionNeeded));
+  const resolved = metricCount(issues, isResolved);
 
   const cards = [
     ["Total Issues", total, "All visible issue cards", "◇"],
@@ -327,6 +329,10 @@ function renderKpis(issues) {
     ["Dependencies", dependency, `${percent(dependency, total)} with dependency noted`, "⌘"],
     ["Decisions", decisions, `${percent(decisions, total)} need a call`, "?"],
   ];
+
+  if (state.view === "delivery") {
+    cards.push(["Resolved", `${percent(resolved, total)}`, `${resolved} closed issue${resolved === 1 ? "" : "s"}`, "✓"]);
+  }
 
   if (state.view === "product") {
     cards.push(["Framing Gaps", framingGaps, `${percent(framingGaps, total)} missing scenario`, "△"]);
@@ -1647,6 +1653,11 @@ function topValues(values, limit = 3) {
 
 function isBlocked(issue) {
   return String(issue.status || "").toLowerCase().includes("blocked") || String(issue.status || "").toLowerCase().includes("hold");
+}
+
+function isResolved(issue) {
+  const status = String(issue.status || "").toLowerCase();
+  return status.includes("closed") || status.includes("completed");
 }
 
 function isHighPriorityAtRisk(issue) {
