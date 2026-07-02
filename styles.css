@@ -510,8 +510,8 @@ h3 {
   line-height: 1.35;
 }
 
-.readiness-description,
-.readiness-note {
+.readiness-card .readiness-description,
+.readiness-card .readiness-note {
   color: var(--muted);
   font-size: 13px;
   font-weight: 400;
