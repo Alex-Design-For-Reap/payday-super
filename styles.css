@@ -513,9 +513,9 @@ h3 {
 .readiness-description,
 .readiness-note {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.55;
 }
 
 .executive-grid {
