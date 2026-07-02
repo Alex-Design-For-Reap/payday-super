@@ -119,6 +119,9 @@ const state = {
     atRisk: false,
     inProgress: false,
   },
+  executiveExpanded: {
+    leadershipAttention: false,
+  },
 };
 
 const els = {
@@ -164,6 +167,7 @@ const els = {
   strategicSummaryStrip: document.querySelector("#strategicSummaryStrip"),
   readinessGrid: document.querySelector("#readinessGrid"),
   executiveAttentionList: document.querySelector("#executiveAttentionList"),
+  leadershipAttentionToggle: document.querySelector("[data-action='toggle-leadership-attention']"),
   strategicDecisionList: document.querySelector("#strategicDecisionList"),
   capabilityBottleneckList: document.querySelector("#capabilityBottleneckList"),
   externalDependencyList: document.querySelector("#externalDependencyList"),
@@ -352,7 +356,10 @@ function renderStrategicExecutive(issues) {
   }
 
   const readiness = aggregateUseCaseReadiness(issues);
-  const attentionIssues = sortExecutiveAttention(issues).slice(0, 8);
+  const allAttentionIssues = sortExecutiveAttention(issues);
+  const attentionIssues = state.executiveExpanded.leadershipAttention
+    ? allAttentionIssues
+    : allAttentionIssues.slice(0, 5);
   const decisionIssues = sortExecutiveAttention(issues.filter(issue => issue.decisionNeeded)).slice(0, 8);
   const allBottlenecks = aggregateCapabilityBottlenecks(issues);
   const bottlenecks = allBottlenecks.slice(0, 8);
@@ -365,6 +372,8 @@ function renderStrategicExecutive(issues) {
     bottlenecks: allBottlenecks.length,
   });
   els.readinessGrid.innerHTML = readiness.map(renderReadinessCard).join("");
+  els.leadershipAttentionToggle.hidden = allAttentionIssues.length <= 5;
+  els.leadershipAttentionToggle.textContent = state.executiveExpanded.leadershipAttention ? "Show less" : "View all";
   els.executiveAttentionList.innerHTML = renderExecutiveIssueList(
     attentionIssues,
     "No leadership attention items match the current filters.",
@@ -1209,6 +1218,11 @@ function setupControls() {
 
   els.highPriorityProgressToggle.addEventListener("click", () => {
     state.deliveryExpanded.inProgress = !state.deliveryExpanded.inProgress;
+    render();
+  });
+
+  els.leadershipAttentionToggle.addEventListener("click", () => {
+    state.executiveExpanded.leadershipAttention = !state.executiveExpanded.leadershipAttention;
     render();
   });
 
