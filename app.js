@@ -780,7 +780,7 @@ function renderDependencyIssueList(issues, emptyMessage, asCompactList = false) 
         <button class="dependency-issue-button" type="button" data-issue-id="${escapeHtml(issue.id)}">
           <span class="id-pill">${escapeHtml(issue.id)}</span>
           <span class="dependency-title">${escapeHtml(issue.title || "Untitled issue")}</span>
-          <span class="dependency-owner">Depends on: ${escapeHtml(dependencyScope(issue) || "TBD")}</span>
+          <span class="dependency-owner">${escapeHtml(dependencyScope(issue) || "TBD")}</span>
         </button>
       `,
   );
