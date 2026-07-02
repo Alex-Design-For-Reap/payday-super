@@ -356,7 +356,7 @@ function renderStrategicExecutive(issues) {
   }
 
   const readiness = aggregateUseCaseReadiness(issues);
-  const allAttentionIssues = sortExecutiveAttention(issues);
+  const allAttentionIssues = sortExecutiveEscalations(issues);
   const attentionIssues = state.executiveExpanded.leadershipAttention
     ? allAttentionIssues
     : allAttentionIssues.slice(0, 5);
@@ -376,7 +376,7 @@ function renderStrategicExecutive(issues) {
   els.leadershipAttentionToggle.textContent = state.executiveExpanded.leadershipAttention ? "Show less" : "View all";
   els.executiveAttentionList.innerHTML = renderExecutiveIssueList(
     attentionIssues,
-    "No leadership attention items match the current filters.",
+    "No escalation or readiness risk items match the current filters.",
   );
   els.strategicDecisionList.innerHTML = renderDecisionExecutiveList(
     decisionIssues,
@@ -620,6 +620,12 @@ function sortExecutiveAttention(issues) {
     .sort((a, b) => executiveAttentionScore(b) - executiveAttentionScore(a));
 }
 
+function sortExecutiveEscalations(issues) {
+  return [...issues]
+    .filter(isExecutiveEscalation)
+    .sort((a, b) => executiveEscalationScore(b) - executiveEscalationScore(a));
+}
+
 function executiveAttentionScore(issue) {
   let score = 0;
   if (issue.priority === "HIGH") score += 40;
@@ -627,6 +633,16 @@ function executiveAttentionScore(issue) {
   if (issue.decisionNeeded) score += 25;
   if (isExternalDependency(issue)) score += 15;
   if (issue.dependencies) score += 10;
+  return score;
+}
+
+function executiveEscalationScore(issue) {
+  let score = 0;
+  if (isHighPriorityAtRisk(issue)) score += 50;
+  if (isBlocked(issue)) score += 40;
+  if (issue.priority === "HIGH" && !issue.owner) score += 25;
+  if (issue.priority === "HIGH" && !issue.currentAction) score += 20;
+  if (issue.priority === "HIGH" && !issue.roadmapAlignment) score += 15;
   return score;
 }
 
@@ -1580,6 +1596,13 @@ function isHighPriorityAtRisk(issue) {
   if (issue.priority !== "HIGH") return false;
   const status = String(issue.status || "").toLowerCase();
   return ["not started", "blocked", "acknowledge", "hold"].some(term => status.includes(term));
+}
+
+function isExecutiveEscalation(issue) {
+  if (isBlocked(issue)) return true;
+  if (isHighPriorityAtRisk(issue)) return true;
+  if (issue.priority !== "HIGH") return false;
+  return !issue.owner || !issue.currentAction || !issue.roadmapAlignment;
 }
 
 function isExternalDependency(issue) {
